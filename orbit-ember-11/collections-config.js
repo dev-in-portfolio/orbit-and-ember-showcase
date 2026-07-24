@@ -1,11 +1,11 @@
 /**
  * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Editorial Configuration
- * Version: 2.0.0 (Pure Editorial Config — References Stable Item IDs Only)
+ * Version: 2.1.0 (Bespoke Michelin Editorial Visuals & Dedicated Image Mapping)
  * Contains NO copied prices, descriptions, dietary markers, or availability data.
  */
 
 window.ORBIT_COLLECTIONS_CONFIG = {
-  version: "2.0.0",
+  version: "2.1.0",
   lastReviewed: "2026-07-24",
   featuredCollectionId: "collection-signature",
   categories: [
@@ -26,7 +26,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "signature",
       shortDescription: "The definitive dishes, craft cocktails, and hearth finishes that define our kitchen.",
       longIntroduction: "Our signature collection highlights the pinnacle of open hearth wood-fired cooking and celestial mixology. From 14-hour black garlic braised short ribs to high-rye bourbon aged with flamed orange peel, these preparations embody the soul of Orbit & Ember.",
-      heroImage: "images/featured-steak.jpg",
+      heroImage: "images/collection-signature.jpg",
       serviceLabel: "Dinner & Drinks",
       orderedItemIds: [
         "menu-black-garlic-short-rib",
@@ -48,7 +48,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "signature",
       shortDescription: "Dishes defined by direct cured oak flame, char, smoke, roasting, and hearth embers.",
       longIntroduction: "Every plate in this collection touches our live-fire hearth. Cured oak firewood imparts a deep campfire finish to pasture-raised chicken, coal-roasted heirloom carrots, and hand-stretched sourdough flatbreads.",
-      heroImage: "images/wood-fired-hearth.jpg",
+      heroImage: "images/collection-fire.jpg",
       serviceLabel: "Dinner Service",
       orderedItemIds: [
         "menu-ember-roasted-chicken",
@@ -70,7 +70,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "occasion",
       shortDescription: "Starters, flatbreads, oysters, and hearth sides designed to pass around the table.",
       longIntroduction: "Dining is best experienced as a communal event. These shareable plates are crafted for passing, pairing, and enjoying together across the table.",
-      heroImage: "images/featured-flatbread.jpg",
+      heroImage: "images/collection-sharing.jpg",
       serviceLabel: "Dinner & Brunch",
       orderedItemIds: [
         "menu-smoked-pepper-flatbread",
@@ -92,7 +92,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "brunch",
       shortDescription: "Hearth-poached eggs, brioche french toast, short rib hash, and morning spritzes.",
       longIntroduction: "Our weekend brunch merges wood-fired hearth techniques with morning favorites. Enjoy harissa hollandaise over pork belly benedict, smoked short rib skillet hash, and botanical morning spritzes.",
-      heroImage: "images/wood-fired-hearth.jpg",
+      heroImage: "images/collection-brunch.jpg",
       serviceLabel: "Sat & Sun 10:00 AM – 2:30 PM",
       orderedItemIds: [
         "menu-ember-benedict",
@@ -114,7 +114,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "drinks",
       shortDescription: "High-rye bourbon, smoked mezcal, espresso martinis, and botanical spritzes.",
       longIntroduction: "Curated mixology inspired by planetary alignment and smoky herbal botanicals. From wood-smoked rye to flamed citrus and cold brew espresso reductions.",
-      heroImage: "images/cosmic-cocktail.jpg",
+      heroImage: "images/collection-cocktails.jpg",
       serviceLabel: "Bar & Lounge Nightly",
       orderedItemIds: [
         "menu-copper-moon",
@@ -136,7 +136,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "drinks",
       shortDescription: "Distilled botanical spirits, jasmine peach elixirs, ginger press, and smoked tea tonics.",
       longIntroduction: "Nonalcoholic beverages treated with the exact same rigor and nuance as our craft cocktail program. Every elixir is formulated with cold-pressed botanicals, smoked teas, and house-made syrups.",
-      heroImage: "images/cosmic-cocktail.jpg",
+      heroImage: "images/collection-zeroproof.jpg",
       serviceLabel: "Available All Services",
       orderedItemIds: [
         "menu-lunar-bloom",
@@ -157,7 +157,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "dessert",
       shortDescription: "Caramelized honey cheesecake, smoked Valrhona dark chocolate torte, and espresso martinis.",
       longIntroduction: "Conclude your meal with hearth-smoked desserts that balance sweetness, rich cacao, Maldon sea salt, and aromatic espresso pairings.",
-      heroImage: "images/lounge-ambiance.jpg",
+      heroImage: "images/collection-dessert.jpg",
       serviceLabel: "Nightly Dessert Service",
       orderedItemIds: [
         "menu-burnt-honey-cheesecake",
@@ -178,7 +178,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "occasion",
       shortDescription: "A curated 4-course progression for two guests featuring hearth bread, charred carrots, short rib, and cheesecake.",
       longIntroduction: "An intimate culinary progression tailored for date night or celebratory dining. Begin with sourdough hearth bread, move to coal-blistered carrots, savor black garlic braised short rib, and finish with burnt honey cheesecake.",
-      heroImage: "images/lounge-ambiance.jpg",
+      heroImage: "images/collection-tablefortwo.jpg",
       serviceLabel: "Dinner Service",
       orderedItemIds: [
         "menu-hearth-bread",
@@ -200,7 +200,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "occasion",
       shortDescription: "Group-friendly feast featuring roasted oysters, smoked flatbread, ember chicken, and charred mushrooms.",
       longIntroduction: "Designed for groups of four or more. Enjoy an abundant family-style spread of coal-roasted Atlantic oysters, smoked pepper flatbread, half ember chicken, and wild mushrooms.",
-      heroImage: "images/featured-flatbread.jpg",
+      heroImage: "images/collection-gathertable.jpg",
       serviceLabel: "Dinner & Large Groups",
       orderedItemIds: [
         "menu-fire-roasted-oysters",
@@ -222,7 +222,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "signature",
       shortDescription: "Limited-availability seasonal dishes highlighting autumn mushrooms and summer peach brioche.",
       longIntroduction: "Our culinary team adapts dishes continuously as local harvests peak. This collection features limited seasonal availability plates current to our kitchen hearth.",
-      heroImage: "images/wood-fired-hearth.jpg",
+      heroImage: "images/collection-season.jpg",
       serviceLabel: "Seasonal Harvest",
       orderedItemIds: [
         "menu-wood-fired-mushrooms",
@@ -242,7 +242,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "signature",
       shortDescription: "Personal recommendations from Executive Chef Julian Reyes highlighting his favorite hearth pairings.",
       longIntroduction: "“These dishes showcase the exact harmony of smoke, acid, and earth that inspired Orbit & Ember. I invite you to sample my personal favorites from our hearth.” — Executive Chef Julian Reyes",
-      heroImage: "images/featured-steak.jpg",
+      heroImage: "images/collection-chefjulian.jpg",
       serviceLabel: "Chef's Recommendations",
       orderedItemIds: [
         "menu-black-garlic-short-rib",
@@ -263,7 +263,7 @@ window.ORBIT_COLLECTIONS_CONFIG = {
       category: "private-dining",
       shortDescription: "Sample direction and curated multi-course menus for private events in The Ember Room.",
       longIntroduction: "Explore sample menu direction for host-curated private dining in The Ember Room. Custom course progressions, wine pairings, and zero-proof flights are designed during inquiry consultation.",
-      heroImage: "images/lounge-ambiance.jpg",
+      heroImage: "images/collection-privatedining.jpg",
       serviceLabel: "Private Events & Inquiries",
       orderedItemIds: [
         "menu-black-garlic-short-rib",

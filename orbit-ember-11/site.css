@@ -1185,3 +1185,269 @@ img, video, canvas, iframe { max-width: 100%; height: auto; }
   font-size: 0.98rem !important;
   margin-bottom: 1.2rem !important;
 }
+
+/* Package 9 Ultra-Luxury Michelin Editorial Card Styles */
+.featured-michelin-card {
+  background: rgba(18, 14, 12, 0.95) !important;
+  border: 1px solid rgba(224, 168, 104, 0.5) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.95), 0 0 30px rgba(224, 168, 104, 0.15) !important;
+  position: relative !important;
+}
+
+@media (max-width: 900px) {
+  .featured-michelin-card { grid-template-columns: 1fr !important; }
+}
+
+.featured-michelin-media {
+  position: relative !important;
+  min-height: 340px !important;
+  overflow: hidden !important;
+}
+
+.featured-michelin-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.8s ease !important;
+}
+
+.featured-michelin-card:hover .featured-michelin-media img {
+  transform: scale(1.05) !important;
+}
+
+.featured-media-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(18, 14, 12, 0.85) 100%) !important;
+}
+
+.feat-michelin-badge {
+  position: absolute !important;
+  top: 1.2rem !important;
+  left: 1.2rem !important;
+  background: linear-gradient(135deg, #e0a868 0%, #c27a4a 100%) !important;
+  color: #080706 !important;
+  padding: 0.45rem 1.1rem !important;
+  border-radius: 20px !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+}
+
+.feat-service-pill {
+  position: absolute !important;
+  bottom: 1.2rem !important;
+  left: 1.2rem !important;
+  background: rgba(18, 14, 12, 0.9) !important;
+  border: 1px solid rgba(224, 168, 104, 0.6) !important;
+  color: var(--color-primary-brand) !important;
+  padding: 0.35rem 0.9rem !important;
+  border-radius: 15px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+}
+
+.featured-michelin-body {
+  padding: 2.8rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.featured-michelin-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 2.5rem !important;
+  color: #ffffff !important;
+  margin: 0.4rem 0 0.8rem !important;
+}
+
+.featured-michelin-desc {
+  color: #e6dfd5 !important;
+  font-size: 1.02rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.featured-pairing-bar {
+  background: rgba(224, 168, 104, 0.12) !important;
+  border-left: 3px solid var(--color-primary-brand) !important;
+  padding: 0.75rem 1.2rem !important;
+  border-radius: 0 10px 10px 0 !important;
+  font-size: 0.92rem !important;
+  color: #f0eae1 !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 500 !important;
+}
+
+.featured-items-preview {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 1.2rem 1.5rem !important;
+  border-radius: 14px !important;
+  margin-bottom: 1.8rem !important;
+}
+
+.preview-header {
+  font-size: 0.85rem !important;
+  color: #aba296 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.preview-items-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.preview-items-list li {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  padding: 0.35rem 0 !important;
+  font-size: 0.95rem !important;
+  color: #ffffff !important;
+}
+
+.preview-item-dots {
+  flex: 1 !important;
+  border-bottom: 1px dotted rgba(255,255,255,0.2) !important;
+  margin: 0 0.6rem !important;
+}
+
+.preview-item-price {
+  color: var(--color-primary-brand) !important;
+  font-weight: 700 !important;
+}
+
+/* 12 Collection Cards Grid */
+.collection-michelin-card {
+  background: rgba(18, 14, 12, 0.94) !important;
+  border: 1px solid rgba(224, 168, 104, 0.35) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.85) !important;
+}
+
+.collection-michelin-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: var(--color-primary-brand) !important;
+  box-shadow: 0 25px 75px rgba(224, 168, 104, 0.25), 0 0 20px rgba(224, 168, 104, 0.15) !important;
+}
+
+.col-michelin-media {
+  position: relative !important;
+  height: 220px !important;
+  overflow: hidden !important;
+}
+
+.col-michelin-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.6s ease !important;
+}
+
+.collection-michelin-card:hover .col-michelin-media img {
+  transform: scale(1.08) !important;
+}
+
+.col-media-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(18, 14, 12, 0.9) 100%) !important;
+}
+
+.col-pairing-badge {
+  position: absolute !important;
+  top: 0.8rem !important;
+  right: 0.8rem !important;
+  background: rgba(224, 168, 104, 0.95) !important;
+  color: #080706 !important;
+  padding: 0.3rem 0.75rem !important;
+  border-radius: 12px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+}
+
+.col-michelin-body {
+  padding: 2rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.col-michelin-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 2.1rem !important;
+  color: #ffffff !important;
+  margin: 0.4rem 0 0.6rem !important;
+}
+
+.col-michelin-desc {
+  color: #e6dfd5 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.col-card-preview-box {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-left: 2px solid var(--color-primary-brand) !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 0 10px 10px 0 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.preview-mini-title {
+  font-size: 0.75rem !important;
+  color: #aba296 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.preview-mini-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.preview-mini-list li {
+  display: flex !important;
+  justify-content: space-between !important;
+  font-size: 0.88rem !important;
+  color: #e6dfd5 !important;
+  padding: 0.18rem 0 !important;
+}
+
+.mini-price {
+  color: var(--color-primary-brand) !important;
+  font-weight: 700 !important;
+}
+
+.col-card-meta {
+  display: flex !important;
+  justify-content: space-between !important;
+  font-size: 0.82rem !important;
+  color: #aba296 !important;
+  margin-bottom: 1.2rem !important;
+  padding-top: 0.6rem !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.col-card-actions {
+  display: flex !important;
+  gap: 0.75rem !important;
+  margin-top: auto !important;
+}

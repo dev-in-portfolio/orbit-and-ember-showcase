@@ -1,6 +1,6 @@
 /**
- * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Controller Engine
- * Version: 2.0.0
+ * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Michelin Controller Engine
+ * Version: 2.5.0 (Ultra-Luxury Editorial Design System)
  * Dynamically resolves collection item IDs against shared ORBIT_MENU_DATA and ORBIT_PAIRING_DATA.
  * Zero copied prices, descriptions, or dietary markers.
  */
@@ -8,7 +8,6 @@
 (function() {
   'use strict';
 
-  // Data Lookup Maps
   let itemMap = new Map();
   let pairingMap = new Map();
 
@@ -50,10 +49,7 @@
     initDataMaps();
 
     const config = window.ORBIT_COLLECTIONS_CONFIG;
-    if (!config) {
-      console.error("ORBIT_COLLECTIONS_CONFIG not found!");
-      return;
-    }
+    if (!config) return;
 
     const categoryNavContainer = document.getElementById('collections-category-nav');
     const featuredSectionContainer = document.getElementById('featured-collection-container');
@@ -84,20 +80,13 @@
         btn.addEventListener('click', () => {
           activeCategory = cat.id;
           renderCategoryTabs();
-
-      // Update dynamic collection total badge
-      const totalBadge = document.getElementById('dynamic-col-total');
-      if (totalBadge && config.collections) {
-        totalBadge.textContent = `${config.collections.length} Curated Collections`;
-      }
-
           renderCollectionsGrid();
         });
         categoryNavContainer.appendChild(btn);
       });
     }
 
-    // 2. Render Featured Collection Spotlight
+    // 2. Render Featured Collection Spotlight (Michelin Editorial Design)
     function renderFeaturedCollection() {
       if (!featuredSectionContainer) return;
       const featId = config.featuredCollectionId;
@@ -105,26 +94,41 @@
 
       if (!featCol) return;
 
-      // Resolve items
       const resolvedItems = featCol.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
+      const isSaved = getSavedCollections().includes(featCol.id);
+
+      // Primary pairing lookup
+      let pairingNote = "";
+      if (featCol.pairingIds && featCol.pairingIds.length > 0) {
+        const p = pairingMap.get(featCol.pairingIds[0]);
+        if (p) {
+          const drink = itemMap.get(p.drinkItemId);
+          if (drink) pairingNote = `🍷 Suggested Beverage: ${drink.name} (${drink.pricing.display})`;
+        }
+      }
 
       featuredSectionContainer.innerHTML = `
-        <div class="featured-col-card">
-          <div class="featured-col-media">
+        <div class="featured-michelin-card">
+          <div class="featured-michelin-media">
             <img src="${featCol.heroImage}" alt="${featCol.title}">
-            <span class="feat-badge">★ FEATURED COLLECTION</span>
+            <div class="featured-media-overlay"></div>
+            <span class="feat-michelin-badge">★ FEATURED EDITORIAL COLLECTION</span>
+            <span class="feat-service-pill">${featCol.serviceLabel}</span>
           </div>
-          <div class="featured-col-body">
-            <span class="subhead-tag">${featCol.eyebrow} • ${resolvedItems.length} Curated Items</span>
-            <h2 class="featured-col-title">${featCol.title}</h2>
-            <p class="featured-col-desc">${featCol.longIntroduction}</p>
-            
+          <div class="featured-michelin-body">
+            <span class="subhead-tag">${featCol.eyebrow} • ${resolvedItems.length} Curated Courses</span>
+            <h2 class="featured-michelin-title">${featCol.title}</h2>
+            <p class="featured-michelin-desc">${featCol.longIntroduction}</p>
+
+            ${pairingNote ? `<div class="featured-pairing-bar">${pairingNote}</div>` : ''}
+
             <div class="featured-items-preview">
-              <strong>Curated Items:</strong>
-              <ul>
+              <div class="preview-header">Featured Menu Courses:</div>
+              <ul class="preview-items-list">
                 ${resolvedItems.map(item => `
                   <li>
                     <span class="preview-item-name">${item.name}</span>
+                    <span class="preview-item-dots"></span>
                     <span class="preview-item-price">${item.pricing.display}</span>
                   </li>
                 `).join('')}
@@ -132,8 +136,8 @@
             </div>
 
             <div class="featured-col-actions">
-              <button class="cta-btn open-col-btn" data-slug="${featCol.slug}">Explore Full Collection</button>
-              <button class="btn-secondary save-col-btn" data-id="${featCol.id}">${getSavedCollections().includes(featCol.id) ? '⭐ Saved' : '☆ Save Collection'}</button>
+              <button class="cta-btn open-col-btn" data-slug="${featCol.slug}">Explore Full Collection &rsaquo;</button>
+              <button class="btn-secondary save-col-btn" data-id="${featCol.id}">${isSaved ? '⭐ Saved' : '☆ Save Collection'}</button>
             </div>
           </div>
         </div>
@@ -153,28 +157,52 @@
       filteredCols.forEach(col => {
         const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
         const card = document.createElement('article');
-        card.className = 'collection-card';
+        card.className = 'collection-michelin-card';
 
         const isSaved = getSavedCollections().includes(col.id);
 
+        // Pairing badge string
+        let pairingPill = "";
+        if (col.pairingIds && col.pairingIds.length > 0) {
+          const p = pairingMap.get(col.pairingIds[0]);
+          if (p) {
+            const drink = itemMap.get(p.drinkItemId);
+            if (drink) pairingPill = `🍷 ${drink.shortName || drink.name}`;
+          }
+        }
+
         card.innerHTML = `
-          <div class="col-card-media">
-            <img src="${col.heroImage}" alt="${col.title}">
+          <div class="col-michelin-media">
+            <img src="${col.heroImage}" alt="${col.title}" loading="lazy">
+            <div class="col-media-overlay"></div>
             <span class="col-service-badge">${col.serviceLabel}</span>
+            ${pairingPill ? `<span class="col-pairing-badge">${pairingPill}</span>` : ''}
           </div>
-          <div class="col-card-body">
+          <div class="col-michelin-body">
             <span class="subhead-tag">${col.eyebrow}</span>
-            <h3 class="col-card-title">${col.title}</h3>
-            <p class="col-card-desc">${col.shortDescription}</p>
+            <h3 class="col-michelin-title">${col.title}</h3>
+            <p class="col-michelin-desc">${col.shortDescription}</p>
+
+            <div class="col-card-preview-box">
+              <div class="preview-mini-title">Highlights:</div>
+              <ul class="preview-mini-list">
+                ${resolvedItems.slice(0, 3).map(item => `
+                  <li>
+                    <span>${item.shortName || item.name}</span>
+                    <span class="mini-price">${item.pricing.display}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
             
             <div class="col-card-meta">
-              <span>🍽️ ${resolvedItems.length} Items</span>
-              ${col.disclaimer ? '<span style="color:#e0a868;">💡 Special Terms</span>' : ''}
+              <span>🍽️ ${resolvedItems.length} Dishes</span>
+              <span>⭐ Dark Star Selection</span>
             </div>
 
             <div class="col-card-actions">
-              <button class="cta-btn open-col-btn" data-slug="${col.slug}" style="flex: 1;">View Collection</button>
-              <button class="btn-secondary save-col-btn" data-id="${col.id}">${isSaved ? '⭐' : '☆'}</button>
+              <button class="cta-btn open-col-btn" data-slug="${col.slug}" style="flex: 1;">Explore Collection</button>
+              <button class="btn-secondary save-col-btn" data-id="${col.id}" title="Save Collection">${isSaved ? '⭐' : '☆'}</button>
             </div>
           </div>
         `;
@@ -184,7 +212,7 @@
       bindCollectionButtons();
     }
 
-    // 4. Bind Button Listeners (Open & Save)
+    // 4. Bind Button Listeners
     function bindCollectionButtons() {
       document.querySelectorAll('.open-col-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -200,10 +228,8 @@
           const id = btn.getAttribute('data-id');
           if (getSavedCollections().includes(id)) {
             removeSavedCollectionId(id);
-            btn.textContent = '☆ Save Collection';
           } else {
             saveCollectionId(id);
-            btn.textContent = '⭐ Saved';
           }
           renderFeaturedCollection();
           renderCollectionsGrid();
@@ -211,7 +237,7 @@
       });
     }
 
-    // 5. Open Collection Detail Modal / Drawer with URL Hash Updates
+    // 5. Open Collection Detail Drawer
     function openCollectionDetailBySlug(slug) {
       const col = config.collections.find(c => c.slug === slug || c.id === slug);
       if (!col) return;
@@ -221,7 +247,6 @@
       const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
       const isSaved = getSavedCollections().includes(col.id);
 
-      // Resolve Pairings
       const resolvedPairings = (col.pairingIds || []).map(pid => {
         const p = pairingMap.get(pid);
         if (!p) return null;
@@ -240,7 +265,7 @@
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
             <a href="${col.ctaUrl}" class="cta-btn">${col.ctaLabel}</a>
             <button class="btn-secondary save-col-btn-modal" data-id="${col.id}">${isSaved ? '⭐ Saved' : '☆ Save Collection'}</button>
-            <button class="btn-secondary share-col-btn" data-slug="${col.slug}">🔗 Share Collection</button>
+            <button class="btn-secondary share-col-btn" data-slug="${col.slug}">🔗 Share Link</button>
           </div>
         </header>
 
@@ -251,7 +276,7 @@
         ` : ''}
 
         <section class="modal-col-items">
-          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Items</h2>
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Courses</h2>
           <div class="col-detail-items-grid">
             ${resolvedItems.map(item => `
               <div class="col-item-card">
@@ -271,7 +296,7 @@
 
         ${resolvedPairings.length > 0 ? `
           <section class="modal-col-pairings" style="margin-top: 3rem;">
-            <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Suggested Beverage Pairings</h2>
+            <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Beverage &amp; Cocktail Pairings</h2>
             <div class="col-detail-pairings-grid">
               ${resolvedPairings.map(rp => `
                 <div class="pairing-card">
@@ -295,7 +320,6 @@
       detailDrawer.style.display = 'flex';
       document.body.style.overflow = 'hidden';
 
-      // Modal button listeners
       document.querySelector('.save-col-btn-modal')?.addEventListener('click', (e) => {
         if (getSavedCollections().includes(col.id)) {
           removeSavedCollectionId(col.id);
@@ -312,10 +336,10 @@
         const shareUrl = window.location.origin + window.location.pathname + '#' + col.slug;
         if (navigator.clipboard) {
           navigator.clipboard.writeText(shareUrl);
-          alert("✅ Collection link copied to clipboard!
+          alert("✅ Link copied to clipboard!
 " + shareUrl);
         } else {
-          alert("Collection link:
+          alert("Collection Link:
 " + shareUrl);
         }
       });
@@ -327,7 +351,6 @@
       window.location.hash = '';
     });
 
-    // Check URL Hash on Load
     function checkHashRoute() {
       const hash = window.location.hash.replace('#', '');
       if (hash) {
@@ -335,15 +358,8 @@
       }
     }
 
-    // Initialize Page
+    // Init
     renderCategoryTabs();
-
-      // Update dynamic collection total badge
-      const totalBadge = document.getElementById('dynamic-col-total');
-      if (totalBadge && config.collections) {
-        totalBadge.textContent = `${config.collections.length} Curated Collections`;
-      }
-
     renderFeaturedCollection();
     renderCollectionsGrid();
     checkHashRoute();
