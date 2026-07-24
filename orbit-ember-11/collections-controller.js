@@ -1,6 +1,6 @@
 /**
  * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Michelin Controller Engine
- * Version: 2.5.0 (Ultra-Luxury Editorial Design System)
+ * Version: 3.0.0 (Clean Single Declaration & High-End Modal Event System)
  * Dynamically resolves collection item IDs against shared ORBIT_MENU_DATA and ORBIT_PAIRING_DATA.
  * Zero copied prices, descriptions, or dietary markers.
  */
@@ -12,6 +12,8 @@
   let pairingMap = new Map();
 
   function initDataMaps() {
+    itemMap.clear();
+    pairingMap.clear();
     if (window.ORBIT_MENU_DATA && window.ORBIT_MENU_DATA.items) {
       window.ORBIT_MENU_DATA.items.forEach(item => {
         itemMap.set(item.id, item);
@@ -45,7 +47,6 @@
     localStorage.setItem('orbit_saved_collections', JSON.stringify(saved));
   }
 
-  
   function initCollectionsEngine() {
     initDataMaps();
 
@@ -54,20 +55,6 @@
       console.error("ORBIT_COLLECTIONS_CONFIG not found!");
       return;
     }
-
-    const categoryNavContainer = document.getElementById('collections-category-nav');
-    const featuredSectionContainer = document.getElementById('featured-collection-container');
-    const gridContainer = document.getElementById('collections-grid');
-    const detailDrawer = document.getElementById('collection-detail-drawer');
-    const detailModalContent = document.getElementById('collection-modal-content');
-    const closeDrawerBtn = document.getElementById('close-drawer-btn');
-
-    let activeCategory = 'all';
-
-    initDataMaps();
-
-    const config = window.ORBIT_COLLECTIONS_CONFIG;
-    if (!config) return;
 
     const categoryNavContainer = document.getElementById('collections-category-nav');
     const featuredSectionContainer = document.getElementById('featured-collection-container');
@@ -115,7 +102,6 @@
       const resolvedItems = featCol.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
       const isSaved = getSavedCollections().includes(featCol.id);
 
-      // Primary pairing lookup
       let pairingNote = "";
       if (featCol.pairingIds && featCol.pairingIds.length > 0) {
         const p = pairingMap.get(featCol.pairingIds[0]);
@@ -179,7 +165,6 @@
 
         const isSaved = getSavedCollections().includes(col.id);
 
-        // Pairing badge string
         let pairingPill = "";
         if (col.pairingIds && col.pairingIds.length > 0) {
           const p = pairingMap.get(col.pairingIds[0]);
@@ -226,69 +211,12 @@
         `;
         gridContainer.appendChild(card);
       });
-
-      bindCollectionButtons();
-
-    // Global Document Event Delegation for Instant Button Clicks
-    document.addEventListener('click', (e) => {
-      const openBtn = e.target.closest('.open-col-btn');
-      if (openBtn) {
-        e.preventDefault();
-        const slug = openBtn.getAttribute('data-slug');
-        if (slug) openCollectionDetailBySlug(slug);
-        return;
-      }
-
-      const saveBtn = e.target.closest('.save-col-btn');
-      if (saveBtn) {
-        e.preventDefault();
-        const id = saveBtn.getAttribute('data-id');
-        if (id) {
-          if (getSavedCollections().includes(id)) {
-            removeSavedCollectionId(id);
-            saveBtn.textContent = '☆';
-          } else {
-            saveCollectionId(id);
-            saveBtn.textContent = '⭐';
-          }
-          renderFeaturedCollection();
-          renderCollectionsGrid();
-        }
-        return;
-      }
-    });
-
     }
 
-    // 4. Bind Button Listeners
-    function bindCollectionButtons() {
-      document.querySelectorAll('.open-col-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const slug = btn.getAttribute('data-slug');
-          openCollectionDetailBySlug(slug);
-        });
-      });
-
-      document.querySelectorAll('.save-col-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const id = btn.getAttribute('data-id');
-          if (getSavedCollections().includes(id)) {
-            removeSavedCollectionId(id);
-          } else {
-            saveCollectionId(id);
-          }
-          renderFeaturedCollection();
-          renderCollectionsGrid();
-        });
-      });
-    }
-
-    // 5. Open Collection Detail Drawer
+    // 4. Open Collection Detail Modal Drawer
     function openCollectionDetailBySlug(slug) {
       const col = config.collections.find(c => c.slug === slug || c.id === slug);
-      if (!col) return;
+      if (!col || !detailDrawer || !detailModalContent) return;
 
       window.location.hash = col.slug;
 
@@ -384,20 +312,20 @@
         const shareUrl = window.location.origin + window.location.pathname + '#' + col.slug;
         if (navigator.clipboard) {
           navigator.clipboard.writeText(shareUrl);
-          alert("✅ Link copied to clipboard!
-" + shareUrl);
+          alert("✅ Link copied to clipboard!\n" + shareUrl);
         } else {
-          alert("Collection Link:
-" + shareUrl);
+          alert("Collection Link:\n" + shareUrl);
         }
       });
     }
 
-    closeDrawerBtn?.addEventListener('click', () => {
-      detailDrawer.style.display = 'none';
-      document.body.style.overflow = '';
-      window.location.hash = '';
-    });
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', () => {
+        detailDrawer.style.display = 'none';
+        document.body.style.overflow = '';
+        window.location.hash = '';
+      });
+    }
 
     function checkHashRoute() {
       const hash = window.location.hash.replace('#', '');
@@ -406,12 +334,49 @@
       }
     }
 
-    // Init
+    // 5. Global Document Event Delegation for Instant Button Clicks
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.open-col-btn');
+      if (openBtn) {
+        e.preventDefault();
+        const slug = openBtn.getAttribute('data-slug');
+        if (slug) openCollectionDetailBySlug(slug);
+        return;
+      }
+
+      const saveBtn = e.target.closest('.save-col-btn');
+      if (saveBtn) {
+        e.preventDefault();
+        const id = saveBtn.getAttribute('data-id');
+        if (id) {
+          if (getSavedCollections().includes(id)) {
+            removeSavedCollectionId(id);
+            saveBtn.textContent = '☆';
+          } else {
+            saveCollectionId(id);
+            saveBtn.textContent = '⭐';
+          }
+          renderFeaturedCollection();
+          renderCollectionsGrid();
+        }
+        return;
+      }
+    });
+
+    // Execute UI Render
     renderCategoryTabs();
     renderFeaturedCollection();
     renderCollectionsGrid();
     checkHashRoute();
 
     window.addEventListener('hashchange', checkHashRoute);
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCollectionsEngine);
+  } else {
+    initCollectionsEngine();
+  }
+
+  window.addEventListener('load', initCollectionsEngine);
 })();
