@@ -1,6 +1,6 @@
 /**
- * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Michelin Controller Engine
- * Version: 3.0.0 (Clean Single Declaration & High-End Modal Event System)
+ * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Inline Editorial Engine
+ * Version: 4.0.0 (Pure Inline Editorial Design — Zero Modals)
  * Dynamically resolves collection item IDs against shared ORBIT_MENU_DATA and ORBIT_PAIRING_DATA.
  * Zero copied prices, descriptions, or dietary markers.
  */
@@ -51,17 +51,11 @@
     initDataMaps();
 
     const config = window.ORBIT_COLLECTIONS_CONFIG;
-    if (!config) {
-      console.error("ORBIT_COLLECTIONS_CONFIG not found!");
-      return;
-    }
+    if (!config) return;
 
     const categoryNavContainer = document.getElementById('collections-category-nav');
-    const featuredSectionContainer = document.getElementById('featured-collection-container');
-    const gridContainer = document.getElementById('collections-grid');
-    const detailDrawer = document.getElementById('collection-detail-drawer');
-    const detailModalContent = document.getElementById('collection-modal-content');
-    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const container = document.getElementById('collections-container');
+    const totalBadge = document.getElementById('dynamic-col-total');
 
     let activeCategory = 'all';
 
@@ -85,290 +79,153 @@
         btn.addEventListener('click', () => {
           activeCategory = cat.id;
           renderCategoryTabs();
-          renderCollectionsGrid();
+          renderCollections();
         });
         categoryNavContainer.appendChild(btn);
       });
     }
 
-    // 2. Render Featured Collection Spotlight (Michelin Editorial Design)
-    function renderFeaturedCollection() {
-      if (!featuredSectionContainer) return;
-      const featId = config.featuredCollectionId;
-      const featCol = config.collections.find(c => c.id === featId) || config.collections[0];
-
-      if (!featCol) return;
-
-      const resolvedItems = featCol.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
-      const isSaved = getSavedCollections().includes(featCol.id);
-
-      let pairingNote = "";
-      if (featCol.pairingIds && featCol.pairingIds.length > 0) {
-        const p = pairingMap.get(featCol.pairingIds[0]);
-        if (p) {
-          const drink = itemMap.get(p.drinkItemId);
-          if (drink) pairingNote = `🍷 Suggested Beverage: ${drink.name} (${drink.pricing.display})`;
-        }
-      }
-
-      featuredSectionContainer.innerHTML = `
-        <div class="featured-michelin-card">
-          <div class="featured-michelin-media">
-            <img src="${featCol.heroImage}" alt="${featCol.title}">
-            <div class="featured-media-overlay"></div>
-            <span class="feat-michelin-badge">★ FEATURED EDITORIAL COLLECTION</span>
-            <span class="feat-service-pill">${featCol.serviceLabel}</span>
-          </div>
-          <div class="featured-michelin-body">
-            <span class="subhead-tag">${featCol.eyebrow} • ${resolvedItems.length} Curated Courses</span>
-            <h2 class="featured-michelin-title">${featCol.title}</h2>
-            <p class="featured-michelin-desc">${featCol.longIntroduction}</p>
-
-            ${pairingNote ? `<div class="featured-pairing-bar">${pairingNote}</div>` : ''}
-
-            <div class="featured-items-preview">
-              <div class="preview-header">Featured Menu Courses:</div>
-              <ul class="preview-items-list">
-                ${resolvedItems.map(item => `
-                  <li>
-                    <span class="preview-item-name">${item.name}</span>
-                    <span class="preview-item-dots"></span>
-                    <span class="preview-item-price">${item.pricing.display}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-
-            <div class="featured-col-actions">
-              <button class="cta-btn open-col-btn" data-slug="${featCol.slug}">Explore Full Collection &rsaquo;</button>
-              <button class="btn-secondary save-col-btn" data-id="${featCol.id}">${isSaved ? '⭐ Saved' : '☆ Save Collection'}</button>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // 3. Render 12 Collections Grid
-    function renderCollectionsGrid() {
-      if (!gridContainer) return;
-      gridContainer.innerHTML = '';
+    // 2. Render All 12 Collections Directly Inline on the Page
+    function renderCollections() {
+      if (!container) return;
+      container.innerHTML = '';
 
       let filteredCols = config.collections;
       if (activeCategory !== 'all') {
         filteredCols = config.collections.filter(c => c.category === activeCategory);
       }
 
-      filteredCols.forEach(col => {
-        const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
-        const card = document.createElement('article');
-        card.className = 'collection-michelin-card';
-
-        const isSaved = getSavedCollections().includes(col.id);
-
-        let pairingPill = "";
-        if (col.pairingIds && col.pairingIds.length > 0) {
-          const p = pairingMap.get(col.pairingIds[0]);
-          if (p) {
-            const drink = itemMap.get(p.drinkItemId);
-            if (drink) pairingPill = `🍷 ${drink.shortName || drink.name}`;
-          }
-        }
-
-        card.innerHTML = `
-          <div class="col-michelin-media">
-            <img src="${col.heroImage}" alt="${col.title}" loading="lazy">
-            <div class="col-media-overlay"></div>
-            <span class="col-service-badge">${col.serviceLabel}</span>
-            ${pairingPill ? `<span class="col-pairing-badge">${pairingPill}</span>` : ''}
-          </div>
-          <div class="col-michelin-body">
-            <span class="subhead-tag">${col.eyebrow}</span>
-            <h3 class="col-michelin-title">${col.title}</h3>
-            <p class="col-michelin-desc">${col.shortDescription}</p>
-
-            <div class="col-card-preview-box">
-              <div class="preview-mini-title">Highlights:</div>
-              <ul class="preview-mini-list">
-                ${resolvedItems.slice(0, 3).map(item => `
-                  <li>
-                    <span>${item.shortName || item.name}</span>
-                    <span class="mini-price">${item.pricing.display}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-            
-            <div class="col-card-meta">
-              <span>🍽️ ${resolvedItems.length} Dishes</span>
-              <span>⭐ Dark Star Selection</span>
-            </div>
-
-            <div class="col-card-actions">
-              <button class="cta-btn open-col-btn" data-slug="${col.slug}" style="flex: 1;">Explore Collection</button>
-              <button class="btn-secondary save-col-btn" data-id="${col.id}" title="Save Collection">${isSaved ? '⭐' : '☆'}</button>
-            </div>
-          </div>
-        `;
-        gridContainer.appendChild(card);
-      });
-    }
-
-    // 4. Open Collection Detail Modal Drawer
-    function openCollectionDetailBySlug(slug) {
-      initDataMaps();
-      const config = window.ORBIT_COLLECTIONS_CONFIG;
-      if (!config) return;
-
-      const col = config.collections.find(c => c.slug === slug || c.id === slug);
-      if (!col) {
-        console.error("Collection not found for slug:", slug);
-        return;
+      if (totalBadge) {
+        totalBadge.textContent = `${filteredCols.length} Curated Collections`;
       }
 
-      const modalContent = document.getElementById('collection-modal-content');
-      const drawer = document.getElementById('collection-detail-drawer');
-      const modalBox = document.querySelector('.dish-inspector-modal');
+      filteredCols.forEach((col, idx) => {
+        const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
+        const isSaved = getSavedCollections().includes(col.id);
 
-      if (!modalContent || !drawer) return;
+        const resolvedPairings = (col.pairingIds || []).map(pid => {
+          const p = pairingMap.get(pid);
+          if (!p) return null;
+          const food = itemMap.get(p.foodItemId);
+          const drink = itemMap.get(p.drinkItemId);
+          const zeroProof = p.zeroProofAlternativeItemId ? itemMap.get(p.zeroProofAlternativeItemId) : null;
+          return { pairing: p, food, drink, zeroProof };
+        }).filter(Boolean);
 
-      window.location.hash = col.slug;
+        const colArticle = document.createElement('article');
+        colArticle.className = 'inline-collection-block';
+        colArticle.id = col.slug;
 
-      const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
-      const isSaved = getSavedCollections().includes(col.id);
+        colArticle.innerHTML = `
+          <div class="inline-col-header">
+            <div class="inline-col-media">
+              <img src="${col.heroImage}" alt="${col.title}" loading="lazy">
+              <div class="inline-media-overlay"></div>
+              <span class="inline-service-badge">${col.serviceLabel}</span>
+              ${idx === 0 ? '<span class="inline-feat-badge">★ FEATURED COLLECTION</span>' : ''}
+            </div>
 
-      const resolvedPairings = (col.pairingIds || []).map(pid => {
-        const p = pairingMap.get(pid);
-        if (!p) return null;
-        const food = itemMap.get(p.foodItemId);
-        const drink = itemMap.get(p.drinkItemId);
-        const zeroProof = p.zeroProofAlternativeItemId ? itemMap.get(p.zeroProofAlternativeItemId) : null;
-        return { pairing: p, food, drink, zeroProof };
-      }).filter(Boolean);
-
-      modalContent.innerHTML = `
-        <header class="modal-col-header" style="margin-bottom: 2rem;">
-          <span class="subhead-tag" style="background: rgba(224, 168, 104, 0.2); color: #e0a868; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.82rem; font-weight: 700;">${col.eyebrow} • ${col.serviceLabel}</span>
-          <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; color: #ffffff; margin: 0.6rem 0;">${col.title}</h1>
-          <p style="color: #e6dfd5; font-size: 1.1rem; line-height: 1.6; max-width: 720px; margin-bottom: 1.5rem;">${col.longIntroduction}</p>
-          
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-            <a href="${col.ctaUrl}" class="cta-btn">${col.ctaLabel}</a>
-            <button class="btn-secondary save-col-btn-modal" data-id="${col.id}">${isSaved ? '⭐ Saved' : '☆ Save Collection'}</button>
-            <button class="btn-secondary share-col-btn" data-slug="${col.slug}">🔗 Share Link</button>
-          </div>
-        </header>
-
-        ${col.disclaimer ? `
-          <div class="concierge-disclaimer-card" style="margin-bottom: 2rem;">
-            <p>💡 <strong>Notice:</strong> ${col.disclaimer}</p>
-          </div>
-        ` : ''}
-
-        <section class="modal-col-items">
-          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Courses (${resolvedItems.length})</h2>
-          <div class="col-detail-items-grid">
-            ${resolvedItems.map(item => `
-              <div class="col-item-card">
-                <div class="col-item-header">
-                  <h3 class="col-item-name">${item.name}</h3>
-                  <span class="col-item-price">${item.pricing.display}</span>
-                </div>
-                <p class="col-item-desc">${item.description}</p>
-                <div class="col-item-tags">
-                  ${(item.dietaryMarkers || []).map(m => `<span class="dietary-chip">${m}</span>`).join('')}
-                  ${(item.flavorTags || []).map(f => `<span class="flavor-chip">${f}</span>`).join('')}
-                </div>
+            <div class="inline-col-summary">
+              <span class="subhead-tag">${col.eyebrow} • ${resolvedItems.length} Curated Courses</span>
+              <h2 class="inline-col-title">${col.title}</h2>
+              <p class="inline-col-desc">${col.longIntroduction}</p>
+              
+              <div class="inline-col-actions">
+                <a href="${col.ctaUrl}" class="cta-btn">${col.ctaLabel} &rsaquo;</a>
+                <button class="btn-secondary save-col-btn" data-id="${col.id}">${isSaved ? '⭐ Saved' : '☆ Save Collection'}</button>
+                <button class="btn-secondary share-col-btn" data-slug="${col.slug}">🔗 Share Collection</button>
               </div>
-            `).join('')}
+            </div>
           </div>
-        </section>
 
-        ${resolvedPairings.length > 0 ? `
-          <section class="modal-col-pairings" style="margin-top: 3rem;">
-            <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Beverage &amp; Cocktail Pairings</h2>
-            <div class="col-detail-pairings-grid">
-              ${resolvedPairings.map(rp => `
-                <div class="pairing-card">
-                  <div style="font-size: 0.85rem; color: #e0a868; font-weight: 700; text-transform: uppercase; margin-bottom: 0.4rem;">Suggested Alongside</div>
-                  <h4 style="font-size: 1.2rem; color: #fff;">${rp.food ? rp.food.name : ''}</h4>
-                  <p style="color: #e6dfd5; font-size: 0.95rem; margin: 0.4rem 0;">🍷 <strong>Pairing:</strong> ${rp.drink ? rp.drink.name : ''} (${rp.drink ? rp.drink.pricing.display : ''})</p>
-                  ${rp.zeroProof ? `<p style="color: #60a5fa; font-size: 0.9rem;">🌿 <strong>Zero-Proof Alternative:</strong> ${rp.zeroProof.name} (${rp.zeroProof.pricing.display})</p>` : ''}
-                  <p style="font-size: 0.85rem; color: #aba296; margin-top: 0.6rem; font-style: italic;">"${rp.pairing.explanation}"</p>
-                  <p style="font-size: 0.75rem; color: #888; margin-top: 0.4rem;">${rp.pairing.disclaimer}</p>
+          ${col.disclaimer ? `
+            <div class="concierge-disclaimer-card" style="margin: 1.5rem 0 0 0;">
+              <p>💡 <strong>Notice:</strong> ${col.disclaimer}</p>
+            </div>
+          ` : ''}
+
+          <!-- Curated Menu Items Grid -->
+          <div class="inline-col-dishes-section">
+            <h3 class="dishes-section-title">Curated Menu Courses (${resolvedItems.length})</h3>
+            <div class="inline-dishes-grid">
+              ${resolvedItems.map(item => `
+                <div class="inline-dish-card">
+                  <div class="dish-card-header">
+                    <h4 class="dish-card-name">${item.name}</h4>
+                    <span class="dish-card-price">${item.pricing.display}</span>
+                  </div>
+                  <p class="dish-card-desc">${item.description}</p>
+                  <div class="dish-card-tags">
+                    ${(item.dietaryMarkers || []).map(m => `<span class="dietary-chip">${m}</span>`).join('')}
+                    ${(item.flavorTags || []).map(f => `<span class="flavor-chip">${f}</span>`).join('')}
+                  </div>
                 </div>
               `).join('')}
             </div>
-          </section>
-        ` : ''}
+          </div>
 
-        <div style="margin-top: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-          <a href="menu.html" class="btn-secondary">View Complete Standard Menu</a>
-        </div>
-      `;
+          <!-- Suggested Beverage Pairings Section -->
+          ${resolvedPairings.length > 0 ? `
+            <div class="inline-pairings-section">
+              <h3 class="dishes-section-title" style="color: #e0a868;">Suggested Beverage &amp; Cocktail Pairings</h3>
+              <div class="inline-pairings-grid">
+                ${resolvedPairings.map(rp => `
+                  <div class="pairing-card">
+                    <div style="font-size: 0.82rem; color: #e0a868; font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Suggested Alongside</div>
+                    <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.4rem;">${rp.food ? rp.food.name : ''}</h4>
+                    <p style="color: #e6dfd5; font-size: 0.95rem; margin: 0.3rem 0;">🍷 <strong>Pairing:</strong> ${rp.drink ? rp.drink.name : ''} (${rp.drink ? rp.drink.pricing.display : ''})</p>
+                    ${rp.zeroProof ? `<p style="color: #60a5fa; font-size: 0.9rem;">🌿 <strong>Zero-Proof Option:</strong> ${rp.zeroProof.name} (${rp.zeroProof.pricing.display})</p>` : ''}
+                    <p style="font-size: 0.85rem; color: #aba296; margin-top: 0.5rem; font-style: italic;">"${rp.pairing.explanation}"</p>
+                    <p style="font-size: 0.75rem; color: #888; margin-top: 0.3rem;">${rp.pairing.disclaimer}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        `;
 
-      drawer.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      if (modalBox) modalBox.scrollTop = 0;
-
-      document.querySelector('.save-col-btn-modal')?.addEventListener('click', (e) => {
-        if (getSavedCollections().includes(col.id)) {
-          removeSavedCollectionId(col.id);
-          e.target.textContent = '☆ Save Collection';
-        } else {
-          saveCollectionId(col.id);
-          e.target.textContent = '⭐ Saved';
-        }
-        renderFeaturedCollection();
-        renderCollectionsGrid();
+        container.appendChild(colArticle);
       });
 
-      document.querySelector('.share-col-btn')?.addEventListener('click', () => {
-        const shareUrl = window.location.origin + window.location.pathname + '#' + col.slug;
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(shareUrl);
-          alert("✅ Link copied to clipboard!\n" + shareUrl);
-        } else {
-          alert("Collection Link:\n" + shareUrl);
-        }
+      bindButtonEvents();
+    }
+
+    // 3. Bind Event Listeners
+    function bindButtonEvents() {
+      document.querySelectorAll('.save-col-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = btn.getAttribute('data-id');
+          if (id) {
+            if (getSavedCollections().includes(id)) {
+              removeSavedCollectionId(id);
+              btn.textContent = '☆ Save Collection';
+            } else {
+              saveCollectionId(id);
+              btn.textContent = '⭐ Saved';
+            }
+          }
+        });
+      });
+
+      document.querySelectorAll('.share-col-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const slug = btn.getAttribute('data-slug');
+          const shareUrl = window.location.origin + window.location.pathname + '#' + slug;
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareUrl);
+            alert("✅ Collection link copied to clipboard!\n" + shareUrl);
+          } else {
+            alert("Collection Link:\n" + shareUrl);
+          }
+        });
       });
     }
 
-    // 5. Global Document Event Delegation for Instant Button Clicks
-    document.addEventListener('click', (e) => {
-      const openBtn = e.target.closest('.open-col-btn');
-      if (openBtn) {
-        e.preventDefault();
-        const slug = openBtn.getAttribute('data-slug');
-        if (slug) openCollectionDetailBySlug(slug);
-        return;
-      }
-
-      const saveBtn = e.target.closest('.save-col-btn');
-      if (saveBtn) {
-        e.preventDefault();
-        const id = saveBtn.getAttribute('data-id');
-        if (id) {
-          if (getSavedCollections().includes(id)) {
-            removeSavedCollectionId(id);
-            saveBtn.textContent = '☆';
-          } else {
-            saveCollectionId(id);
-            saveBtn.textContent = '⭐';
-          }
-          renderFeaturedCollection();
-          renderCollectionsGrid();
-        }
-        return;
-      }
-    });
-
-    // Execute UI Render
+    // Init
     renderCategoryTabs();
-    renderFeaturedCollection();
-    renderCollectionsGrid();
-    checkHashRoute();
-
-    window.addEventListener('hashchange', checkHashRoute);
+    renderCollections();
   }
 
   if (document.readyState === 'loading') {

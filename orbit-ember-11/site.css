@@ -1499,3 +1499,177 @@ img, video, canvas, iframe { max-width: 100%; height: auto; }
     max-height: 90vh !important;
   }
 }
+
+
+/* Package 9 Inline Editorial Collections Styling (Zero Modals) */
+.collections-list-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4rem !important;
+}
+
+.inline-collection-block {
+  background: rgba(18, 14, 12, 0.96) !important;
+  border: 1px solid rgba(224, 168, 104, 0.4) !important;
+  border-radius: 24px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 25px rgba(224, 168, 104, 0.12) !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.inline-collection-block:hover {
+  border-color: var(--color-primary-brand) !important;
+}
+
+.inline-col-header {
+  display: grid !important;
+  grid-template-columns: 340px 1fr !important;
+  gap: 2.5rem !important;
+  align-items: start !important;
+}
+
+@media (max-width: 900px) {
+  .inline-col-header { grid-template-columns: 1fr !important; }
+}
+
+.inline-col-media {
+  position: relative !important;
+  height: 280px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.inline-col-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.inline-media-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(18, 14, 12, 0.85) 100%) !important;
+}
+
+.inline-service-badge {
+  position: absolute !important;
+  bottom: 1rem !important;
+  left: 1rem !important;
+  background: rgba(18, 14, 12, 0.92) !important;
+  border: 1px solid rgba(224, 168, 104, 0.6) !important;
+  color: var(--color-primary-brand) !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 14px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+}
+
+.inline-feat-badge {
+  position: absolute !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  background: linear-gradient(135deg, #e0a868 0%, #c27a4a 100%) !important;
+  color: #080706 !important;
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 16px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+}
+
+.inline-col-summary {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.inline-col-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 2.6rem !important;
+  color: #ffffff !important;
+  margin: 0.3rem 0 0.8rem !important;
+}
+
+.inline-col-desc {
+  color: #e6dfd5 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.8rem !important;
+}
+
+.inline-col-actions {
+  display: flex !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  margin-top: auto !important;
+}
+
+.inline-col-dishes-section {
+  margin-top: 2.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: 2rem !important;
+}
+
+.dishes-section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.8rem !important;
+  color: #ffffff !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.inline-dishes-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.4rem !important;
+}
+
+.inline-dish-card {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(224, 168, 104, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 1.4rem !important;
+}
+
+.dish-card-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dish-card-name {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.4rem !important;
+  color: #ffffff !important;
+}
+
+.dish-card-price {
+  color: var(--color-primary-brand) !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+}
+
+.dish-card-desc {
+  color: #e6dfd5 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.dish-card-tags {
+  display: flex !important;
+  gap: 0.4rem !important;
+  flex-wrap: wrap !important;
+}
+
+.inline-pairings-section {
+  margin-top: 2rem !important;
+  background: rgba(0,0,0,0.4) !important;
+  border: 1px solid rgba(224, 168, 104, 0.25) !important;
+  border-radius: 16px !important;
+  padding: 1.8rem !important;
+}
+
+.inline-pairings-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.2rem !important;
+}
