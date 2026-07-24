@@ -228,6 +228,36 @@
       });
 
       bindCollectionButtons();
+
+    // Global Document Event Delegation for Instant Button Clicks
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.open-col-btn');
+      if (openBtn) {
+        e.preventDefault();
+        const slug = openBtn.getAttribute('data-slug');
+        if (slug) openCollectionDetailBySlug(slug);
+        return;
+      }
+
+      const saveBtn = e.target.closest('.save-col-btn');
+      if (saveBtn) {
+        e.preventDefault();
+        const id = saveBtn.getAttribute('data-id');
+        if (id) {
+          if (getSavedCollections().includes(id)) {
+            removeSavedCollectionId(id);
+            saveBtn.textContent = '☆';
+          } else {
+            saveCollectionId(id);
+            saveBtn.textContent = '⭐';
+          }
+          renderFeaturedCollection();
+          renderCollectionsGrid();
+        }
+        return;
+      }
+    });
+
     }
 
     // 4. Bind Button Listeners
