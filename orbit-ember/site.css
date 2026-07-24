@@ -2,53 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-<<<<<<< HEAD
-  --bg-dark: #0d0c0b;
-  --bg-surface: #1c1c1e;
-  --bg-surface-hover: #262629;
-  --accent-amber: #c27a4a;
-  --accent-amber-glow: rgba(194, 122, 74, 0.25);
-  --accent-purple: #8a2e2e;
-  --accent-purple-glow: rgba(138, 46, 46, 0.15);
-  --text-primary: #f4efe6;
-  --text-secondary: #a6a095;
-  --border: rgba(194, 122, 74, 0.15);
-  --border-hover: rgba(194, 122, 74, 0.4);
-  
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
-  --radius: 12px;
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.foundation-disclosure {
-  padding: 0.65rem 1rem;
-  background: #f0ede7;
-  color: #292723;
-  border-bottom: 1px solid #c9c2b8;
-  font: 600 0.78rem/1.4 Arial, sans-serif;
-  letter-spacing: 0.04em;
-  text-align: center;
-}
-
-.level-zero-foundation {
-  --color-primary-brand: #655f57;
-  --color-accent: #655f57;
-}
-
-.level-zero-foundation .hero,
-.level-zero-foundation .card,
-.level-zero-foundation .cta-btn {
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-.level-zero-foundation .hero::before,
-.level-zero-foundation .hero::after {
-  display: none !important;
-}
-
-=======
   --bg-dark: #070606;
   --bg-surface: rgba(18, 16, 16, 0.75);
   --bg-surface-hover: rgba(26, 23, 23, 0.85);
@@ -67,7 +20,6 @@
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
->>>>>>> add7241 (fix(showcase): restore original Level 0 baseline, fix top text notice bar, remove screenshot logo references, enforce new tab links, and apply responsive safeguards)
 /* Global Reset */
 * {
   box-sizing: border-box;
@@ -137,24 +89,15 @@ body {
 
 /* Top Notice Bar */
 .notice-bar {
-<<<<<<< HEAD
-  background: linear-gradient(90deg, #130a0a, #3e1212);
-  color: #fdd8d8;
-=======
   background: linear-gradient(90deg, #1e130c, #3e1b07);
   color: #fed7aa;
->>>>>>> add7241 (fix(showcase): restore original Level 0 baseline, fix top text notice bar, remove screenshot logo references, enforce new tab links, and apply responsive safeguards)
   text-align: center;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.6rem 1rem;
-<<<<<<< HEAD
-  border-bottom: 1px solid rgba(138, 46, 46, 0.25);
-=======
   border-bottom: 1px solid rgba(226, 138, 42, 0.15);
->>>>>>> add7241 (fix(showcase): restore original Level 0 baseline, fix top text notice bar, remove screenshot logo references, enforce new tab links, and apply responsive safeguards)
   position: relative;
   z-index: 1001;
 }
@@ -530,213 +473,6 @@ main {
   box-shadow: 0 0 10px rgba(226, 138, 42, 0.15);
 }
 
-<<<<<<< HEAD
-/* Logo Image */
-.logo-img {
-  height: 48px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* Branded Footer Styles */
-.main-footer {
-  background: #070606;
-  border-top: 1px solid var(--border);
-  padding: 4.5rem 2rem 2.5rem;
-  color: var(--text-secondary);
-  text-align: left;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto 3.5rem;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1.25fr 1.25fr;
-  gap: 3rem;
-}
-
-@media (max-width: 992px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-.footer-column h3 {
-  font-family: var(--font-display);
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.05em;
-}
-
-.footer-column p {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
-}
-
-.footer-column ul {
-  list-style: none;
-}
-
-.footer-column ul li {
-  margin-bottom: 0.75rem;
-}
-
-.footer-column ul li a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-.footer-column ul li a:hover {
-  color: var(--accent-amber);
-}
-
-.footer-logo {
-  max-width: 140px;
-  height: auto;
-  margin-bottom: 1.2rem;
-  object-fit: contain;
-}
-
-.footer-tagline {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.05rem !important;
-  color: var(--accent-amber);
-}
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.82rem;
-}
-
-
-/* --- Elevated Brand Finish Enhancements --- */
-.logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-right: 2.5rem;
-  flex-shrink: 0;
-}
-
-.nav-logo-icon {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(194, 122, 74, 0.35));
-  transition: transform 0.3s ease;
-  mix-blend-mode: screen;
-}
-
-.logo:hover .nav-logo-icon {
-  transform: scale(1.06);
-}
-
-.nav-brand-title {
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 0.06em;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-
-.nav-brand-title span {
-  font-weight: 300;
-  color: var(--accent-amber);
-  letter-spacing: 0.18em;
-  font-size: 0.95rem;
-  border-left: 1px solid var(--border);
-  padding-left: 0.65rem;
-  white-space: nowrap;
-}
-
-.hero-block {
-  text-align: center;
-  padding: 4.5rem 2rem 5.5rem;
-  position: relative;
-  background: radial-gradient(circle at 50% 35%, rgba(194, 122, 74, 0.14) 0%, rgba(138, 46, 46, 0.06) 50%, transparent 80%);
-  border: 1px solid rgba(194, 122, 74, 0.2);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.hero-brand-badge {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.8rem;
-}
-
-.hero-logo-img {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 8px 24px rgba(194, 122, 74, 0.35));
-  transition: transform 0.4s ease;
-  margin: 0 auto;
-}
-
-.hero-logo-img:hover {
-  transform: scale(1.03);
-}
-
-.premium-card, .menu-item-row, .experience-card, .story-block {
-  border: 1px solid rgba(194, 122, 74, 0.15) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.premium-card:hover, .experience-card:hover, .story-block:hover {
-  border-color: rgba(194, 122, 74, 0.45) !important;
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(194, 122, 74, 0.15) !important;
-}
-
-.cta-btn {
-  background: linear-gradient(135deg, #c27a4a 0%, #8a4f2b 100%) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 18px rgba(194, 122, 74, 0.35) !important;
-  transition: var(--transition) !important;
-}
-
-.cta-btn:hover {
-  background: linear-gradient(135deg, #d48753 0%, #9c5a32 100%) !important;
-  box-shadow: 0 6px 26px rgba(194, 122, 74, 0.55) !important;
-  transform: translateY(-2px);
-}
-
-
-/* Global Uncropped Logo Styling */
-.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
-  object-fit: contain !important;
-  max-height: 70px !important;
-  width: auto !important;
-  padding: 4px !important;
-  display: inline-block !important;
-=======
 /* Site Footer */
 .main-footer {
   border-top: 1px solid var(--border);
@@ -811,5 +547,4 @@ html, body {
 img, video, canvas {
   max-width: 100%;
   height: auto;
->>>>>>> add7241 (fix(showcase): restore original Level 0 baseline, fix top text notice bar, remove screenshot logo references, enforce new tab links, and apply responsive safeguards)
 }
