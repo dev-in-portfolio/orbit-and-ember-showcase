@@ -1,6 +1,6 @@
 /**
  * Orbit & Ember Kitchen + Bar — Package 9: Menu Collections Master Engine
- * Version: 5.0.0 (Ultra-Luxury Michelin Design System with Dual View Modes & Interactive Pairing Flights)
+ * Version: 6.0.0 (Master Michelin Design System with Dietary Filtering & Per-Guest Price Calculator)
  * Dynamically resolves collection item IDs against shared ORBIT_MENU_DATA and ORBIT_PAIRING_DATA.
  * Zero copied prices, descriptions, or dietary markers.
  */
@@ -60,9 +60,9 @@
     const gridBtn = document.getElementById('view-grid-btn');
 
     let activeCategory = 'all';
-    let currentViewMode = 'magazine'; // 'magazine' or 'grid'
+    let activeDiet = 'all';
+    let currentViewMode = 'magazine';
 
-    // View mode toggle listeners
     magazineBtn?.addEventListener('click', () => {
       currentViewMode = 'magazine';
       magazineBtn.classList.add('active');
@@ -79,6 +79,16 @@
       container?.classList.remove('view-magazine');
       container?.classList.add('view-grid-mode');
       renderCollections();
+    });
+
+    // Dietary Filter Pill Listeners
+    document.querySelectorAll('.dietary-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.dietary-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeDiet = btn.getAttribute('data-diet') || 'all';
+        renderCollections();
+      });
     });
 
     // 1. Render Category Filter Tabs
@@ -122,7 +132,20 @@
       }
 
       filteredCols.forEach((col, idx) => {
-        const resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
+        let resolvedItems = col.orderedItemIds.map(id => itemMap.get(id)).filter(Boolean);
+
+        // Apply Dietary Filter if set
+        if (activeDiet !== 'all') {
+          resolvedItems = resolvedItems.filter(item => 
+            (item.dietaryMarkers || []).includes(activeDiet)
+          );
+        }
+
+        if (resolvedItems.length === 0) return; // Skip if no items match active diet
+
+        // Calculate total collection price estimate
+        const totalEstPrice = resolvedItems.reduce((sum, item) => sum + (item.pricing.baseAmount || 0), 0);
+
         const isSaved = getSavedCollections().includes(col.id);
 
         const resolvedPairings = (col.pairingIds || []).map(pid => {
@@ -135,7 +158,7 @@
         }).filter(Boolean);
 
         const colArticle = document.createElement('article');
-        colArticle.className = currentViewMode === 'grid' ? 'grid-collection-card' : 'inline-collection-block';
+        colArticle.className = currentViewMode === 'grid' ? 'grid-collection-card' : 'master-collection-block';
         colArticle.id = col.slug;
 
         if (currentViewMode === 'grid') {
@@ -163,7 +186,12 @@
                 </ul>
               </div>
 
-              <div class="inline-col-actions" style="margin-top: auto; padding-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #e0a868; font-weight: 700; margin-bottom: 1rem;">
+                <span>Est. Total:</span>
+                <span>$${totalEstPrice} / guest</span>
+              </div>
+
+              <div class="inline-col-actions" style="margin-top: auto;">
                 <a href="${col.ctaUrl}" class="cta-btn" style="flex: 1; text-align: center;">${col.ctaLabel} &rsaquo;</a>
                 <button class="btn-secondary save-col-btn" data-id="${col.id}">${isSaved ? '⭐' : '☆'}</button>
               </div>
@@ -171,18 +199,22 @@
           `;
         } else {
           colArticle.innerHTML = `
-            <div class="inline-col-header">
-              <div class="inline-col-media">
+            <div class="master-col-header">
+              <div class="master-col-media">
                 <img src="${col.heroImage}" alt="${col.title}" loading="lazy">
                 <div class="inline-media-overlay"></div>
                 <span class="inline-service-badge">${col.serviceLabel}</span>
                 ${idx === 0 ? '<span class="inline-feat-badge">★ FEATURED MICHELIN COLLECTION</span>' : ''}
               </div>
 
-              <div class="inline-col-summary">
-                <span class="subhead-tag-gold">${col.eyebrow} • ${resolvedItems.length} Curated Courses</span>
-                <h2 class="inline-col-title">${col.title}</h2>
-                <p class="inline-col-desc">${col.longIntroduction}</p>
+              <div class="master-col-summary">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem;">
+                  <span class="subhead-tag-gold">${col.eyebrow} • ${resolvedItems.length} Curated Courses</span>
+                  <span class="est-price-tag">Est. Progression: $${totalEstPrice} / guest</span>
+                </div>
+                
+                <h2 class="master-col-title">${col.title}</h2>
+                <p class="master-col-desc">${col.longIntroduction}</p>
                 
                 <div class="inline-col-actions">
                   <a href="${col.ctaUrl}" class="cta-btn">${col.ctaLabel} &rsaquo;</a>
@@ -193,17 +225,21 @@
             </div>
 
             ${col.disclaimer ? `
-              <div class="concierge-disclaimer-card" style="margin: 1.5rem 0 0 0;">
+              <div class="concierge-disclaimer-card" style="margin: 1.8rem 0 0 0;">
                 <p>💡 <strong>Notice:</strong> ${col.disclaimer}</p>
               </div>
             ` : ''}
 
             <!-- Curated Menu Courses Grid -->
             <div class="inline-col-dishes-section">
-              <h3 class="dishes-section-title">Curated Menu Courses (${resolvedItems.length})</h3>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.2rem;">
+                <h3 class="dishes-section-title">Curated Menu Courses (${resolvedItems.length})</h3>
+                <span style="font-size: 0.85rem; color: #aba296;">Hover dish card for techniques &amp; flavor tags</span>
+              </div>
+              
               <div class="inline-dishes-grid">
                 ${resolvedItems.map(item => `
-                  <div class="inline-dish-card">
+                  <div class="master-dish-card">
                     <div class="dish-card-header">
                       <h4 class="dish-card-name">${item.name}</h4>
                       <span class="dish-card-price">${item.pricing.display}</span>
@@ -221,15 +257,15 @@
             <!-- Suggested Beverage Pairings Section -->
             ${resolvedPairings.length > 0 ? `
               <div class="inline-pairings-section">
-                <h3 class="dishes-section-title" style="color: #e0a868;">Sommelier Beverage &amp; Cocktail Pairings</h3>
+                <h3 class="dishes-section-title" style="color: #e0a868;">Sommelier Beverage &amp; Cocktail Flights</h3>
                 <div class="inline-pairings-grid">
                   ${resolvedPairings.map(rp => `
-                    <div class="pairing-card">
+                    <div class="master-pairing-card">
                       <div style="font-size: 0.82rem; color: #e0a868; font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Suggested Alongside</div>
                       <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.4rem;">${rp.food ? rp.food.name : ''}</h4>
                       <p style="color: #e6dfd5; font-size: 0.98rem; margin: 0.3rem 0;">🍷 <strong>Pairing:</strong> ${rp.drink ? rp.drink.name : ''} (${rp.drink ? rp.drink.pricing.display : ''})</p>
                       ${rp.zeroProof ? `<p style="color: #60a5fa; font-size: 0.92rem; margin-top: 0.2rem;">🌿 <strong>Zero-Proof Option:</strong> ${rp.zeroProof.name} (${rp.zeroProof.pricing.display})</p>` : ''}
-                      <p style="font-size: 0.88rem; color: #aba296; margin-top: 0.6rem; font-style: italic;">"${rp.pairing.explanation}"</p>
+                      <p style="font-size: 0.88rem; color: #aba296; margin-top: 0.5rem; font-style: italic;">"${rp.pairing.explanation}"</p>
                       <p style="font-size: 0.75rem; color: #888; margin-top: 0.3rem;">${rp.pairing.disclaimer}</p>
                     </div>
                   `).join('')}
@@ -245,7 +281,7 @@
       bindButtonEvents();
     }
 
-    // 3. Bind Button Events
+    // 3. Bind Event Listeners
     function bindButtonEvents() {
       document.querySelectorAll('.save-col-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
