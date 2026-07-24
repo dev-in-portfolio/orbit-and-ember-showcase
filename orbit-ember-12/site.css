@@ -428,3 +428,12 @@ html, body {
   padding: 4px !important;
   display: inline-block !important;
 }
+
+
+/* Responsive Safeguards */
+html, body {
+  margin: 0; padding: 0; width: 100%; max-width: 100vw;
+  overflow-x: hidden; box-sizing: border-box;
+}
+*, *:before, *:after { box-sizing: inherit; }
+img, video, canvas, iframe { max-width: 100%; height: auto; }
