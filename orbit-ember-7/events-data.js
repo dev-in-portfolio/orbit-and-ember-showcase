@@ -1,4 +1,4 @@
-// Centralized Events & Private Dining Source of Truth for Orbit & Ember Kitchen + Bar
+﻿// Centralized Catering & Private Events Source of Truth for Orbit & Ember Kitchen + Bar
 
 const EVENT_CONFIG = {
   roomName: "The Ember Room",

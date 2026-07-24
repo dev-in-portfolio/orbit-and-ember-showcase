@@ -20,8 +20,8 @@
       state: "North Carolina",
       country: "United States",
       timeZone: "America/New_York",
-      publicAddress: "2250 Camden Ember Way, Charlotte, NC 28203",
-      phone: "704-555-0148",
+      publicAddress: "Fictional South End demonstration address",
+      phone: null,
       email: "southend@orbitandember.example",
       heroImage: "images/featured-steak.jpg",
       tagline: "The original Orbit & Ember experience featuring open wood-fired hearth cooking, craft mixology, weekend brunch, and The Ember Room.",
@@ -40,7 +40,7 @@
       actions: {
         canReserve: true,
         canOrder: true,
-        canCall: true,
+        canCall: false,
         canGetDirections: true,
         canViewMenu: true,
         canRequestPrivateDining: true
@@ -65,8 +65,8 @@
       email: "ballantyne@orbitandember.example",
       heroImage: "images/wood-fired-hearth.jpg",
       tagline: "A new Orbit & Ember experience being developed for Ballantyne, bringing wood-fired cooking and seasonal mixology to South Charlotte.",
-      openingTarget: "Expected 2027",
-      features: ["Expanded Cocktail Lounge", "Private Dining Suite", "Spacious Patio", "Weekday Lunch Consideration"],
+      openingTarget: "Opening Soon",
+      features: ["Opening Updates Only"],
       actions: {
         canReserve: false,
         canOrder: false,
@@ -96,7 +96,7 @@
       email: null,
       heroImage: "images/lounge-ambiance.jpg",
       tagline: "Exploring future growth opportunities in the Lake Norman area. No site or opening date has been confirmed.",
-      features: ["Market Exploration", "Waterfront Hospitality Concept"],
+      features: ["Market Exploration"],
       actions: {
         canReserve: false,
         canOrder: false,

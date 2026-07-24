@@ -11,6 +11,33 @@
       this.canvas = document.getElementById(canvasId);
       if (!this.canvas) return;
       this.ctx = this.canvas.getContext('2d');
+      this.webglCanvas = document.createElement('canvas');
+      this.webglCanvas.id = 'orbit-webgl-scene';
+      this.webglCanvas.setAttribute('aria-hidden', 'true');
+      Object.assign(this.webglCanvas.style, {
+        position: 'fixed',
+        inset: '0',
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: '-1'
+      });
+      this.canvas.parentElement.insertBefore(this.webglCanvas, this.canvas);
+      this.gl = this.webglCanvas.getContext('webgl', {
+        alpha: true,
+        antialias: false,
+        powerPreference: window.innerWidth < 760 ? 'low-power' : 'high-performance'
+      });
+      this.webglReady = this.initWebGL();
+      this.webglCanvas.addEventListener('webglcontextlost', event => {
+        event.preventDefault();
+        this.webglReady = false;
+        document.documentElement.classList.add('webgl-fallback');
+      });
+      this.webglCanvas.addEventListener('webglcontextrestored', () => {
+        this.webglReady = this.initWebGL();
+        document.documentElement.classList.toggle('webgl-fallback', !this.webglReady);
+      });
 
       this.audioContext = null;
       this.analyser = null;
@@ -32,10 +59,60 @@
       this.animate();
     }
 
+    initWebGL() {
+      if (!this.gl || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+      const gl = this.gl;
+      const vertexShader = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vertexShader, `
+        attribute vec2 position;
+        varying vec2 uv;
+        void main() {
+          uv = position * 0.5 + 0.5;
+          gl_Position = vec4(position, 0.0, 1.0);
+        }
+      `);
+      gl.compileShader(vertexShader);
+      const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.shaderSource(fragmentShader, `
+        precision mediump float;
+        varying vec2 uv;
+        uniform float time;
+        void main() {
+          vec2 p = uv - 0.5;
+          float heat = sin((p.y + time * 0.035) * 32.0 + sin(p.x * 18.0)) * 0.03;
+          float ember = 0.012 / max(0.012, length(p + vec2(heat, 0.16)));
+          vec3 copper = vec3(0.72, 0.28, 0.09) * ember;
+          float vignette = smoothstep(0.78, 0.12, length(p));
+          gl_FragColor = vec4(copper * vignette, clamp(ember * 0.24, 0.0, 0.34));
+        }
+      `);
+      gl.compileShader(fragmentShader);
+      if (!gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS) ||
+          !gl.getShaderParameter(fragmentShader, gl.COMPILE_STATUS)) return false;
+      const program = gl.createProgram();
+      gl.attachShader(program, vertexShader);
+      gl.attachShader(program, fragmentShader);
+      gl.linkProgram(program);
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return false;
+      const buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+      gl.useProgram(program);
+      const position = gl.getAttribLocation(program, 'position');
+      gl.enableVertexAttribArray(position);
+      gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+      this.webglProgram = program;
+      this.webglTime = gl.getUniformLocation(program, 'time');
+      return true;
+    }
+
     resize() {
       if (!this.canvas) return;
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight;
+      this.webglCanvas.width = Math.min(window.innerWidth, 1440);
+      this.webglCanvas.height = Math.min(window.innerHeight, 900);
+      if (this.gl) this.gl.viewport(0, 0, this.webglCanvas.width, this.webglCanvas.height);
     }
 
     initParticles() {
@@ -116,6 +193,11 @@
 
     animate() {
       if (!this.canvas || !this.ctx) return;
+      if (this.webglReady) {
+        this.gl.useProgram(this.webglProgram);
+        this.gl.uniform1f(this.webglTime, performance.now() / 1000);
+        this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+      }
       const w = this.canvas.width;
       const h = this.canvas.height;
 

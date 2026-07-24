@@ -1,4 +1,4 @@
-// Master Business Information & Real-Time Local Engine V3 for Orbit & Ember Kitchen + Bar
+﻿// Master Business Information & Real-Time Local Engine V3 for Orbit & Ember Kitchen + Bar
 
 const BUSINESS_INFO = {
   name: "Orbit & Ember Kitchen + Bar",
@@ -21,9 +21,9 @@ const BUSINESS_INFO = {
     longitude: -80.8431
   },
   urls: {
-    website: "http://localhost:8082/restaurants/orbit-ember-4/",
-    menu: "http://localhost:8082/restaurants/orbit-ember-4/menu.html",
-    reservation: "http://localhost:8082/restaurants/orbit-ember-4/reserve.html",
+    website: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/",
+    menu: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/menu.html",
+    reservation: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/reserve.html",
     googleMaps: "https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202",
     appleMaps: "https://maps.apple.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202",
     waze: "https://waze.com/ul?q=300+S+Tryon+St+Charlotte+NC"

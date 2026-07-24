@@ -1,0 +1,1416 @@
+{
+  "restaurant": "Orbit & Ember Kitchen + Bar",
+  "version": "11.0.0",
+  "lastReviewed": "2026-07-24",
+  "menu": [
+    {
+      "id": "hearth-bread",
+      "slug": "hearth-bread",
+      "name": "Hearth Bread",
+      "shortDescription": "Warm house bread with cultured butter, smoked salt, and seasonal preserve.",
+      "longDescription": "Artisanal naturally leavened sourdough baked directly over white oak embers, served warm with cultured butter, smoked sea salt, and house-made seasonal fruit preserve.",
+      "price": 8,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "flavorTags": [
+        "comforting",
+        "warm"
+      ],
+      "mealStyleTags": [
+        "starter",
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared",
+        "table"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Warm house hearth bread with butter",
+      "collectionIds": [
+        "made-for-sharing",
+        "signature-orbit-ember"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "charred-carrots",
+      "slug": "charred-carrots",
+      "name": "Charred Carrots with Whipped Feta",
+      "shortDescription": "Fire-charred carrots with whipped feta, toasted seeds, herb oil, and warm-spice honey.",
+      "longDescription": "Heirloom carrots charred over oak fire, resting on whipped feta spread, topped with toasted sunflower and pumpkin seeds, garden herb oil, and wildflower warm-spice honey.",
+      "price": 14,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy",
+        "seeds"
+      ],
+      "flavorTags": [
+        "smoky-charred",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "starter",
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/lounge-ambiance.jpg",
+      "cardImage": "images/lounge-ambiance.jpg",
+      "altText": "Fire charred carrots with whipped feta",
+      "collectionIds": [
+        "around-the-fire",
+        "made-for-sharing"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "solar-flare",
+          "note": "Grapefruit, lime, and smoked chile continue the dish's charred and warm-spice direction."
+        },
+        {
+          "drinkId": "lunar-bloom",
+          "note": "Tart fruit and herbs contrast with whipped feta and honey."
+        }
+      ]
+    },
+    {
+      "id": "wood-fired-mushrooms",
+      "slug": "wood-fired-mushrooms",
+      "name": "Wood-Fired Mushrooms",
+      "shortDescription": "Mixed mushrooms with black garlic, toasted farro, herbs, aged cheese, and mushroom jus.",
+      "longDescription": "Wild maitake and king oyster mushrooms seared over hearth embers, tossed with black garlic emulsion, crispy toasted farro, garden thyme, and shaved aged mountain cheese.",
+      "price": 17,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "flavorTags": [
+        "deep-savory"
+      ],
+      "mealStyleTags": [
+        "starter",
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/wood-fired-hearth.jpg",
+      "cardImage": "images/wood-fired-hearth.jpg",
+      "altText": "Sizzling wood-fired wild mushrooms",
+      "collectionIds": [
+        "signature-orbit-ember",
+        "around-the-fire"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "copper-moon",
+          "note": "Bitter orange and black walnut fit the mushrooms' deeper toasted character."
+        },
+        {
+          "drinkId": "ember-tonic",
+          "note": "Charred citrus and gentian reinforce the earthier flavors without adding sweetness."
+        }
+      ]
+    },
+    {
+      "id": "fire-roasted-oysters",
+      "slug": "fire-roasted-oysters",
+      "name": "Fire-Roasted Oysters",
+      "shortDescription": "Roasted oysters with herb butter, breadcrumbs, lemon, and smoked chile.",
+      "longDescription": "Fresh coastal oysters roasted over glowing embers with cultured herb butter, toasted sourdough breadcrumbs, charred lemon juice, and crushed smoked chile.",
+      "price": 18,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [
+        "shellfish",
+        "dairy",
+        "gluten"
+      ],
+      "flavorTags": [
+        "smoky-charred",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "starter",
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/wood-fired-hearth.jpg",
+      "cardImage": "images/wood-fired-hearth.jpg",
+      "altText": "Fire roasted oysters in shell",
+      "collectionIds": [
+        "around-the-fire",
+        "made-for-sharing"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "first-light-spritz",
+          "note": "Citrus and herbs complement the smoke and salinity."
+        },
+        {
+          "drinkId": "garden-orbit",
+          "note": "Cucumber and lime keep the shellfish pairing crisp and clean."
+        }
+      ]
+    },
+    {
+      "id": "smoked-pepper-flatbread",
+      "slug": "smoked-pepper-flatbread",
+      "name": "Smoked Pepper Flatbread",
+      "shortDescription": "Wood-fired flatbread with smoked pepper sauce, roasted tomato, caramelized onion, aged cheese, and herbs.",
+      "longDescription": "Crispy hearth flatbread layered with roasted red pepper reduction, blistered heirloom cherry tomatoes, sweet caramelized onions, aged fontina, and fresh oregano.",
+      "price": 16,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "flavorTags": [
+        "smoky-charred",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Smoked pepper flatbread from wood oven",
+      "collectionIds": [
+        "made-for-sharing",
+        "around-the-fire"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "solar-flare",
+          "note": "Smoked chile and tequila match the wood-fired pepper crust."
+        },
+        {
+          "drinkId": "bright-ash",
+          "note": "Smoked tea and pineapple mirror the sweet char."
+        }
+      ]
+    },
+    {
+      "id": "crispy-potatoes",
+      "slug": "crispy-potatoes",
+      "name": "Crispy Potatoes",
+      "shortDescription": "Crispy potatoes with charred onion dip, herbs, and chile oil.",
+      "longDescription": "Triple-cooked fingerling potatoes, crushed and fried crispy, served with caramelized onion dip, scallion oil, and house-pressed smoky chile oil.",
+      "price": 11,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy"
+      ],
+      "flavorTags": [
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "starter",
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Crispy potatoes with charred onion dip",
+      "collectionIds": [
+        "made-for-sharing"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "cheese-board",
+      "slug": "cheese-board",
+      "name": "Seasonal Cheese and Preserve Board",
+      "shortDescription": "Selection of regional cheeses with seasonal preserves, toasted bread, and spiced nuts.",
+      "longDescription": "Curated selection of three Carolina artisanal cheeses accompanied by house seasonal preserves, wood-toasted sourdough crostini, candied pecans, and clover honey.",
+      "price": 19,
+      "category": "starter",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy",
+        "gluten",
+        "tree-nuts"
+      ],
+      "flavorTags": [
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/lounge-ambiance.jpg",
+      "cardImage": "images/lounge-ambiance.jpg",
+      "altText": "Artisanal cheese board with preserves",
+      "collectionIds": [
+        "made-for-sharing",
+        "a-table-for-two"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "short-rib",
+      "slug": "short-rib",
+      "name": "Black Garlic Short Rib",
+      "shortDescription": "Slow-braised beef short rib with parsnip pur\u00e9e, charred broccolini, black-garlic and red-wine reduction, and crisp shallot.",
+      "longDescription": "12-hour braised prime beef short rib resting on velvet parsnip pur\u00e9e, served alongside hearth-charred broccolini, rich fermented black garlic reduction, and crispy shallot rings.",
+      "price": 34,
+      "category": "main",
+      "servicePeriod": [
+        "dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [],
+      "allergens": [
+        "dairy"
+      ],
+      "flavorTags": [
+        "deep-savory",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "full-evening"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-steak.jpg",
+      "cardImage": "images/featured-steak.jpg",
+      "altText": "Black garlic short rib with parsnip pur\u00e9e",
+      "collectionIds": [
+        "signature-orbit-ember",
+        "chef-julians-current-picks"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "copper-moon",
+          "note": "The drink's bitterness and orange notes cut through the richness of the short rib."
+        },
+        {
+          "drinkId": "lunar-bloom",
+          "note": "Tart blackberry, lime, and rosemary provide contrast to the deeper savory flavors."
+        }
+      ]
+    },
+    {
+      "id": "ember-chicken",
+      "slug": "ember-chicken",
+      "name": "Ember-Roasted Chicken",
+      "shortDescription": "Wood-fired half chicken with roasted garlic jus, crispy fingerling potatoes, seasonal greens, and preserved lemon.",
+      "longDescription": "Pasture-raised half chicken marinating in citrus brine, hearth-roasted until skin is crisp, served with pan roasting jus, crispy herb fingerling potatoes, and wilted brassicas.",
+      "price": 29,
+      "category": "main",
+      "servicePeriod": [
+        "dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [],
+      "allergens": [
+        "dairy"
+      ],
+      "flavorTags": [
+        "smoky-charred",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "full-evening"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/wood-fired-hearth.jpg",
+      "cardImage": "images/wood-fired-hearth.jpg",
+      "altText": "Ember roasted half chicken",
+      "collectionIds": [
+        "around-the-fire",
+        "signature-orbit-ember"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "first-light-spritz",
+          "note": "Citrus, bitterness, and herbs complement the preserved lemon and fire-roasted preparation."
+        },
+        {
+          "drinkId": "garden-orbit",
+          "note": "Cucumber, green tea, basil, and lime keep the pairing bright."
+        }
+      ]
+    },
+    {
+      "id": "seasonal-veg",
+      "slug": "seasonal-veg",
+      "name": "Seasonal Vegetable Plate",
+      "shortDescription": "Seasonal vegetables with grain, herb sauce, toasted seeds, and cultured dairy or approved vegan alternative.",
+      "longDescription": "Rotational showcase of local organic vegetables cooked across oak hearth embers, served over warm ancient grains, herb salsa verde, and sunflower seed crema.",
+      "price": 24,
+      "category": "main",
+      "servicePeriod": [
+        "dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "lighter"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/lounge-ambiance.jpg",
+      "cardImage": "images/lounge-ambiance.jpg",
+      "altText": "Hearth roasted seasonal vegetable main",
+      "collectionIds": [
+        "the-current-season"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "garden-orbit",
+          "note": "Botanical green tea and herbs elevate the fresh garden flavor profile."
+        }
+      ]
+    },
+    {
+      "id": "ember-benedict",
+      "slug": "ember-benedict",
+      "name": "Ember Benedict",
+      "shortDescription": "Poached eggs, smoked ham, grilled sourdough, charred tomato hollandaise, and crispy potatoes.",
+      "longDescription": "Two organic poached eggs atop house-smoked heritage pork ham and grilled sourdough, blanketed in wood-charred tomato hollandaise, served with crispy fingerlings.",
+      "price": 18,
+      "category": "brunch",
+      "servicePeriod": [
+        "brunch"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "contains-pork"
+      ],
+      "allergens": [
+        "egg",
+        "dairy",
+        "gluten",
+        "pork"
+      ],
+      "flavorTags": [
+        "rich-comforting",
+        "deep-savory"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "comforting"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Ember Benedict with poached eggs and hollandaise",
+      "collectionIds": [
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "short-rib-hash",
+      "slug": "short-rib-hash",
+      "name": "Short Rib Hash",
+      "shortDescription": "Braised short rib, crispy potatoes, roasted peppers, onion, herbs, and two eggs.",
+      "longDescription": "Tender braised short rib folded with crispy skillet potatoes, hearth-roasted sweet peppers, caramelized onions, fresh herbs, and two sunny-side farm eggs.",
+      "price": 19,
+      "category": "brunch",
+      "servicePeriod": [
+        "brunch"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [],
+      "allergens": [
+        "egg"
+      ],
+      "flavorTags": [
+        "deep-savory",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "comforting"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-steak.jpg",
+      "cardImage": "images/featured-steak.jpg",
+      "altText": "Short rib hash with sunny eggs",
+      "collectionIds": [
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "peach-french-toast",
+      "slug": "peach-french-toast",
+      "name": "Wood-Fired Peach French Toast",
+      "shortDescription": "Thick-cut brioche with wood-fired peaches, whipped mascarpone, toasted pecans, and warm maple.",
+      "longDescription": "Custom thick-cut brioche soaked in vanilla custard, griddled golden, topped with wood-fired caramel peaches, whipped mascarpone cream, candied pecans, and maple syrup.",
+      "price": 17,
+      "category": "brunch",
+      "servicePeriod": [
+        "brunch"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "gluten",
+        "dairy",
+        "egg",
+        "tree-nuts"
+      ],
+      "flavorTags": [
+        "rich-comforting",
+        "sweet-bittersweet"
+      ],
+      "mealStyleTags": [
+        "comforting"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Brioche French toast with wood fired peaches",
+      "collectionIds": [
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "veg-frittata",
+      "slug": "veg-frittata",
+      "name": "Seasonal Vegetable Frittata",
+      "shortDescription": "Baked eggs with seasonal vegetables, herbs, aged cheese, and dressed greens.",
+      "longDescription": "Fluffy cast-iron baked farm eggs with roasted bell peppers, baby spinach, goat cheese, fresh chives, served with lemon-dressed arugula salad.",
+      "price": 16,
+      "category": "brunch",
+      "servicePeriod": [
+        "brunch"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg",
+        "dairy"
+      ],
+      "flavorTags": [
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "focused",
+        "lighter"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/lounge-ambiance.jpg",
+      "cardImage": "images/lounge-ambiance.jpg",
+      "altText": "Vegetable frittata with dressed greens",
+      "collectionIds": [
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "pastry-board",
+      "slug": "pastry-board",
+      "name": "Brunch Pastry Board",
+      "shortDescription": "Selection of warm pastries, cultured butter, seasonal jam, and honey.",
+      "longDescription": "Assortment of fresh baked croissants, cardamom buns, and berry scones, served warm alongside cultured butter, house peach preserve, and local wildflower honey.",
+      "price": 15,
+      "category": "brunch",
+      "servicePeriod": [
+        "brunch"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "gluten",
+        "dairy",
+        "egg"
+      ],
+      "flavorTags": [
+        "rich-comforting",
+        "sweet-bittersweet"
+      ],
+      "mealStyleTags": [
+        "sharing"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Warm brunch pastry board",
+      "collectionIds": [
+        "weekend-brunch",
+        "made-for-sharing"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "house-coffee",
+      "slug": "house-coffee",
+      "name": "House Specialty Coffee",
+      "shortDescription": "Direct-trade roasted coffee poured fresh.",
+      "longDescription": "Single-origin direct-trade washed Guatemalan roast featuring notes of dark cocoa, toasted hazelnut, and clean citrus acidity.",
+      "price": 5,
+      "category": "beverage",
+      "servicePeriod": [
+        "brunch",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "sweet-bittersweet"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Hot house specialty coffee",
+      "collectionIds": [
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "burnt-honey-cheesecake",
+      "slug": "burnt-honey-cheesecake",
+      "name": "Burnt Honey Cheesecake",
+      "shortDescription": "Burnt honey cheesecake with roasted pear, oat crumble, and cultured cream.",
+      "longDescription": "Creamy baked cheesecake infused with caramelized mountain honey, topped with wood-roasted pear compote, toasted oat cinnamon crumble, and dollop of whipped creme fraiche.",
+      "price": 12,
+      "category": "dessert",
+      "servicePeriod": [
+        "dinner",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy",
+        "egg",
+        "gluten"
+      ],
+      "flavorTags": [
+        "sweet-bittersweet",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "full-evening"
+      ],
+      "sharingTags": [
+        "shared",
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Burnt honey cheesecake with roasted pear",
+      "collectionIds": [
+        "save-room-for-dessert"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "event-horizon",
+          "note": "Coffee, cacao, and salt extend the cheesecake's dark caramel notes."
+        },
+        {
+          "drinkId": "house-citrus-soda",
+          "note": "Citrus acidity balances the sweet honey richness."
+        }
+      ]
+    },
+    {
+      "id": "dark-chocolate-torte",
+      "slug": "dark-chocolate-torte",
+      "name": "Dark Chocolate Torte",
+      "shortDescription": "Dark chocolate torte with espresso cream, cocoa nib, and sea salt.",
+      "longDescription": "Flourless 72% Valrhona dark chocolate torte with velvety texture, topped with espresso chantilly cream, roasted cocoa nib crunch, and Maldon sea salt flakes.",
+      "price": 12,
+      "category": "dessert",
+      "servicePeriod": [
+        "dinner",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "gluten-conscious"
+      ],
+      "allergens": [
+        "dairy",
+        "egg"
+      ],
+      "flavorTags": [
+        "sweet-bittersweet"
+      ],
+      "mealStyleTags": [
+        "full-evening"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-steak.jpg",
+      "cardImage": "images/featured-steak.jpg",
+      "altText": "Flourless dark chocolate torte",
+      "collectionIds": [
+        "save-room-for-dessert"
+      ],
+      "approvedPairings": [
+        {
+          "drinkId": "event-horizon",
+          "note": "Espresso and cocoa deepen the chocolate intensity."
+        }
+      ]
+    },
+    {
+      "id": "wood-fired-fruit",
+      "slug": "wood-fired-fruit",
+      "name": "Wood-Fired Fruit",
+      "shortDescription": "Seasonal wood-fired fruit with cultured cream, toasted grain, and warm-spice syrup.",
+      "longDescription": "Hearth-roasted stone fruits and berries caramelized over embers, finished with vanilla bean cultured cream, toasted grain granola, and clove syrup.",
+      "price": 11,
+      "category": "dessert",
+      "servicePeriod": [
+        "dinner",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy",
+        "gluten"
+      ],
+      "flavorTags": [
+        "sweet-bittersweet",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "lighter"
+      ],
+      "sharingTags": [
+        "shared"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/wood-fired-hearth.jpg",
+      "cardImage": "images/wood-fired-hearth.jpg",
+      "altText": "Wood fired fruit with cultured cream",
+      "collectionIds": [
+        "save-room-for-dessert",
+        "the-current-season"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "brown-butter-custard",
+      "slug": "brown-butter-custard",
+      "name": "Brown Butter Custard",
+      "shortDescription": "Brown butter custard with caramelized apple, oat crumble, and cider reduction.",
+      "longDescription": "Silky baked brown butter custard topped with wood-fired spiced crisp apples, cinnamon oat crumble, and reduced local apple cider glaze.",
+      "price": 11,
+      "category": "dessert",
+      "servicePeriod": [
+        "dinner",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "dairy",
+        "egg",
+        "gluten"
+      ],
+      "flavorTags": [
+        "sweet-bittersweet",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "comforting"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "none",
+      "heroImage": "images/featured-flatbread.jpg",
+      "cardImage": "images/featured-flatbread.jpg",
+      "altText": "Brown butter custard with caramelized apple",
+      "collectionIds": [
+        "save-room-for-dessert"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "affogato",
+      "slug": "affogato",
+      "name": "Affogato",
+      "shortDescription": "Vanilla gelato with hot espresso and optional amaro.",
+      "longDescription": "Double shot of fresh hot Guatemalan espresso poured table-side over house vanilla bean gelato, optional splash of Averna Amaro.",
+      "price": 9,
+      "category": "dessert",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [
+        "vegetarian",
+        "gluten-conscious"
+      ],
+      "allergens": [
+        "dairy"
+      ],
+      "flavorTags": [
+        "sweet-bittersweet"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "optional",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Vanilla gelato affogato with espresso",
+      "collectionIds": [
+        "save-room-for-dessert"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "copper-moon",
+      "slug": "copper-moon",
+      "name": "Copper Moon",
+      "shortDescription": "Bourbon, amaro, orange, black walnut, and aromatic bitters.",
+      "longDescription": "Straight bourbon whiskey stirred with Italian amaro, roasted orange oil, house black walnut liqueur, and aromatic bitters served over big ice.",
+      "price": 15,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [
+        "tree-nuts"
+      ],
+      "flavorTags": [
+        "deep-savory",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Copper Moon bourbon cocktail",
+      "collectionIds": [
+        "cocktails-after-dark"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "solar-flare",
+      "slug": "solar-flare",
+      "name": "Solar Flare",
+      "shortDescription": "Reposado tequila, smoked chile, grapefruit, lime, and agave.",
+      "longDescription": "Oak-aged reposado tequila shaken with house smoked chile syrup, fresh pink grapefruit, key lime juice, and organic agave nectar with smoked salt rim.",
+      "price": 15,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [],
+      "flavorTags": [
+        "smoky-charred",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Solar Flare smoky tequila cocktail",
+      "collectionIds": [
+        "cocktails-after-dark",
+        "around-the-fire"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "event-horizon",
+      "slug": "event-horizon",
+      "name": "Event Horizon Espresso Martini",
+      "shortDescription": "Vodka, espresso, coffee liqueur, cacao, and sea salt.",
+      "longDescription": "Small-batch vodka shaken hard with fresh Guatemalan espresso, organic cacao nib liqueur, cane sugar, and finished with Maldon sea salt.",
+      "price": 16,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates",
+        "dessert-after-dinner"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [],
+      "flavorTags": [
+        "sweet-bittersweet",
+        "deep-savory"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Event Horizon espresso martini",
+      "collectionIds": [
+        "cocktails-after-dark",
+        "save-room-for-dessert"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "ash-and-orchard",
+      "slug": "ash-and-orchard",
+      "name": "Ash and Orchard",
+      "shortDescription": "Apple brandy, rye, smoked tea, lemon, and spiced honey.",
+      "longDescription": "Aged applejack brandy and straight rye whiskey combined with Lapsang Souchong smoked black tea, fresh lemon juice, and spiced clove honey.",
+      "price": 15,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [],
+      "flavorTags": [
+        "smoky-charred",
+        "rich-comforting"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Ash and Orchard apple brandy cocktail",
+      "collectionIds": [
+        "cocktails-after-dark"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "night-bloom",
+      "slug": "night-bloom",
+      "name": "Night Bloom",
+      "shortDescription": "Gin, blackberry, basil, lemon, and dry vermouth.",
+      "longDescription": "Botanical dry gin shaken with fresh muddled Carolina blackberries, sweet garden basil, lemon juice, and extra dry vermouth.",
+      "price": 14,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [],
+      "flavorTags": [
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Night Bloom blackberry gin cocktail",
+      "collectionIds": [
+        "cocktails-after-dark"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "first-light-spritz",
+      "slug": "first-light-spritz",
+      "name": "First Light Spritz",
+      "shortDescription": "Aperitivo, sparkling wine, citrus, and rosemary.",
+      "longDescription": "Italian red aperitivo bitter topped with crisp dry prosecco, fresh squeezed grapefruit, sparkling mineral water, and slapped rosemary sprig.",
+      "price": 13,
+      "category": "cocktail",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": false,
+      "dietary": [],
+      "allergens": [],
+      "flavorTags": [
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led",
+        "lighter"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "contains-alcohol",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "First Light Spritz aperitivo cocktail",
+      "collectionIds": [
+        "cocktails-after-dark",
+        "weekend-brunch"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "lunar-bloom",
+      "slug": "lunar-bloom",
+      "name": "Lunar Bloom",
+      "shortDescription": "Hibiscus, blackberry, lime, rosemary, and sparkling water.",
+      "longDescription": "House brewed wild hibiscus tea infused with crushed dark blackberries, fresh lime juice, garden rosemary syrup, topped with effervescent soda.",
+      "price": 10,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Lunar Bloom Zero-Proof botanical cocktail",
+      "collectionIds": [
+        "zero-proof-fully-considered"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "ember-tonic",
+      "slug": "ember-tonic",
+      "name": "Ember Tonic",
+      "shortDescription": "Charred citrus, gentian, rosemary, tonic, and smoked salt.",
+      "longDescription": "Fire-charred orange and grapefruit cordial blended with gentian root tea, aromatic rosemary, craft tonic water, and a pinch of smoked salt.",
+      "price": 9,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "smoky-charred"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Ember Tonic zero proof glass",
+      "collectionIds": [
+        "zero-proof-fully-considered",
+        "around-the-fire"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "garden-orbit",
+      "slug": "garden-orbit",
+      "name": "Garden Orbit",
+      "shortDescription": "Cucumber, basil, green tea, lime, and sparkling water.",
+      "longDescription": "Fresh cold-pressed English cucumber juice with sweet basil leaves, sencha green tea reduction, key lime, and sparkling mineral water.",
+      "price": 9,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led",
+        "lighter"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Garden Orbit zero proof botanical drink",
+      "collectionIds": [
+        "zero-proof-fully-considered"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "bright-ash",
+      "slug": "bright-ash",
+      "name": "Bright Ash",
+      "shortDescription": "Pineapple, smoked tea, ginger, lime, and soda.",
+      "longDescription": "Fresh roasted pineapple juice steeped with pine-smoked black tea, spicy cold-pressed ginger root, lime juice, and club soda.",
+      "price": 10,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "smoky-charred"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Bright Ash smoked tea zero proof drink",
+      "collectionIds": [
+        "zero-proof-fully-considered"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "house-citrus-soda",
+      "slug": "house-citrus-soda",
+      "name": "House Citrus Soda",
+      "shortDescription": "Rotating citrus, vanilla, sea salt, and sparkling water.",
+      "longDescription": "Clarified juice from charred lemons, blood oranges, and limes, lightly sweetened with Madagascar vanilla bean syrup and sea salt.",
+      "price": 7,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "House citrus soda",
+      "collectionIds": [
+        "zero-proof-fully-considered"
+      ],
+      "approvedPairings": []
+    },
+    {
+      "id": "seasonal-shrub",
+      "slug": "seasonal-shrub",
+      "name": "Seasonal Shrub",
+      "shortDescription": "Seasonal fruit shrub with herbs, citrus, and sparkling water.",
+      "longDescription": "House fermented apple cider vinegar shrub featuring seasonal peaches or berries, mountain thyme, lemon, and sparkling water.",
+      "price": 8,
+      "category": "zero-proof",
+      "servicePeriod": [
+        "dinner",
+        "brunch",
+        "drinks-small-plates"
+      ],
+      "active": true,
+      "dineInEligible": true,
+      "takeoutEligible": true,
+      "dietary": [
+        "vegetarian",
+        "vegan",
+        "gluten-conscious"
+      ],
+      "allergens": [],
+      "flavorTags": [
+        "fresh-zero-proof",
+        "bright-herbal"
+      ],
+      "mealStyleTags": [
+        "drinks-led"
+      ],
+      "sharingTags": [
+        "individual"
+      ],
+      "alcoholStatus": "zero-proof",
+      "heroImage": "images/cosmic-cocktail.jpg",
+      "cardImage": "images/cosmic-cocktail.jpg",
+      "altText": "Seasonal fruit shrub zero proof glass",
+      "collectionIds": [
+        "zero-proof-fully-considered",
+        "the-current-season"
+      ],
+      "approvedPairings": []
+    }
+  ]
+}

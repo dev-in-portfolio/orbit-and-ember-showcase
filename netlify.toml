@@ -1,0 +1,41 @@
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/restaurants/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/the-orbit-experience"
+  to = "/orbit-ember-12/experience.html"
+  status = 200
+
+[[redirects]]
+  from = "/menu-concierge"
+  to = "/orbit-ember-13/concierge.html"
+  status = 200
+
+[[redirects]]
+  from = "/locations"
+  to = "/orbit-ember-14/locations.html"
+  status = 200
+
+[[redirects]]
+  from = "/guest-follow-up-loyalty"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/performance-insights"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
