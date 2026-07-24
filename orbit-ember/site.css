@@ -20,6 +20,33 @@
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.foundation-disclosure {
+  padding: 0.65rem 1rem;
+  background: #f0ede7;
+  color: #292723;
+  border-bottom: 1px solid #c9c2b8;
+  font: 600 0.78rem/1.4 Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.level-zero-foundation {
+  --color-primary-brand: #655f57;
+  --color-accent: #655f57;
+}
+
+.level-zero-foundation .hero,
+.level-zero-foundation .card,
+.level-zero-foundation .cta-btn {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.level-zero-foundation .hero::before,
+.level-zero-foundation .hero::after {
+  display: none !important;
+}
+
 /* Global Reset */
 * {
   box-sizing: border-box;

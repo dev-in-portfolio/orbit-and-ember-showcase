@@ -109,3 +109,10 @@ test("private event inquiry uses the required non-booking notice", () => {
   const events = fs.readFileSync(path.join(root, "orbit-ember-7", "experience.html"), "utf8");
   assert.match(events, /Submitting an inquiry does not reserve the space or confirm availability\./);
 });
+
+test("Level 0 is intentionally distinct from Brand Finish", () => {
+  const foundation = fs.readFileSync(path.join(root, "orbit-ember", "index.html"), "utf8");
+  const brandFinish = fs.readFileSync(path.join(root, "orbit-ember-1", "index.html"), "utf8");
+  assert.match(foundation, /level-zero-foundation/);
+  assert.notEqual(foundation, brandFinish);
+});
