@@ -1067,3 +1067,121 @@ img, video, canvas, iframe { max-width: 100%; height: auto; }
     font-size: 0.85rem !important;
   }
 }
+
+
+/* Package 9 Above-the-Fold Layout & Branded Breadcrumb Styles */
+.breadcrumb-trail {
+  font-size: 0.88rem !important;
+  color: #aba296 !important;
+  margin-bottom: 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.breadcrumb-link {
+  color: var(--color-primary-brand) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.3s ease !important;
+}
+
+.breadcrumb-link:hover, .breadcrumb-link:focus {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  outline: none !important;
+}
+
+.breadcrumb-sep {
+  color: rgba(224, 168, 104, 0.6) !important;
+  font-weight: 700 !important;
+}
+
+.breadcrumb-current {
+  color: #e6dfd5 !important;
+  font-weight: 400 !important;
+}
+
+.hero-compact {
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.hero-title-compact {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 2.8rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 1.12 !important;
+  margin: 0.3rem 0 0.6rem !important;
+}
+
+.hero-title-compact em {
+  font-style: italic !important;
+  color: var(--color-primary-brand) !important;
+  font-weight: 400 !important;
+}
+
+.hero-intro-text {
+  color: #e6dfd5 !important;
+  font-size: 1.05rem !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  line-height: 1.5 !important;
+}
+
+.filter-section-compact {
+  background: rgba(18, 15, 13, 0.92) !important;
+  border: 1px solid rgba(224, 168, 104, 0.4) !important;
+  border-radius: 20px !important;
+  padding: 1.4rem 2rem !important;
+  margin-bottom: 2.5rem !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.85) !important;
+}
+
+.filter-header-bar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 1rem !important;
+  flex-wrap: wrap !important;
+  gap: 0.8rem !important;
+}
+
+.filter-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.col-total-badge {
+  background: rgba(224, 168, 104, 0.2) !important;
+  border: 1px solid var(--color-primary-brand) !important;
+  color: var(--color-primary-brand) !important;
+  padding: 0.3rem 0.9rem !important;
+  border-radius: 20px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Compact Featured Card Heights */
+.featured-col-card {
+  min-height: 280px !important;
+}
+
+.featured-col-body {
+  padding: 2.2rem !important;
+}
+
+.featured-col-title {
+  font-size: 2.2rem !important;
+  margin: 0.3rem 0 0.6rem !important;
+}
+
+.featured-col-desc {
+  font-size: 0.98rem !important;
+  margin-bottom: 1.2rem !important;
+}

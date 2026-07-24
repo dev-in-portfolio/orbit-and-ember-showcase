@@ -84,6 +84,13 @@
         btn.addEventListener('click', () => {
           activeCategory = cat.id;
           renderCategoryTabs();
+
+      // Update dynamic collection total badge
+      const totalBadge = document.getElementById('dynamic-col-total');
+      if (totalBadge && config.collections) {
+        totalBadge.textContent = `${config.collections.length} Curated Collections`;
+      }
+
           renderCollectionsGrid();
         });
         categoryNavContainer.appendChild(btn);
@@ -330,6 +337,13 @@
 
     // Initialize Page
     renderCategoryTabs();
+
+      // Update dynamic collection total badge
+      const totalBadge = document.getElementById('dynamic-col-total');
+      if (totalBadge && config.collections) {
+        totalBadge.textContent = `${config.collections.length} Curated Collections`;
+      }
+
     renderFeaturedCollection();
     renderCollectionsGrid();
     checkHashRoute();
