@@ -487,7 +487,47 @@
   <!-- Full-Screen Glassmorphic Collection Detail Drawer -->
   <div id="collection-detail-drawer" class="dish-inspector-overlay" style="display: none;">
     <div class="dish-inspector-modal" style="max-width: 860px; max-height: 90vh; overflow-y: auto;">
-      <div id="collection-modal-content"></div>
+      
+      <div id="collection-modal-content">
+        <header class="modal-col-header" style="margin-bottom: 2rem;">
+          <span class="subhead-tag" style="background: rgba(224, 168, 104, 0.2); color: #e0a868; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.82rem; font-weight: 700;">The Flagship Experience • Dinner &amp; Drinks</span>
+          <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; color: #ffffff; margin: 0.6rem 0;">Signature Orbit &amp; Ember</h1>
+          <p style="color: #e6dfd5; font-size: 1.1rem; line-height: 1.6; max-width: 720px; margin-bottom: 1.5rem;">Our signature collection highlights the pinnacle of open hearth wood-fired cooking and celestial mixology. From 14-hour black garlic braised short ribs to high-rye bourbon aged with flamed orange peel, these preparations embody the soul of Orbit &amp; Ember.</p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a href="reserve.html" class="cta-btn">Reserve Signature Table</a>
+            <button class="btn-secondary save-col-btn-modal" data-id="collection-signature">☆ Save Collection</button>
+            <button class="btn-secondary share-col-btn" data-slug="signature-orbit-and-ember">🔗 Share Link</button>
+          </div>
+        </header>
+
+        <section class="modal-col-items">
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Courses (4)</h2>
+          <div class="col-detail-items-grid">
+            <div class="col-item-card">
+              <div class="col-item-header"><h3 class="col-item-name">Black Garlic Braised Short Rib</h3><span class="col-item-price">$34</span></div>
+              <p class="col-item-desc">Slow-braised over cured oak for 14 hours with fermented black garlic jus, charred cipollini onions, and smoked parsnip puree.</p>
+              <div class="col-item-tags"><span class="dietary-chip">CF</span><span class="dietary-chip">GF</span><span class="flavor-chip">Smoky</span><span class="flavor-chip">Deep</span></div>
+            </div>
+            <div class="col-item-card">
+              <div class="col-item-header"><h3 class="col-item-name">Copper Moon Rye Cocktail</h3><span class="col-item-price">$17</span></div>
+              <p class="col-item-desc">High-rye bourbon, charred cedar smoked syrup, amaro averna, black walnut bitters, and flamed orange peel.</p>
+              <div class="col-item-tags"><span class="dietary-chip">CF</span><span class="flavor-chip">Smoky</span><span class="flavor-chip">Bittersweet</span></div>
+            </div>
+            <div class="col-item-card">
+              <div class="col-item-header"><h3 class="col-item-name">Hearth-Roasted Wild Mushrooms</h3><span class="col-item-price">$24</span></div>
+              <p class="col-item-desc">Foraged maitake and king oyster mushrooms roasted over live coals with thyme butter, crispy shallots, and aged sherry glaze.</p>
+              <div class="col-item-tags"><span class="dietary-chip">V</span><span class="dietary-chip">GF</span><span class="flavor-chip">Earthy</span><span class="flavor-chip">Rich</span></div>
+            </div>
+            <div class="col-item-card">
+              <div class="col-item-header"><h3 class="col-item-name">Burnt Honey &amp; Hearth Salt Cheesecake</h3><span class="col-item-price">$14</span></div>
+              <p class="col-item-desc">Caramelized wildflower honey cheesecake over smoked graham crust with roasted fig jam and flaked Maldon sea salt.</p>
+              <div class="col-item-tags"><span class="dietary-chip">V</span><span class="flavor-chip">Sweet</span><span class="flavor-chip">Rich</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div style="margin-top: 2.5rem; text-align: center;">
         <button id="close-drawer-btn" class="btn-secondary" style="padding: 0.8rem 2.5rem;">Close Collection</button>
       </div>

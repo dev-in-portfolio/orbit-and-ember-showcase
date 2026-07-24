@@ -215,8 +215,21 @@
 
     // 4. Open Collection Detail Modal Drawer
     function openCollectionDetailBySlug(slug) {
+      initDataMaps();
+      const config = window.ORBIT_COLLECTIONS_CONFIG;
+      if (!config) return;
+
       const col = config.collections.find(c => c.slug === slug || c.id === slug);
-      if (!col || !detailDrawer || !detailModalContent) return;
+      if (!col) {
+        console.error("Collection not found for slug:", slug);
+        return;
+      }
+
+      const modalContent = document.getElementById('collection-modal-content');
+      const drawer = document.getElementById('collection-detail-drawer');
+      const modalBox = document.querySelector('.dish-inspector-modal');
+
+      if (!modalContent || !drawer) return;
 
       window.location.hash = col.slug;
 
@@ -232,10 +245,10 @@
         return { pairing: p, food, drink, zeroProof };
       }).filter(Boolean);
 
-      detailModalContent.innerHTML = `
-        <header class="modal-col-header">
-          <span class="subhead-tag">${col.eyebrow} • ${col.serviceLabel}</span>
-          <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; color: #fff; margin: 0.4rem 0;">${col.title}</h1>
+      modalContent.innerHTML = `
+        <header class="modal-col-header" style="margin-bottom: 2rem;">
+          <span class="subhead-tag" style="background: rgba(224, 168, 104, 0.2); color: #e0a868; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.82rem; font-weight: 700;">${col.eyebrow} • ${col.serviceLabel}</span>
+          <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; color: #ffffff; margin: 0.6rem 0;">${col.title}</h1>
           <p style="color: #e6dfd5; font-size: 1.1rem; line-height: 1.6; max-width: 720px; margin-bottom: 1.5rem;">${col.longIntroduction}</p>
           
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
@@ -252,7 +265,7 @@
         ` : ''}
 
         <section class="modal-col-items">
-          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Courses</h2>
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #e0a868; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(224, 168, 104, 0.3); padding-bottom: 0.5rem;">Curated Menu Courses (${resolvedItems.length})</h2>
           <div class="col-detail-items-grid">
             ${resolvedItems.map(item => `
               <div class="col-item-card">
@@ -293,8 +306,9 @@
         </div>
       `;
 
-      detailDrawer.style.display = 'flex';
+      drawer.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      if (modalBox) modalBox.scrollTop = 0;
 
       document.querySelector('.save-col-btn-modal')?.addEventListener('click', (e) => {
         if (getSavedCollections().includes(col.id)) {
@@ -317,21 +331,6 @@
           alert("Collection Link:\n" + shareUrl);
         }
       });
-    }
-
-    if (closeDrawerBtn) {
-      closeDrawerBtn.addEventListener('click', () => {
-        detailDrawer.style.display = 'none';
-        document.body.style.overflow = '';
-        window.location.hash = '';
-      });
-    }
-
-    function checkHashRoute() {
-      const hash = window.location.hash.replace('#', '');
-      if (hash) {
-        openCollectionDetailBySlug(hash);
-      }
     }
 
     // 5. Global Document Event Delegation for Instant Button Clicks
