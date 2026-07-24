@@ -34,6 +34,16 @@
   to = "/"
   status = 301
 
+[[redirects]]
+  from = "/orbit-ember-8/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/orbit-ember-9/*"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -92,6 +92,10 @@ test("Netlify routes legacy base paths and clean package URLs", () => {
   for (const route of ["/the-orbit-experience", "/menu-concierge", "/locations"]) {
     assert.match(netlify, new RegExp(`from = "${route}"`));
   }
+  for (const retiredRoute of ["/guest-follow-up-loyalty", "/performance-insights", "/orbit-ember-8/*", "/orbit-ember-9/*"]) {
+    const escaped = retiredRoute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(netlify, new RegExp(`from = "${escaped}"\\s+to = "/"\\s+status = 301`, "s"));
+  }
 });
 
 test("concierge loads the shared authoritative menu source", () => {
