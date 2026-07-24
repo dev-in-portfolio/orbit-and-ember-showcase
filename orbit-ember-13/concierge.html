@@ -514,6 +514,7 @@
 
         recommendations.forEach(item => {
           const whyFits = window.menuConciergeEngine.generateWhyItFits(item, userPrefs);
+          const approvedPairing = window.menuConciergeEngine.getApprovedPairing(item, userPrefs);
 
           const card = document.createElement('article');
           card.className = 'concierge-result-card';
@@ -532,10 +533,10 @@
                 <p>${whyFits}</p>
               </div>
 
-              ${item.approvedPairings && item.approvedPairings.length > 0 ? `
+              ${approvedPairing ? `
                 <div class="res-pairing-box">
-                  <span class="res-pairing-label">🍸 Sommelier Pairing Note:</span>
-                  <p>${item.approvedPairings[0].note}</p>
+                  <span class="res-pairing-label">Approved ${approvedPairing.drink.alcoholStatus === 'zero-proof' ? 'Zero-Proof ' : ''}Pairing:</span>
+                  <p><strong>${approvedPairing.drink.name}.</strong> ${approvedPairing.note}</p>
                 </div>
               ` : ''}
 

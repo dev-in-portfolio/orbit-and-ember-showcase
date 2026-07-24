@@ -177,6 +177,20 @@
       }
       return "Selected because it provides alignment with your requested flavor and dining pace.";
     }
+
+    getApprovedPairing(item, prefs) {
+      if (!item.approvedPairings || item.approvedPairings.length === 0 || prefs.drinkPref === 'none') {
+        return null;
+      }
+      const pairings = item.approvedPairings.map(pairing => ({
+        ...pairing,
+        drink: this.menuData.find(candidate => candidate.id === pairing.drinkId)
+      })).filter(pairing => pairing.drink);
+      if (prefs.drinkPref === 'zero-proof-only') {
+        return pairings.find(pairing => pairing.drink.alcoholStatus === 'zero-proof') || null;
+      }
+      return pairings[0] || null;
+    }
   }
 
   window.menuConciergeEngine = new MenuConciergeEngine();

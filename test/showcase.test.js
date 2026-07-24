@@ -96,6 +96,8 @@ test("concierge loads the shared authoritative menu source", () => {
   const concierge = fs.readFileSync(path.join(root, "orbit-ember-13", "concierge-engine.js"), "utf8");
   assert.match(concierge, /MENU_SOURCE = "\/data\/menu\.json"/);
   assert.ok(!concierge.includes("INLINE_SHOWCASE_MENU"));
+  assert.match(concierge, /prefs\.drinkPref === 'zero-proof-only'/);
+  assert.match(concierge, /pairing\.drink\.alcoholStatus === 'zero-proof'/);
   const menu = JSON.parse(fs.readFileSync(path.join(root, "data", "menu.json"), "utf8"));
   assert.ok(Array.isArray(menu.menu) && menu.menu.length >= 20);
   assert.equal(new Set(menu.menu.map(item => item.id)).size, menu.menu.length);
