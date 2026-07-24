@@ -65,7 +65,7 @@
       email: "ballantyne@orbitandember.example",
       heroImage: "images/wood-fired-hearth.jpg",
       tagline: "A new Orbit & Ember experience being developed for Ballantyne, bringing wood-fired cooking and seasonal mixology to South Charlotte.",
-      openingTarget: "Expected 2027",
+      openingTarget: "Opening Soon",
       features: ["Expanded Cocktail Lounge", "Private Dining Suite", "Spacious Patio", "Weekday Lunch Consideration"],
       actions: {
         canReserve: false,

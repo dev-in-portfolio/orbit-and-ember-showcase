@@ -84,3 +84,24 @@ test("signature, concierge, and collection implementations are substantive", () 
   assert.match(collections, /Chef Julian/);
   assert.match(collections, /Private Dining Menus/);
 });
+
+test("Netlify routes legacy base paths and clean package URLs", () => {
+  assert.match(netlify, /from = "\/restaurants\/\*"\s+to = "\/:splat"\s+status = 200/s);
+  for (const route of ["/the-orbit-experience", "/menu-concierge", "/locations"]) {
+    assert.match(netlify, new RegExp(`from = "${route}"`));
+  }
+});
+
+test("concierge loads the shared authoritative menu source", () => {
+  const concierge = fs.readFileSync(path.join(root, "orbit-ember-13", "concierge-engine.js"), "utf8");
+  assert.match(concierge, /MENU_SOURCE = "\/data\/menu\.json"/);
+  assert.ok(!concierge.includes("INLINE_SHOWCASE_MENU"));
+  const menu = JSON.parse(fs.readFileSync(path.join(root, "data", "menu.json"), "utf8"));
+  assert.ok(Array.isArray(menu.menu) && menu.menu.length >= 20);
+  assert.equal(new Set(menu.menu.map(item => item.id)).size, menu.menu.length);
+});
+
+test("private event inquiry uses the required non-booking notice", () => {
+  const events = fs.readFileSync(path.join(root, "orbit-ember-7", "experience.html"), "utf8");
+  assert.match(events, /Submitting an inquiry does not reserve the space or confirm availability\./);
+});

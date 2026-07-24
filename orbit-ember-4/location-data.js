@@ -59,17 +59,17 @@ function getRealtimeStatusV3() {
   if (currentDayName === "Saturday" || currentDayName === "Sunday") {
     const isBrunch = currentHour >= 10.0 && currentHour <= 14.5;
     const isDinner = currentHour >= 16.5 && currentHour <= todayInfo.closeHour;
-    if (isBrunch) return { isOpen: true, text: "ðŸŸ¢ Open Now â€¢ Weekend Brunch (Until 2:30 PM)", badgeClass: "is-open" };
-    if (isDinner) return { isOpen: true, text: `ðŸŸ¢ Open Now â€¢ Dinner Service (Until ${currentDayName === "Sunday" ? "9:30 PM" : "11:00 PM"})`, badgeClass: "is-open" };
-    if (currentHour < 10.0) return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Brunch Opens at 10:00 AM", badgeClass: "is-closed" };
-    if (currentHour > 14.5 && currentHour < 16.5) return { isOpen: false, text: "ðŸŸ¡ Afternoon Prep â€¢ Dinner Opens at 4:30 PM", badgeClass: "is-closed" };
-    return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Opens Tomorrow at 10:00 AM", badgeClass: "is-closed" };
+    if (isBrunch) return { isOpen: true, text: "🟢 Open Now • Weekend Brunch (Until 2:30 PM)", badgeClass: "is-open" };
+    if (isDinner) return { isOpen: true, text: `🟢 Open Now • Dinner Service (Until ${currentDayName === "Sunday" ? "9:30 PM" : "11:00 PM"})`, badgeClass: "is-open" };
+    if (currentHour < 10.0) return { isOpen: false, text: "🟡 Closed Now • Brunch Opens at 10:00 AM", badgeClass: "is-closed" };
+    if (currentHour > 14.5 && currentHour < 16.5) return { isOpen: false, text: "🟡 Afternoon Prep • Dinner Opens at 4:30 PM", badgeClass: "is-closed" };
+    return { isOpen: false, text: "🟡 Closed Now • Opens Tomorrow at 10:00 AM", badgeClass: "is-closed" };
   } else {
     if (currentHour >= todayInfo.openHour && currentHour <= todayInfo.closeHour) {
-      return { isOpen: true, text: "ðŸŸ¢ Open Now â€¢ Wood-Fired Dinner & Bar", badgeClass: "is-open" };
+      return { isOpen: true, text: "🟢 Open Now • Wood-Fired Dinner & Bar", badgeClass: "is-open" };
     }
-    if (currentHour < todayInfo.openHour) return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Dinner Opens Today at 4:30 PM", badgeClass: "is-closed" };
-    return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Opens Tomorrow at 4:30 PM", badgeClass: "is-closed" };
+    if (currentHour < todayInfo.openHour) return { isOpen: false, text: "🟡 Closed Now • Dinner Opens Today at 4:30 PM", badgeClass: "is-closed" };
+    return { isOpen: false, text: "🟡 Closed Now • Opens Tomorrow at 4:30 PM", badgeClass: "is-closed" };
   }
 }
 
@@ -79,7 +79,7 @@ function copyAddressToClipboard() {
   navigator.clipboard.writeText(addr).then(() => {
     const toast = document.createElement('div');
     toast.className = 'copy-address-toast';
-    toast.textContent = `ðŸ“‹ Copied "${addr}" to clipboard!`;
+    toast.textContent = `📋 Copied "${addr}" to clipboard!`;
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
   }).catch(err => {

@@ -5,6 +5,11 @@
   NODE_VERSION = "22"
 
 [[redirects]]
+  from = "/restaurants/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
   from = "/the-orbit-experience"
   to = "/orbit-ember-12/experience.html"
   status = 200
@@ -34,4 +39,3 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
