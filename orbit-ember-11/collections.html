@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <script>
@@ -7,22 +7,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu Collections — Curated Dining Storytelling | Orbit &amp; Ember Kitchen + Bar</title>
-  <meta name="description" content="Explore signature dishes, wood-fired hearth items, brunch favorites, zero-proof drinks, and food-and-drink pairings at Orbit &amp; Ember in Charlotte, NC.">
-  <link rel="canonical" href="https://restaurant-showcase-demos.netlify.app/orbit-ember-11/collections.html">
+  <meta name="description" content="Explore twelve curated menu stories built around signature dishes, live-fire cooking, brunch, cocktails, zero-proof drinks, desserts, occasions, and private dining at Orbit &amp; Ember.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-11/collections.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body class="collections-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Menu Collections Showcase</div>
-
-  <!-- Interactive Toast Notification Banner -->
-  <div id="toast-notification" class="toast-notification" style="display: none;">
-    <span id="toast-message">✅ Action completed!</span>
-  </div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Package 9: Menu Collections Redo</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -30,10 +25,9 @@
       <nav class="main-nav">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html" class="active">Collections</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="story.html">Story</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="collections.html" class="active">Collections</a></li>
           <li><a href="visit.html">Visit</a></li>
         </ul>
         <a href="reserve.html" class="cta-btn">Book Table</a>
@@ -41,146 +35,46 @@
     </div>
   </header>
 
-  <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 6rem;">
     <nav class="breadcrumb-trail" aria-label="Breadcrumb">
-      <a href="index.html">Home</a> &rsaquo; <span>Menu Collections Hub</span>
+      <a href="index.html">Home</a> &rsaquo; <span>Menu Collections</span>
     </nav>
 
-    <!-- Editorial Visual Hero Header -->
-    <section class="collections-hero-banner" style="background-image: linear-gradient(180deg, rgba(13,12,11,0.4) 0%, rgba(13,12,11,0.92) 100%), url('images/wood-fired-hearth.jpg');">
-      <div class="hero-content-inner">
-        <span class="subhead-tag">Curated Culinary Storytelling</span>
-        <h1 class="hero-title">Explore the Table <em>Differently</em></h1>
-        <p class="hero-desc">More ways to explore the Orbit &amp; Ember menu — through signature dishes, live-fire hearth plates, weekend brunch, spirit-free drinks, and chef pairings.</p>
-        
-        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#collections-hub-section" class="cta-btn" style="padding: 0.8rem 1.8rem;">Browse All Collections</a>
-          <a href="menu.html" class="btn-secondary" style="padding: 0.8rem 1.8rem;">View Full Standard Menu</a>
-        </div>
-      </div>
+    <!-- Editorial Hero Header -->
+    <header class="section-header-center" style="margin-bottom: 3rem;">
+      <span class="subhead-tag">Curated Menu Storytelling</span>
+      <h1 class="hero-title">Explore the Menu <em>Differently</em></h1>
+      <p style="color: #e6dfd5; font-size: 1.18rem; max-width: 780px; margin: 0.8rem auto 0; line-height: 1.6;">Curated paths through the Orbit &amp; Ember menu, organized around live-fire hearth flavors, table occasions, service periods, and crafted beverage pairings.</p>
+    </header>
+
+    <!-- Featured Collection Spotlight Container -->
+    <section id="featured-collection-container" style="margin-bottom: 4rem;"></section>
+
+    <!-- Category Filter Tabs -->
+    <section class="concierge-nl-section" style="padding: 1.8rem 2.5rem; margin-bottom: 3rem;">
+      <label style="font-size: 1.4rem; margin-bottom: 1rem;">Filter Collections by Category:</label>
+      <div id="collections-category-nav" class="cat-tabs-wrapper"></div>
     </section>
 
-    <!-- Featured Collection Showcase Card -->
-    <section class="featured-collection-section" style="margin-top: 4rem;">
-      <div class="featured-collection-card">
-        <div class="feat-media-box">
-          <img src="images/featured-steak.jpg" alt="Signature Black Garlic Short Rib" class="feat-cover-img">
-          <span class="feat-badge-overlay">★ Primary Signature Collection</span>
-        </div>
-        <div class="feat-info-box">
-          <span class="col-card-eyebrow">Identity &amp; Heritage</span>
-          <h2 class="feat-title">Signature Orbit &amp; Ember</h2>
-          <p class="feat-desc">The plates, cocktails, and desserts that most clearly express the restaurant's character. Balancing live-fire hearth cooking, deep dark-garlic reductions, and artisan mixology.</p>
-          
-          <div class="feat-item-chips-grid">
-            <div class="feat-chip">🥩 Black Garlic Short Rib <em>($34)</em></div>
-            <div class="feat-chip">🍗 Ember-Roasted Chicken <em>($29)</em></div>
-            <div class="feat-chip">🥕 Charred Carrots &amp; Feta <em>($14)</em></div>
-            <div class="feat-chip">🍸 Copper Moon Cocktail <em>($15)</em></div>
-            <div class="feat-chip">🌿 Lunar Bloom Zero-Proof <em>($10)</em></div>
-            <div class="feat-chip">🍯 Burnt Honey Cheesecake <em>($12)</em></div>
-          </div>
+    <!-- 12 Collections Cards Grid -->
+    <section id="collections-grid" class="locations-grid-container"></section>
 
-          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="cta-btn inspect-collection-btn" data-colid="signature" style="cursor: pointer;">Inspect Collection Story</button>
-            <button class="btn-secondary save-collection-btn" data-colname="Signature Collection" style="cursor: pointer;">🔖 Save to Device</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Collection Category Filters & Visual Grid -->
-    <section id="collections-hub-section" class="collections-hub-section" style="margin-top: 5rem;">
-      <div class="section-header-center">
-        <span class="subhead-tag">Curated Categories</span>
-        <h2 class="section-title">The Collection <em>Gallery</em></h2>
-        <p class="section-desc">Select a category below to filter our chef-curated collections by dining occasion, flavor profile, or service period.</p>
-      </div>
-
-      <div class="filter-tabs-row">
-        <button class="filter-tab-btn active" data-filter="all">All Collections (7)</button>
-        <button class="filter-tab-btn" data-filter="Dinner">Dinner &amp; Hearth</button>
-        <button class="filter-tab-btn" data-filter="Shared">Shared Plates</button>
-        <button class="filter-tab-btn" data-filter="Brunch">Weekend Brunch</button>
-        <button class="filter-tab-btn" data-filter="Drinks">Craft Cocktails</button>
-        <button class="filter-tab-btn" data-filter="Zero-Proof">Zero-Proof</button>
-        <button class="filter-tab-btn" data-filter="Desserts">Desserts</button>
-      </div>
-
-      <div id="collections-grid-container" class="visual-collections-grid">
-        <!-- Rendered dynamically with rich images via JS -->
-      </div>
-    </section>
-
-    <!-- Food & Drink Chef Pairings Showcase -->
-    <section class="pairings-showcase-section" style="margin-top: 5rem;">
-      <div class="section-header-center" style="margin-bottom: 2.5rem;">
-        <span class="subhead-tag">Sommelier &amp; Bar Guidance</span>
-        <h2 class="section-title">Chef &amp; Bar <em>Pairings</em></h2>
-        <p class="section-desc">Thoughtful culinary pairings designed to balance live-fire smoke, rich umami reductions, and craft acidity.</p>
-      </div>
-
-      <div class="pairings-grid-3">
-        <div class="pairing-card">
-          <div class="pairing-img-wrapper">
-            <img src="images/cosmic-cocktail.jpg" alt="Copper Moon Cocktail" class="pairing-img">
-            <span class="pairing-badge">Signature Pairing</span>
-          </div>
-          <div class="pairing-body">
-            <h3>Short Rib + Copper Moon</h3>
-            <div class="pairing-meta">
-              <p>🥩 <strong>Dish:</strong> Black Garlic Braised Short Rib ($34)</p>
-              <p>🍸 <strong>Drink:</strong> Copper Moon Cocktail ($15)</p>
-            </div>
-            <p class="pairing-note">"The cocktail's dark orange and amaro bitterness cuts smoothly through the braised rib's deep savory richness."</p>
-            <button class="btn-secondary pairing-share-btn" data-pair="Short Rib + Copper Moon" style="margin-top: 1rem; width: 100%; cursor: pointer;">🔗 Copy Pairing Link</button>
-          </div>
-        </div>
-
-        <div class="pairing-card">
-          <div class="pairing-img-wrapper">
-            <img src="images/wood-fired-hearth.jpg" alt="Ember-Roasted Half Chicken" class="pairing-img">
-            <span class="pairing-badge">Hearth Classic</span>
-          </div>
-          <div class="pairing-body">
-            <h3>Half Chicken + Solar Flare</h3>
-            <div class="pairing-meta">
-              <p>🍗 <strong>Dish:</strong> Ember-Roasted Half Chicken ($29)</p>
-              <p>🍹 <strong>Drink:</strong> Solar Flare Craft Cocktail ($15)</p>
-            </div>
-            <p class="pairing-note">"Smoked chile and bright ruby grapefruit highlight the roasted lemon jus and crispy chicken skin."</p>
-            <button class="btn-secondary pairing-share-btn" data-pair="Half Chicken + Solar Flare" style="margin-top: 1rem; width: 100%; cursor: pointer;">🔗 Copy Pairing Link</button>
-          </div>
-        </div>
-
-        <div class="pairing-card">
-          <div class="pairing-img-wrapper">
-            <img src="images/featured-flatbread.jpg" alt="Charred Carrots with Feta" class="pairing-img">
-            <span class="pairing-badge">Zero-Proof Match</span>
-          </div>
-          <div class="pairing-body">
-            <h3>Charred Carrots + Lunar Bloom</h3>
-            <div class="pairing-meta">
-              <p>🥕 <strong>Dish:</strong> Charred Carrots &amp; Whipped Feta ($14)</p>
-              <p>🌿 <strong>Drink:</strong> Lunar Bloom Zero-Proof ($10)</p>
-            </div>
-            <p class="pairing-note">"Tart wild blackberry and lime provide a crisp, aromatic contrast to warm-spice honey and creamy feta."</p>
-            <button class="btn-secondary pairing-share-btn" data-pair="Charred Carrots + Lunar Bloom" style="margin-top: 1rem; width: 100%; cursor: pointer;">🔗 Copy Pairing Link</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal Drawer for Inspecting Collection Story -->
-    <div id="collection-modal-overlay" class="modal-overlay" style="display: none;">
-      <div class="modal-content-card">
-        <button id="modal-close-btn" class="modal-close" aria-label="Close Modal">&times;</button>
-        <div id="modal-body-container">
-          <!-- Filled dynamically -->
-        </div>
-      </div>
+    <!-- Standard Menu Authority Note & Disclaimer -->
+    <div class="concierge-disclaimer-card" style="margin-top: 5rem;">
+      <p>💡 <strong>Standard Menu Authority:</strong> Menu items, prices, service periods, and availability are dynamically resolved from the authoritative menu source of truth. <a href="menu.html" style="color: #e0a868; font-weight: 600; text-decoration: underline;">View Full Standard Menu &rsaquo;</a></p>
+      <p style="margin-top: 0.6rem; font-size: 0.82rem;">Please inform your server of allergies or dietary restrictions. Our kitchen handles common allergens and cannot guarantee an allergen-free environment.</p>
     </div>
   </main>
+
+  <!-- Full-Screen Glassmorphic Collection Detail Drawer -->
+  <div id="collection-detail-drawer" class="dish-inspector-overlay" style="display: none;">
+    <div class="dish-inspector-modal" style="max-width: 860px; max-height: 90vh; overflow-y: auto;">
+      <div id="collection-modal-content"></div>
+      <div style="margin-top: 2.5rem; text-align: center;">
+        <button id="close-drawer-btn" class="btn-secondary" style="padding: 0.8rem 2.5rem;">Close Collection</button>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-container">
@@ -188,192 +82,18 @@
         <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
         <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="story.html">Story</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="collections.html">Menu Collections</a></li>
-          <li><a href="visit.html">Visit &amp; FAQ</a></li>
-        </ul>
-      </div>
     </div>
-
     <div class="portfolio-disclosure-bar">
-      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, loyalty, performance-reporting, operations, guest-engagement, and menu-collection services.</p>
+      <p>💡 <strong>Showcase Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional restaurant concept demonstrating Dark Star Consulting's curated menu storytelling services.</p>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="collections-data.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const gridContainer = document.getElementById('collections-grid-container');
-      const filterBtns = document.querySelectorAll('.filter-tab-btn');
-      const modalOverlay = document.getElementById('collection-modal-overlay');
-      const modalClose = document.getElementById('modal-close-btn');
-      const modalBody = document.getElementById('modal-body-container');
-      const toast = document.getElementById('toast-notification');
-      const toastMsg = document.getElementById('toast-message');
-
-      function showToast(message) {
-        if (!toast || !toastMsg) return;
-        toastMsg.textContent = message;
-        toast.style.display = 'block';
-        toast.classList.add('show-toast');
-        setTimeout(() => {
-          toast.classList.remove('show-toast');
-          setTimeout(() => { toast.style.display = 'none'; }, 300);
-        }, 3000);
-      }
-
-      const collectionImages = {
-        signature: 'images/featured-steak.jpg',
-        fire: 'images/wood-fired-hearth.jpg',
-        sharing: 'images/featured-flatbread.jpg',
-        brunch: 'images/lounge-ambiance.jpg',
-        cocktails: 'images/cosmic-cocktail.jpg',
-        zeroproof: 'images/cosmic-cocktail.jpg',
-        dessert: 'images/featured-flatbread.jpg'
-      };
-
-      function renderCollections(filterType = 'all') {
-        if (!gridContainer || !window.COLLECTIONS_CONFIG) return;
-        gridContainer.innerHTML = '';
-
-        const collections = window.COLLECTIONS_CONFIG.collections.filter(c => {
-          if (filterType === 'all') return true;
-          return c.type.toLowerCase() === filterType.toLowerCase();
-        });
-
-        collections.forEach(col => {
-          const card = document.createElement('article');
-          card.className = 'visual-col-card';
-          
-          const imgSrc = collectionImages[col.id] || 'images/wood-fired-hearth.jpg';
-
-          let itemsListHtml = col.items.map(i => `
-            <div class="col-item-row">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span class="col-item-name">${i.name}</span>
-                <span class="col-item-price">${i.price}</span>
-              </div>
-              <span class="col-item-note">${i.note}</span>
-            </div>
-          `).join('');
-
-          card.innerHTML = `
-            <div class="col-card-media">
-              <img src="${imgSrc}" alt="${col.name}" class="col-card-img">
-              <span class="col-card-tag">${col.tag}</span>
-            </div>
-            <div class="col-card-body">
-              <span class="col-card-eyebrow">${col.eyebrow}</span>
-              <h3>${col.name}</h3>
-              <p class="col-card-desc">${col.desc}</p>
-              <div class="col-card-items">${itemsListHtml}</div>
-              <div style="margin-top: 1.2rem; display: flex; gap: 0.6rem;">
-                <button class="cta-btn inspect-collection-btn" data-colid="${col.id}" style="flex: 1; cursor: pointer; font-size: 0.82rem;">Inspect Details</button>
-                <button class="btn-secondary save-collection-btn" data-colname="${col.name}" style="cursor: pointer; font-size: 0.82rem;">🔖 Save</button>
-              </div>
-            </div>
-          `;
-          gridContainer.appendChild(card);
-        });
-
-        // Attach listeners for newly rendered buttons
-        attachButtonListeners();
-      }
-
-      function attachButtonListeners() {
-        // Inspect Buttons
-        document.querySelectorAll('.inspect-collection-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const colId = btn.getAttribute('data-colid');
-            const colData = window.COLLECTIONS_CONFIG.collections.find(c => c.id === colId);
-            if (colData && modalBody) {
-              const imgSrc = collectionImages[colId] || 'images/wood-fired-hearth.jpg';
-              let itemsHtml = colData.items.map(i => `
-                <div class="modal-item-box" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 0.9rem; border-radius: 8px; margin-bottom: 0.6rem;">
-                  <div style="display: flex; justify-content: space-between; font-weight: 700; color: #ffffff;">
-                    <span>${i.name}</span>
-                    <span style="color: var(--color-primary-brand);">${i.price}</span>
-                  </div>
-                  <p style="font-size: 0.85rem; color: #a39b90; margin-top: 0.3rem;">${i.note}</p>
-                </div>
-              `).join('');
-
-              modalBody.innerHTML = `
-                <img src="${imgSrc}" alt="${colData.name}" style="width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
-                <span class="subhead-tag">${colData.eyebrow}</span>
-                <h2 style="font-family: var(--font-heading); color: #fff; font-size: 2rem; margin-bottom: 0.4rem;">${colData.name}</h2>
-                <p style="color: #d1c8bd; margin-bottom: 1.2rem; line-height: 1.5; font-size: 0.95rem;">${colData.desc}</p>
-                <h4 style="font-family: var(--font-heading); color: var(--color-primary-brand); margin-bottom: 0.8rem; font-size: 1.15rem;">Collection Dishes &amp; Pricing</h4>
-                <div>${itemsHtml}</div>
-                <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                  <a href="reserve.html" class="cta-btn" style="flex: 1; text-align: center;">Book Table for This Collection</a>
-                  <button class="btn-secondary" id="modal-save-btn">Bookmark Collection</button>
-                </div>
-              `;
-
-              document.getElementById('modal-save-btn')?.addEventListener('click', () => {
-                showToast(`🔖 Saved "${colData.name}" on this device!`);
-              });
-
-              if (modalOverlay) modalOverlay.style.display = 'flex';
-            }
-          });
-        });
-
-        // Save Collection Buttons
-        document.querySelectorAll('.save-collection-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const name = btn.getAttribute('data-colname') || 'Collection';
-            showToast(`🔖 Saved "${name}" on this device!`);
-          });
-        });
-
-        // Pairing Share Buttons
-        document.querySelectorAll('.pairing-share-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const pairName = btn.getAttribute('data-pair') || 'Pairing';
-            navigator.clipboard?.writeText(window.location.href);
-            showToast(`📋 Copied pairing link for "${pairName}"!`);
-          });
-        });
-      }
-
-      if (modalClose) {
-        modalClose.addEventListener('click', () => {
-          if (modalOverlay) modalOverlay.style.display = 'none';
-        });
-      }
-
-      if (modalOverlay) {
-        modalOverlay.addEventListener('click', (e) => {
-          if (e.target === modalOverlay) modalOverlay.style.display = 'none';
-        });
-      }
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-          renderCollections(filter);
-          showToast(`Filtered collections by "${btn.textContent}"`);
-        });
-      });
-
-      // Initial Render & Listeners
-      renderCollections('all');
-    });
-  </script>
-  
+  <script src="../shared/menu/menu-data.js"></script>
+  <script src="../shared/menu/pairing-data.js"></script>
+  <script src="collections-config.js"></script>
+  <script src="collections-controller.js"></script>
 </body>
 </html>
