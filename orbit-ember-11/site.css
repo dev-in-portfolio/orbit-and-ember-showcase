@@ -1673,3 +1673,173 @@ img, video, canvas, iframe { max-width: 100%; height: auto; }
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   gap: 1.2rem !important;
 }
+
+
+/* Package 9 Michelin WOW Master Visual Design System */
+.hero-wow {
+  position: relative !important;
+  padding: 2.5rem 1rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.hero-glow-aura {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 450px !important;
+  height: 250px !important;
+  background: radial-gradient(circle, rgba(224, 168, 104, 0.25) 0%, rgba(255, 140, 60, 0.1) 50%, transparent 80%) !important;
+  filter: blur(50px) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.subhead-tag-gold {
+  background: linear-gradient(135deg, rgba(224, 168, 104, 0.25) 0%, rgba(194, 122, 74, 0.15) 100%) !important;
+  border: 1px solid var(--color-primary-brand) !important;
+  color: #f3d39e !important;
+  padding: 0.35rem 1.1rem !important;
+  border-radius: 20px !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  display: inline-block !important;
+  margin-bottom: 0.8rem !important;
+  box-shadow: 0 4px 15px rgba(224, 168, 104, 0.2) !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.hero-title-wow {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 3.2rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.08 !important;
+  margin: 0.4rem 0 0.8rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 10%, #e0a868 60%, #ff8c38 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+.hero-intro-text-wow {
+  color: #e6dfd5 !important;
+  font-size: 1.12rem !important;
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.view-mode-toggle {
+  display: flex !important;
+  gap: 0.4rem !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  padding: 0.3rem !important;
+  border-radius: 30px !important;
+  border: 1px solid rgba(224, 168, 104, 0.3) !important;
+}
+
+.view-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #aba296 !important;
+  padding: 0.45rem 1rem !important;
+  border-radius: 20px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.view-btn.active, .view-btn:hover {
+  background: rgba(224, 168, 104, 0.25) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(224, 168, 104, 0.3) !important;
+}
+
+/* Grid View Mode Styles */
+.collections-list-wrapper.view-grid-mode {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+  gap: 2rem !important;
+}
+
+.grid-collection-card {
+  background: rgba(18, 14, 12, 0.95) !important;
+  border: 1px solid rgba(224, 168, 104, 0.35) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.85) !important;
+  transition: all 0.35s ease !important;
+}
+
+.grid-collection-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: var(--color-primary-brand) !important;
+  box-shadow: 0 25px 75px rgba(224, 168, 104, 0.25) !important;
+}
+
+.grid-card-media {
+  position: relative !important;
+  height: 220px !important;
+}
+
+.grid-card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.grid-card-body {
+  padding: 1.8rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.grid-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 2.1rem !important;
+  color: #ffffff !important;
+  margin: 0.3rem 0 0.6rem !important;
+}
+
+.grid-card-desc {
+  color: #e6dfd5 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.grid-card-preview-box {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-left: 2px solid var(--color-primary-brand) !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 0 10px 10px 0 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+/* Hover Shimmer & Glow Effects */
+.inline-dish-card {
+  transition: all 0.3s ease !important;
+}
+
+.inline-dish-card:hover {
+  border-color: var(--color-primary-brand) !important;
+  background: rgba(224, 168, 104, 0.08) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important;
+}
