@@ -72,6 +72,8 @@ test("approved location model is present", () => {
   const locationData = fs.readFileSync(path.join(root, "orbit-ember-14", "locations-data.js"), "utf8");
   for (const location of ["South End", "Ballantyne", "Lake Norman"]) assert.ok(locationData.includes(location));
   for (const location of ["Raleigh", "Charleston"]) assert.ok(!locationData.includes(location));
+  assert.match(locationData, /id: "location-ballantyne"[\s\S]*?canReserve: false[\s\S]*?canOrder: false/);
+  assert.match(locationData, /id: "location-lake-norman"[\s\S]*?publicAddress: null[\s\S]*?canGetDirections: false/);
 });
 
 test("signature, concierge, and collection implementations are substantive", () => {
