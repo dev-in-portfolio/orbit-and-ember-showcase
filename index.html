@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit & Ember Redesign Showcase | Showcase Portal</title>
+  <meta name="description" content="Presentation-ready Orbit & Ember website showcase. Compare the legacy website with the premium 6-page branding concept redesign.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0c0b;
+      --panel-bg: rgba(22, 21, 20, 0.7);
+      --panel-border: rgba(232, 189, 114, 0.12);
+      --panel-border-hover: rgba(232, 189, 114, 0.4);
+      --text: #f7f3ea;
+      --text-muted: #aba296;
+      --accent: #e8bd72;
+      --accent-hover: #f3d39e;
+      --accent-glow: rgba(232, 189, 114, 0.25);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 1rem;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      background-image: radial-gradient(circle at top, #241f1a 0%, #0d0c0b 60%);
+      min-height: 100vh;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 2rem));
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      text-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #ffdca3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+      box-shadow: var(--glass-shadow);
+      text-align: left;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--panel-border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55), 0 0 20px rgba(232, 189, 114, 0.08);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-emoji-box {
+      width: 3.2rem;
+      height: 3.2rem;
+      background: rgba(232, 189, 114, 0.1);
+      border: 1px solid rgba(232, 189, 114, 0.2);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+    }
+
+    .card-number {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(232, 189, 114, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .card-location {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.03em;
+    }
+
+    .card-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-action-group {
+      display: flex;
+      gap: 0.8rem;
+      width: 100%;
+    }
+
+    .card-action {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .card-action.primary {
+      background: var(--accent);
+      color: #11100f;
+      box-shadow: 0 4px 12px rgba(232, 189, 114, 0.15);
+    }
+
+    .card-action.primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(232, 189, 114, 0.3);
+    }
+
+    .card-action.secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .card-action.secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .card-action svg {
+      width: 1rem;
+      height: 1rem;
+      fill: currentColor;
+    }
+
+    /* Gallery Section Styles */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .gallery-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery-panel {
+      position: relative;
+      height: 380px;
+      border-radius: var(--radius);
+      border: 1px solid var(--panel-border);
+      background: var(--panel-bg);
+      overflow: hidden;
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-panel:hover {
+      border-color: var(--panel-border-hover);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain !important;
+      padding: 2.5rem !important;
+      background: rgba(10, 9, 8, 0.95);
+      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .gallery-panel:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+      padding: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.03em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    /* Rotating Panel Setup */
+    .rotating-panel .slide,
+    .rotating-panel-2 .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      pointer-events: none;
+    }
+
+    .rotating-panel .slide.active,
+    .rotating-panel-2 .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="eyebrow">Redesign Showcase</span>
+      <h1>Orbit &amp; Ember Concept</h1>
+      <p class="intro">Compare the legacy website (Before) and the premium 6-page branding concept redesign (After).</p>
+    </header>
+
+    <!-- Top Gallery Section -->
+    <section class="gallery-container">
+      <div class="gallery-panel static-panel">
+        <img src="images/orbit_ember_logo.png" alt="Orbit & Ember Kitchen + Bar Original Logo">
+        <div class="gallery-caption">Original Provided Logo</div>
+      </div>
+      <div class="gallery-panel rotating-panel">
+        <div class="slide active">
+          <img src="images/logo_refresh_1.png" alt="Example Logo Refresh 1 - Refined Heritage Upgrade">
+          <div class="gallery-caption">Example Logo Refresh</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_refresh_2.png" alt="Example Logo Refresh 2 - Modern Celestial Luxury">
+          <div class="gallery-caption">Example Logo Refresh</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_refresh_3.png" alt="Example Logo Refresh 3 - Ember Eclipse Emblem">
+          <div class="gallery-caption">Example Logo Refresh</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_refresh_4.png" alt="Example Logo Refresh 4 - O&E Orbital Monogram">
+          <div class="gallery-caption">Example Logo Refresh</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_refresh_5.jpg" alt="Example Logo Refresh 5 - Wood-Fired Orbit Mark">
+          <div class="gallery-caption">Example Logo Refresh</div>
+        </div>
+      </div>
+
+      <!-- Second Rotating Gallery Panel -->
+      <div class="gallery-panel rotating-panel-2">
+        <div class="slide active">
+          <img src="images/logo_redo_1.png" alt="Example Logo Redo 1">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_redo_2.png" alt="Example Logo Redo 2">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_redo_3.png" alt="Example Logo Redo 3">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_redo_4.png" alt="Example Logo Redo 4">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_redo_5.jpg" alt="Example Logo Redo 5">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+        <div class="slide">
+          <img src="images/logo_redo_6.jpg" alt="Example Logo Redo 6">
+          <div class="gallery-caption">Example Logo Redos</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="grid">
+      <!-- Original Site Card -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🍽️</div>
+          <span class="card-number">Original Site</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The legacy website draft for Orbit &amp; Ember before the Dark Star Consulting redesign.</p>
+        <div class="card-tags">
+          <span class="card-tag">Legacy Draft</span>
+          <span class="card-tag">Before</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-before/index.html" class="card-action secondary" style="flex: 1;">
+            <span>View Original Site</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Level 0 Card -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 12 copies of Level 0 +, each pointing to its own sandbox copy -->
+      <!-- Copy 1 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Brand Finish</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-1/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 2 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Menu Experience</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-2/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 3 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Photo Story</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-3/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 4 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Local Discovery</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-4/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 5 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Trust &amp; Reputation</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-5/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 6 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Order &amp; Reserve</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-6/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 7 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Events &amp; Private Dining</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-7/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      
+
+      
+
+      <!-- Copy 10 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Guest Engagement</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-10/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 11 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Menu Collections</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-11/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Copy 12 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🔥</div>
+          <span class="card-number">Level 0 + Signature Interactive</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The modern, ultra-premium 6-page branding concept redesign featuring oak wood-fired cuisine and cosmic mixology.</p>
+        <div class="card-tags">
+          <span class="card-tag">Wood-Fired Grill</span>
+          <span class="card-tag">Modern Mixology</span>
+          <span class="card-tag">6-Page Identity</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-12/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    
+      <!-- Copy 13 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">🍷</div>
+          <span class="card-number">Level 0 + Digital Menu Concierge</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Charlotte, NC</div>
+        <p class="card-description">The baseline 6-page branding concept enhanced with interactive dietary filtering, real-time ingredient search, and sommelier wine pairings.</p>
+        <div class="card-tags">
+          <span class="card-tag">Dietary Filters</span>
+          <span class="card-tag">Sommelier Pairings</span>
+          <span class="card-tag">Menu Concierge</span>
+          <span class="card-tag">After</span>
+        </div>
+        <div class="card-action-group">
+          <a href="restaurants/orbit-ember-13/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 14 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-emoji-box">📍</div>
+          <span class="card-number">Level 0 + Multi-Location</span>
+        </div>
+        <h2>Orbit &amp; Ember Kitchen + Bar</h2>
+        <div class="card-location">Multi-Location Showcase (Charlotte • Raleigh • Charleston)</div>
+        <p class="card-description">The baseline 6-page branding concept enhanced with multi-location venue switching, local menus, regional specials, and location selector.</p>
+        <div class="card-tags">
+          <span class="card-tag">Multi-Location</span>
+          <span class="card-tag">Regional Menus</span>
+          <span class="card-tag">Venue Switcher</span>
+          <span class="card-tag">Level 0 Baseline</span>
+        </div>
+        <div class="card-action-group">
+          <a href="orbit-ember-14/index.html" class="card-action primary" style="flex: 1;">
+            <span>View Redesign</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+
+    </main>
+  </div>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  
+  
+  <!-- Auto-rotating Slideshow Script -->
+  <script>
+    (() => {
+      const initSlideshow = (selector) => {
+        const slides = document.querySelectorAll(selector + ' .slide');
+        let currentSlide = 0;
+        
+        if (slides.length > 0) {
+          setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }, 3000);
+        }
+      };
+
+      initSlideshow('.rotating-panel');
+      initSlideshow('.rotating-panel-2');
+    })();
+  </script>
+</body>
+</html>

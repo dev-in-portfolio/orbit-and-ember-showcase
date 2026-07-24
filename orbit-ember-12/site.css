@@ -1,0 +1,430 @@
+/* Orbit & Ember - Cinematic Ambient Storytelling Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #080706;
+  --color-primary-brand: #e0a868;
+  --color-brand-glow: rgba(224, 168, 104, 0.4);
+  --color-text-main: #ffffff;
+  --color-text-muted: #e6dfd5;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Full-Bleed Ambient Background Layer */
+.cinematic-bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.65) 0%, rgba(8, 7, 6, 0.92) 100%), url('images/lounge-ambiance.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 1.2s ease-in-out;
+  z-index: 1;
+}
+
+.cinematic-ember-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--color-primary-brand);
+  color: #000;
+  font-weight: 700;
+  padding: 10px 20px;
+  z-index: 99999;
+}
+.skip-link:focus { top: 16px; }
+
+/* Minimal Transparent Header */
+.minimal-experience-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.4rem 2.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.95) 0%, rgba(8, 7, 6, 0.6) 80%, transparent 100%);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo span {
+  color: var(--color-primary-brand);
+  font-weight: 300;
+  font-size: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 0.75rem;
+}
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Buttons */
+.cta-btn {
+  background: linear-gradient(135deg, #e0a868 0%, #b87b3e 100%);
+  color: #080706;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(224, 168, 104, 0.35);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(224, 168, 104, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 168, 104, 0.4);
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(224, 168, 104, 0.22);
+  border-color: var(--color-primary-brand);
+  transform: translateY(-2px);
+}
+
+/* Floating Viewport */
+.floating-experience-viewport {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6.5rem 2.8rem 3rem;
+  pointer-events: none;
+}
+
+.floating-screen {
+  width: 100%;
+  max-width: 640px;
+  pointer-events: auto;
+}
+
+.editorial-card-panel {
+  background: rgba(10, 8, 7, 0.88);
+  border: 1px solid rgba(224, 168, 104, 0.4);
+  border-radius: 22px;
+  padding: 3.2rem;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.95);
+}
+
+.floating-flow-container {
+  width: 100%;
+  max-width: 560px;
+  pointer-events: auto;
+}
+
+.floating-step-panel {
+  background: rgba(10, 8, 7, 0.86);
+  border: 1px solid rgba(224, 168, 104, 0.38);
+  border-radius: 22px;
+  padding: 2.5rem;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.95);
+}
+
+.step-meta {
+  margin-bottom: 1.8rem;
+}
+
+.step-num-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-brand);
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.step-meta h2 {
+  font-family: var(--font-display);
+  color: #ffffff;
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.15;
+}
+
+.step-meta p {
+  color: #e6dfd5;
+  font-size: 1.05rem;
+}
+
+.subhead-tag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-brand);
+  letter-spacing: 0.14em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--color-primary-brand);
+}
+
+.hero-desc {
+  color: #e6dfd5;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+/* Option Selector Rail */
+.option-selector-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.rail-option-btn {
+  background: rgba(18, 15, 13, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rail-option-btn:hover, .rail-option-btn.active {
+  background: rgba(224, 168, 104, 0.25);
+  border-color: var(--color-primary-brand);
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(224, 168, 104, 0.3);
+}
+
+.rail-option-text h3 {
+  font-family: var(--font-display);
+  color: #ffffff;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.rail-option-text span {
+  color: #e6dfd5;
+  font-size: 0.92rem;
+  display: block;
+}
+
+.floating-nav-bar {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Result Modal Overlay */
+.editorial-result-modal {
+  background: rgba(10, 8, 7, 0.92);
+  border: 1px solid rgba(224, 168, 104, 0.5);
+  border-radius: 26px;
+  padding: 3.2rem;
+  max-width: 820px;
+  backdrop-filter: blur(26px);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.95);
+}
+
+.result-title {
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  line-height: 1.1;
+}
+
+.result-intro {
+  color: #e6dfd5;
+  font-size: 1.15rem;
+  margin-bottom: 2.2rem;
+}
+
+.result-menu-path {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.res-path-box {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.4rem;
+}
+
+.res-path-box.highlight-zp {
+  border-color: rgba(224, 168, 104, 0.5);
+  background: rgba(224, 168, 104, 0.15);
+}
+
+.res-path-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-brand);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.res-path-box p {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #1a1714;
+  border: 1px solid var(--color-primary-brand);
+  color: #ffffff;
+  padding: 1rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toast-notification.show-toast {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Ken Burns Background Motion Effect */
+.cinematic-bg-layer.ken-burns-active {
+  animation: kenBurnsZoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurnsZoom {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+/* Dish Inspector Modal Overlay */
+.dish-inspector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(6, 5, 4, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.dish-inspector-modal {
+  background: rgba(14, 11, 9, 0.94);
+  border: 1px solid var(--color-primary-brand);
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  padding: 2.8rem;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.95);
+  position: relative;
+}
+
+.dish-inspector-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-primary-brand);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+/* Global Uncropped Logo Styling */
+.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
+  object-fit: contain !important;
+  max-height: 70px !important;
+  width: auto !important;
+  padding: 4px !important;
+  display: inline-block !important;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-6/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve a Table | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Reserve a table online via Resy for wood-fired dinner or weekend brunch at Orbit &amp; Ember in Charlotte, NC. View seating options and policies.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-6/reserve.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="reserve-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Order &amp; Reserve Master Tier</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn active">Reserve Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Table Reservations</span>
+    </nav>
+
+    <div class="section-header-center">
+      <span class="subhead-tag">Resy Online Booking</span>
+      <h1 class="section-title">Reserve Your <em>Table</em></h1>
+      <p class="section-desc">Reservations are encouraged for dinner, weekend brunch, and larger groups. Walk-in guests are also welcomed when space is available.</p>
+    </div>
+
+    <!-- Interactive Resy Booking Widget Card -->
+    <div class="reservation-card-wrapper">
+      <div class="resy-booking-form-box">
+        <h2 class="card-heading">Find a Table</h2>
+        
+        <!-- Seating Area Preference Switcher -->
+        <label style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #c27a4a; display: block; margin-top: 1rem;">Select Seating Preference</label>
+        <div class="seating-area-selector">
+          <button class="seating-tab-btn active" data-area="main">🔥 Main Dining Room</button>
+          <button class="seating-tab-btn" data-area="bar">🍸 Walnut Bar &amp; Lounge</button>
+          <button class="seating-tab-btn" data-area="patio">🌿 Heated Outdoor Patio</button>
+        </div>
+        
+        <div id="seating-info-panel" class="seating-info-display">
+          <strong>Main Dining Room:</strong> Prime seating with full views of our open oak wood-fired hearth and open kitchen.
+        </div>
+
+        <form id="resy-booking-form" action="https://resy.com/cities/clt/orbit-and-ember" method="GET" target="_blank" rel="noopener noreferrer">
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="resy-date">Date</label>
+              <input type="date" id="resy-date" name="date" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="resy-time">Preferred Service</label>
+              <select id="resy-time" name="time" class="form-input">
+                <option value="17:00">Dinner (5:00 PM - 10:00 PM)</option>
+                <option value="10:30">Weekend Brunch (10:00 AM - 2:30 PM)</option>
+                <option value="21:00">Late Evening Spirits (9:00 PM+)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="resy-seats">Guests</label>
+              <select id="resy-seats" name="seats" class="form-input">
+                <option value="2">2 Guests</option>
+                <option value="1">1 Guest</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="7">7 Guests</option>
+                <option value="8">8 Guests (Max Online)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions-row" style="margin-top: 1.5rem;">
+            <button type="submit" class="cta-btn primary-booking-btn">
+              <span>📅 Reserve a Table via Resy</span>
+            </button>
+            <a href="https://resy.com/cities/clt/orbit-and-ember/waitlist" target="_blank" rel="noopener noreferrer" class="secondary-waitlist-btn">
+              ⚡ Join Live Waitlist
+            </a>
+          </div>
+        </form>
+
+        <div class="large-party-notice" style="margin-top: 1.5rem;">
+          <p><strong>Planning for 9 or more guests?</strong> Parties larger than 8 require direct coordination. Please <a href="experience.html" style="color: #c27a4a; text-decoration: underline;">submit a Private Dining inquiry</a> or call <a href="tel:+17045550198" style="color: #c27a4a;">(704) 555-0198</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reservation Policies & Walk-in Guidance Grid -->
+    <div class="policies-grid-2" style="margin-top: 3rem;">
+      <div class="policy-card">
+        <h3>📋 Reservation Policies</h3>
+        <ul>
+          <li><strong>Grace Period:</strong> Reserved tables are held for 15 minutes after the reservation time. Please call if your party is running late.</li>
+          <li><strong>Booking Window:</strong> Reservations open up to 30 days in advance daily at 10:00 AM.</li>
+          <li><strong>Complete Party Seating:</strong> We seat parties once all guests have arrived so the table can begin service together.</li>
+          <li><strong>Seating Requests:</strong> Patio and specific table requests are welcomed but subject to weather and availability.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>🚶 Walk-In Hospitality</h3>
+        <p>Walk-in guests are welcomed whenever space is available. A portion of our walnut bar and lounge is reserved nightly for walk-in dining.</p>
+        <p>During peak weekend hours, our team will quote an estimated wait or add your party to the live waitlist.</p>
+        <div class="call-fallback-box" style="margin-top: 1rem;">
+          <span>Need immediate availability info?</span>
+          <a href="tel:+17045550198" class="phone-call-btn">📞 Call (704) 555-0198</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="mobile-action-bar" role="navigation" aria-label="Quick Local Actions">
+    <a href="reserve.html" class="bar-action-item highlight"><span>📅 Reserve</span></a>
+    <a href="menu.html" class="bar-action-item"><span>🍽️ Menu</span></a>
+    <a href="order.html" class="bar-action-item"><span>🛍️ Order</span></a>
+    <a href="https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="bar-action-item"><span>🗺️ Map</span></a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Actions</h4>
+        <ul>
+          <li><a href="reserve.html">Reserve a Table</a></li>
+          <li><a href="order.html">Order Takeout</a></li>
+          <li><a href="experience.html">Private Dining</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="visit.html">Directions &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, and ordering services.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="actions-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('resy-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+
+      // Seating Area Selector Logic
+      const seatingBtns = document.querySelectorAll('.seating-tab-btn');
+      const infoPanel = document.getElementById('seating-info-panel');
+      const seatingText = {
+        main: "<strong>Main Dining Room:</strong> Prime seating with full views of our open oak wood-fired hearth and open kitchen.",
+        bar: "<strong>Walnut Bar & Lounge:</strong> High-top and bar seating suitable for casual dining, cocktails, and walk-in seating.",
+        patio: "<strong>Heated Outdoor Patio:</strong> Covered terrace with radiant heaters. Subject to weather and availability."
+      };
+
+      seatingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          seatingBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const area = btn.getAttribute('data-area');
+          if (seatingText[area] && infoPanel) {
+            infoPanel.innerHTML = seatingText[area];
+          }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>

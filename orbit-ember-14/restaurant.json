@@ -1,0 +1,31 @@
+{
+  "id": "orbit-ember",
+  "name": "Orbit & Ember Kitchen + Bar",
+  "slug": "orbit-ember",
+  "location": {
+    "city": "Charlotte",
+    "state": "NC",
+    "address": "123 Main Street"
+  },
+  "stage": "showcase",
+  "status": "presentation-ready",
+  "sourceRepository": "dev-in-portfolio/restaurant-staging",
+  "sourcePath": "restaurants/orbit-ember",
+  "currentWebsiteUrl": "orbit-ember-before/index.html",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/orbit-ember/index.html",
+  "desktopReviewed": true,
+  "tabletReviewed": true,
+  "mobileReviewed": true,
+  "linksVerified": true,
+  "contentVerified": true,
+  "performanceReviewed": true,
+  "accessibilityReviewed": true,
+  "comparisonButtonAdded": true,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": true,
+  "approvedForPresentation": true,
+  "promotedToShowcaseAt": "2026-07-22T12:00:00.000Z",
+  "badge": "FINAL SHOWCASE",
+  "buttonText": "View Final Build"
+}

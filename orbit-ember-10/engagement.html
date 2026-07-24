@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-10/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Around the Table — Guest Engagement | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Explore seasonal polls, choose your ideal evening, vote on dish matchups, and share your Orbit &amp; Ember moments in Charlotte, NC.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-10/engagement.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="engagement-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Guest Engagement Showcase</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="engagement.html" class="active">Around the Table</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Around the Table (Guest Engagement)</span>
+    </nav>
+
+    <div class="section-header-center">
+      <span class="subhead-tag">Around the Table</span>
+      <h1 class="section-title">A Little More to <em>Explore</em></h1>
+      <p class="section-desc">Choose a favorite dish, answer the seasonal question, or discover the kind of Orbit &amp; Ember evening that fits the moment.</p>
+    </div>
+
+    <!-- Seasonal Question Poll Component -->
+    <section class="poll-card-section" style="margin-top: 2rem;">
+      <div class="poll-card">
+        <span class="poll-badge">Spring 2026 Question</span>
+        <h2>Which flavor direction would you most like to explore next season?</h2>
+        <p style="color: #a39b90; font-size: 0.92rem; margin-bottom: 1.5rem;">Cast your vote below to see current guest interest across our upcoming hearth menu concepts.</p>
+
+        <form id="seasonal-poll-form">
+          <div class="poll-options-grid">
+            <label class="poll-option-label">
+              <input type="radio" name="flavor_poll" value="citrus" required>
+              <span>🌿 Charred citrus and herbs</span>
+            </label>
+            <label class="poll-option-label">
+              <input type="radio" name="flavor_poll" value="mushroom">
+              <span>🍄 Deep mushroom and black garlic</span>
+            </label>
+            <label class="poll-option-label">
+              <input type="radio" name="flavor_poll" value="fruit">
+              <span>🍑 Stone fruit and warm spice</span>
+            </label>
+            <label class="poll-option-label">
+              <input type="radio" name="flavor_poll" value="pepper">
+              <span>🔥 Smoked pepper and tomato</span>
+            </label>
+            <label class="poll-option-label">
+              <input type="radio" name="flavor_poll" value="butter">
+              <span>🌾 Brown butter and toasted grains</span>
+            </label>
+          </div>
+
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <button type="submit" class="cta-btn" style="padding: 0.8rem 2.2rem; cursor: pointer;">Cast My Vote</button>
+          </div>
+        </form>
+
+        <div id="poll-results-display" class="poll-results-box" style="display: none; margin-top: 1.5rem;">
+          <h4>✅ Your vote is in. Thanks for joining the seasonal question!</h4>
+          <p style="font-size: 0.85rem; color: #a39b90; margin-bottom: 1rem;">Current Guest Interest Breakdown (Demonstration Data):</p>
+
+          <div class="result-bar-row">
+            <span>Stone fruit and warm spice</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 31%;"></div></div>
+            <strong>31%</strong>
+          </div>
+          <div class="result-bar-row">
+            <span>Deep mushroom and black garlic</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 28%;"></div></div>
+            <strong>28%</strong>
+          </div>
+          <div class="result-bar-row">
+            <span>Charred citrus and herbs</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 22%;"></div></div>
+            <strong>22%</strong>
+          </div>
+          <div class="result-bar-row">
+            <span>Smoked pepper and tomato</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 12%;"></div></div>
+            <strong>12%</strong>
+          </div>
+          <div class="result-bar-row">
+            <span>Brown butter and toasted grains</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 7%;"></div></div>
+            <strong>7%</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Your Evening Selector -->
+    <section class="choose-evening-section" style="margin-top: 4rem;">
+      <div class="section-header-center" style="margin-bottom: 2rem;">
+        <span class="subhead-tag">Mood &amp; Occasion Finder</span>
+        <h2 class="section-title">Choose Your <em>Evening</em></h2>
+        <p class="section-desc">What kind of gathering are you planning? Select an evening style to see suggested dish &amp; cocktail highlights.</p>
+      </div>
+
+      <div class="evening-buttons-row">
+        <button class="eve-btn active" data-eve="date">🌙 Date Night</button>
+        <button class="eve-btn" data-eve="friends">🥂 Friends Gathering</button>
+        <button class="eve-btn" data-eve="drinks">🍸 Drinks &amp; Small Plates</button>
+        <button class="eve-btn" data-eve="brunch">🍳 Weekend Brunch</button>
+        <button class="eve-btn" data-eve="celeb">🎉 Celebration</button>
+      </div>
+
+      <div id="evening-result-panel" class="evening-card">
+        <span class="eve-tag">Suggested Experience</span>
+        <h3>A Slow Dinner Near the Fire</h3>
+        <p>Warm light, a thoughtful drink, and enough time for something worth sharing around the table.</p>
+        <ul class="eve-highlights-list">
+          <li>🍸 <strong>Cocktail:</strong> Copper Moon (Smoked Bourbon, Amaro, Orange)</li>
+          <li>🔥 <strong>Starter:</strong> Coal-Roasted Carrots with Harissa Yogurt</li>
+          <li>🥩 <strong>Main:</strong> Black Garlic Braised Short Rib</li>
+          <li>🍯 <strong>Dessert:</strong> Burnt Honey Cheesecake</li>
+        </ul>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="reserve.html" class="cta-btn">Reserve a Table for Two</a>
+          <button id="share-card-btn" class="btn-secondary">🔗 Copy Experience Card</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- This or That Matchup Component -->
+    <section class="matchup-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">This or <em>That</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;">Which one would reach your table first?</p>
+
+      <div class="matchup-grid-2">
+        <div class="matchup-option-card">
+          <span class="dish-badge">Signature Entrée</span>
+          <h3>Black Garlic Short Rib</h3>
+          <p>Slow-braised over oak embers with roasted root vegetables and red wine reduction.</p>
+          <button class="matchup-vote-btn cta-btn" data-dish="Short Rib" style="margin-top: 1rem; cursor: pointer;">Choose Short Rib</button>
+        </div>
+        <div class="matchup-option-card">
+          <span class="dish-badge">Hearth Classic</span>
+          <h3>Wood-Fired Roasted Chicken</h3>
+          <p>Herb-marinated Half Chicken with charred lemon, natural jus, and hearth potatoes.</p>
+          <button class="matchup-vote-btn cta-btn" data-dish="Wood-Fired Chicken" style="margin-top: 1rem; cursor: pointer;">Choose Chicken</button>
+        </div>
+      </div>
+      <div id="matchup-feedback-banner" class="status-success-box" style="display: none; margin-top: 1.5rem; text-align: center;">
+        🎉 Good choice! Your vote for <strong id="selected-matchup-item">Short Rib</strong> has been counted.
+      </div>
+    </section>
+
+    <!-- Share the Moment (Moderated Guest Photo Prompt) -->
+    <section class="photo-prompt-section" style="margin-top: 4rem;">
+      <div class="section-header-center" style="margin-bottom: 2rem;">
+        <span class="subhead-tag">Guest Submissions</span>
+        <h2 class="section-title">Share the <em>Moment</em></h2>
+        <p class="section-desc">Captured a favorite plate, cocktail, or corner of the room? Submit your Orbit &amp; Ember moment for our curated guest gallery.</p>
+      </div>
+
+      <div class="photo-upload-card">
+        <form id="photo-upload-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="photo-file">Upload Image (JPG, PNG, WEBP) *</label>
+              <input type="file" id="photo-file" class="form-input" accept="image/*" required>
+            </div>
+            <div class="form-group">
+              <label for="photo-name">First Name or Initials</label>
+              <input type="text" id="photo-name" class="form-input" placeholder="Eleanor R.">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label for="photo-caption">Short Caption</label>
+            <input type="text" id="photo-caption" class="form-input" placeholder="e.g., Anniversary dinner at the hearth bar!">
+          </div>
+
+          <div style="margin-top: 1.2rem;">
+            <label class="checkbox-label" style="font-size: 0.85rem; color: #d1c8bd; cursor: pointer;">
+              <input type="checkbox" id="photo-perm" required> I confirm that I have the right to submit this image and grant Orbit &amp; Ember permission to review it for possible use in the guest gallery.
+            </label>
+          </div>
+
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <button type="submit" class="cta-btn" style="padding: 0.85rem 2.2rem; cursor: pointer;">Submit Photo for Review</button>
+          </div>
+        </form>
+
+        <div id="photo-success-box" class="status-success-box" style="display: none; margin-top: 1.5rem;">
+          ✅ <strong>Thanks for sharing!</strong> Your photo submission has been received for moderation. Approved moments are featured in our <em>Around the Table</em> gallery.
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Guest Moments Gallery -->
+    <section class="featured-moments-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Around the <em>Gallery</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;">Curated moments shared by our guests.</p>
+
+      <div class="moments-grid-3">
+        <div class="moment-card">
+          <img src="images/cosmic-cocktail.jpg" alt="Cosmic Cocktail at Orbit & Ember" class="moment-img">
+          <div class="moment-caption">"The Copper Moon cocktail is pure art." — <em>Marcus T.</em></div>
+        </div>
+        <div class="moment-card">
+          <img src="images/wood-fired-hearth.jpg" alt="Wood-Fired Hearth Kitchen" class="moment-img">
+          <div class="moment-caption">"Front row seats at the hearth counter!" — <em>Elena &amp; James</em></div>
+        </div>
+        <div class="moment-card">
+          <img src="images/featured-steak.jpg" alt="Featured Steak Dish" class="moment-img">
+          <div class="moment-caption">"Celebrated 5 years around the table." — <em>David K.</em></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="engagement.html">Around the Table</a></li>
+          <li><a href="visit.html">Visit &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, loyalty, performance-reporting, operations, and guest-engagement services.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="engagement-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Seasonal Poll Submit
+      const pollForm = document.getElementById('seasonal-poll-form');
+      const pollResults = document.getElementById('poll-results-display');
+      if (pollForm && pollResults) {
+        pollForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          pollForm.style.display = 'none';
+          pollResults.style.display = 'block';
+        });
+      }
+
+      // Choose Your Evening Switcher
+      const eveBtns = document.querySelectorAll('.eve-btn');
+      const evePanel = document.getElementById('evening-result-panel');
+
+      const eveData = {
+        date: `<h3>A Slow Dinner Near the Fire</h3><p>Warm light, a thoughtful drink, and enough time for something worth sharing around the table.</p><ul class="eve-highlights-list"><li>🍸 <strong>Cocktail:</strong> Copper Moon (Smoked Bourbon)</li><li>🔥 <strong>Starter:</strong> Coal-Roasted Carrots</li><li>🥩 <strong>Main:</strong> Black Garlic Short Rib</li><li>🍯 <strong>Dessert:</strong> Burnt Honey Cheesecake</li></ul><div style="margin-top: 1.5rem; display: flex; gap: 1rem;"><a href="reserve.html" class="cta-btn">Reserve a Table for Two</a></div>`,
+        friends: `<h3>Build the Table Together</h3><p>Shared starters, seasonal plates, and a few different drinks make the table the experience.</p><ul class="eve-highlights-list"><li>🥖 <strong>Shared:</strong> Hearth Flatbread &amp; Dips</li><li>🥗 <strong>Greens:</strong> Ember Roasted Beet Salad</li><li>🍷 <strong>Wine:</strong> Oregon Pinot Noir Bottle</li></ul><div style="margin-top: 1.5rem; display: flex; gap: 1rem;"><a href="reserve.html" class="cta-btn">Reserve for a Group</a></div>`,
+        drinks: `<h3>Start at the Bar</h3><p>Signature cocktails, spirit-free creations, and a table of smaller hearth-fired plates.</p><ul class="eve-highlights-list"><li>🍸 <strong>Drink:</strong> Solar Flare (Craft Cocktail)</li><li>🌿 <strong>Zero-Proof:</strong> Lunar Bloom</li><li>🧀 <strong>Bites:</strong> Artisanal Cheese Board</li></ul><div style="margin-top: 1.5rem; display: flex; gap: 1rem;"><a href="menu.html" class="cta-btn">View Cocktail Menu</a></div>`,
+        brunch: `<h3>A Brighter Orbit &amp; Ember</h3><p>Brunch plates, specialty coffee, morning spritzes, and no need to rush on a weekend.</p><ul class="eve-highlights-list"><li>🍳 <strong>Classic:</strong> Ember Benedict</li><li>🧇 <strong>Sweet:</strong> Peach &amp; Cardamom French Toast</li><li>🥂 <strong>Spritz:</strong> First Light Mimosa</li></ul><div style="margin-top: 1.5rem; display: flex; gap: 1rem;"><a href="menu.html" class="cta-btn">View Brunch Menu</a></div>`,
+        celeb: `<h3>Give the Occasion a Table</h3><p>Reserve for a smaller milestone celebration or explore The Ember Room for private gatherings.</p><ul class="eve-highlights-list"><li>🥂 <strong>Toast:</strong> Sparkling Rosé</li><li>🥩 <strong>Entrée:</strong> Oak-Grilled Ribeye</li><li>🎂 <strong>Perk:</strong> Birthday Dessert Benefit</li></ul><div style="margin-top: 1.5rem; display: flex; gap: 1rem;"><a href="experience.html" class="cta-btn">Explore Private Dining</a></div>`
+      };
+
+      eveBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          eveBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const key = btn.getAttribute('data-eve');
+          if (eveData[key] && evePanel) {
+            evePanel.innerHTML = eveData[key];
+          }
+        });
+      });
+
+      // Matchup Vote Buttons
+      const matchBtns = document.querySelectorAll('.matchup-vote-btn');
+      const matchBanner = document.getElementById('matchup-feedback-banner');
+      const matchItemSpan = document.getElementById('selected-matchup-item');
+
+      matchBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const dishName = btn.getAttribute('data-dish');
+          if (matchItemSpan) matchItemSpan.textContent = dishName;
+          if (matchBanner) matchBanner.style.display = 'block';
+        });
+      });
+
+      // Photo Upload Form Submit
+      const photoForm = document.getElementById('photo-upload-form');
+      const photoSuccess = document.getElementById('photo-success-box');
+      if (photoForm && photoSuccess) {
+        photoForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          photoForm.style.display = 'none';
+          photoSuccess.style.display = 'block';
+        });
+      }
+    });
+  </script>
+  
+</body>
+</html>
