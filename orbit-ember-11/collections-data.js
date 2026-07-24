@@ -21,6 +21,66 @@ const COLLECTIONS_CONFIG = {
       ]
     },
     {
+      id: "table-for-two",
+      name: "A Table for Two",
+      type: "Occasion",
+      eyebrow: "An Unhurried Evening",
+      tag: "Two Guests",
+      desc: "A compact progression of hearth plates, one shared main, and a considered finish.",
+      items: [
+        { name: "Hearth Bread & Cultured Butter", price: "$8", note: "House sourdough with smoked sea salt & jam" },
+        { name: "Black Garlic Short Rib", price: "$34", note: "Slow-braised with parsnip purée & red wine reduction" }
+      ]
+    },
+    {
+      id: "gather-table",
+      name: "Gather the Table",
+      type: "Group Dining",
+      eyebrow: "For the Whole Table",
+      tag: "Shared Courses",
+      desc: "Flexible shared plates that let a larger table build its own progression.",
+      items: [
+        { name: "Seasonal Cheese & Preserve Board", price: "$19", note: "Regional cheeses, spiced nuts & toasted bread" },
+        { name: "Ember-Roasted Chicken", price: "$29", note: "Half chicken with roasted garlic jus & fingerlings" }
+      ]
+    },
+    {
+      id: "current-season",
+      name: "The Current Season",
+      type: "Seasonal",
+      eyebrow: "Now at the Hearth",
+      tag: "Rotating",
+      desc: "A seasonal edit whose availability is always confirmed against the standard menu.",
+      items: [
+        { name: "Charred Carrots with Whipped Feta", price: "$14", note: "Fire-charred with toasted seeds & warm-spice honey" },
+        { name: "Wood-Fired Fruit", price: "$11", note: "Cultured cream, toasted grain & warm spice" }
+      ]
+    },
+    {
+      id: "chef-julian",
+      name: "Chef Julian’s Current Picks",
+      type: "Chef Edit",
+      eyebrow: "From Chef Julian Reyes",
+      tag: "Current Picks",
+      desc: "A short editorial route through the dishes that best express the hearth today.",
+      items: [
+        { name: "Fire-Roasted Oysters", price: "$18", note: "Herb butter, breadcrumbs & smoked chile" },
+        { name: "Black Garlic Short Rib", price: "$34", note: "Slow-braised with parsnip purée & red wine reduction" }
+      ]
+    },
+    {
+      id: "private-dining",
+      name: "Private Dining Menus",
+      type: "Events",
+      eyebrow: "Inquiry Planning",
+      tag: "Sample Direction",
+      desc: "Sample menu direction for an event inquiry; selections and availability are not confirmed here.",
+      items: [
+        { name: "Hearth Bread & Cultured Butter", price: "$8", note: "House sourdough with smoked sea salt & jam" },
+        { name: "Ember-Roasted Chicken", price: "$29", note: "Half chicken with roasted garlic jus & fingerlings" }
+      ]
+    },
+    {
       id: "fire",
       name: "Around the Fire",
       type: "Dinner",
@@ -104,5 +164,5 @@ const COLLECTIONS_CONFIG = {
     { food: "Wood-Fired Chicken", drink: "Solar Flare Cocktail", note: "Smoked chile and grapefruit highlight the citrus-marinated chicken skin." },
     { food: "Charred Carrots", drink: "Lunar Bloom (Zero-Proof)", note: "Tart berry & lime provide a crisp, refreshing contrast to warm-spice honey." }
   ],
-  showcaseNotice: "Orbit & Ember Kitchen + Bar is a fictional restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, loyalty, performance-reporting, operations, guest-engagement, and menu-collection services."
+  showcaseNotice: "Orbit & Ember Kitchen + Bar is a fictional restaurant concept. Menu collections are demonstrations and resolve current facts from the standard menu."
 };

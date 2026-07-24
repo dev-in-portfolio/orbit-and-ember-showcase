@@ -17,6 +17,12 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   let pathname = url.pathname;
+  const cleanRoutes = {
+    '/the-orbit-experience': '/orbit-ember-12/experience.html',
+    '/menu-concierge': '/orbit-ember-13/concierge.html',
+    '/locations': '/orbit-ember-14/locations.html'
+  };
+  pathname = cleanRoutes[pathname] || pathname;
 
   console.log(`[Request] ${req.method} ${pathname}`);
 

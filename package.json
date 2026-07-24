@@ -1,0 +1,10 @@
+{
+  "name": "orbit-and-ember-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "validate": "node --test"
+  }
+}
+

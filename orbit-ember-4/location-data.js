@@ -1,4 +1,4 @@
-// Master Business Information & Real-Time Local Engine V3 for Orbit & Ember Kitchen + Bar
+﻿// Master Business Information & Real-Time Local Engine V3 for Orbit & Ember Kitchen + Bar
 
 const BUSINESS_INFO = {
   name: "Orbit & Ember Kitchen + Bar",
@@ -21,9 +21,9 @@ const BUSINESS_INFO = {
     longitude: -80.8431
   },
   urls: {
-    website: "http://localhost:8082/restaurants/orbit-ember-4/",
-    menu: "http://localhost:8082/restaurants/orbit-ember-4/menu.html",
-    reservation: "http://localhost:8082/restaurants/orbit-ember-4/reserve.html",
+    website: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/",
+    menu: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/menu.html",
+    reservation: "https://restaurant-showcase-demos.netlify.app/orbit-ember-4/reserve.html",
     googleMaps: "https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202",
     appleMaps: "https://maps.apple.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202",
     waze: "https://waze.com/ul?q=300+S+Tryon+St+Charlotte+NC"
@@ -59,17 +59,17 @@ function getRealtimeStatusV3() {
   if (currentDayName === "Saturday" || currentDayName === "Sunday") {
     const isBrunch = currentHour >= 10.0 && currentHour <= 14.5;
     const isDinner = currentHour >= 16.5 && currentHour <= todayInfo.closeHour;
-    if (isBrunch) return { isOpen: true, text: "🟢 Open Now • Weekend Brunch (Until 2:30 PM)", badgeClass: "is-open" };
-    if (isDinner) return { isOpen: true, text: `🟢 Open Now • Dinner Service (Until ${currentDayName === "Sunday" ? "9:30 PM" : "11:00 PM"})`, badgeClass: "is-open" };
-    if (currentHour < 10.0) return { isOpen: false, text: "🟡 Closed Now • Brunch Opens at 10:00 AM", badgeClass: "is-closed" };
-    if (currentHour > 14.5 && currentHour < 16.5) return { isOpen: false, text: "🟡 Afternoon Prep • Dinner Opens at 4:30 PM", badgeClass: "is-closed" };
-    return { isOpen: false, text: "🟡 Closed Now • Opens Tomorrow at 10:00 AM", badgeClass: "is-closed" };
+    if (isBrunch) return { isOpen: true, text: "ðŸŸ¢ Open Now â€¢ Weekend Brunch (Until 2:30 PM)", badgeClass: "is-open" };
+    if (isDinner) return { isOpen: true, text: `ðŸŸ¢ Open Now â€¢ Dinner Service (Until ${currentDayName === "Sunday" ? "9:30 PM" : "11:00 PM"})`, badgeClass: "is-open" };
+    if (currentHour < 10.0) return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Brunch Opens at 10:00 AM", badgeClass: "is-closed" };
+    if (currentHour > 14.5 && currentHour < 16.5) return { isOpen: false, text: "ðŸŸ¡ Afternoon Prep â€¢ Dinner Opens at 4:30 PM", badgeClass: "is-closed" };
+    return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Opens Tomorrow at 10:00 AM", badgeClass: "is-closed" };
   } else {
     if (currentHour >= todayInfo.openHour && currentHour <= todayInfo.closeHour) {
-      return { isOpen: true, text: "🟢 Open Now • Wood-Fired Dinner & Bar", badgeClass: "is-open" };
+      return { isOpen: true, text: "ðŸŸ¢ Open Now â€¢ Wood-Fired Dinner & Bar", badgeClass: "is-open" };
     }
-    if (currentHour < todayInfo.openHour) return { isOpen: false, text: "🟡 Closed Now • Dinner Opens Today at 4:30 PM", badgeClass: "is-closed" };
-    return { isOpen: false, text: "🟡 Closed Now • Opens Tomorrow at 4:30 PM", badgeClass: "is-closed" };
+    if (currentHour < todayInfo.openHour) return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Dinner Opens Today at 4:30 PM", badgeClass: "is-closed" };
+    return { isOpen: false, text: "ðŸŸ¡ Closed Now â€¢ Opens Tomorrow at 4:30 PM", badgeClass: "is-closed" };
   }
 }
 
@@ -79,7 +79,7 @@ function copyAddressToClipboard() {
   navigator.clipboard.writeText(addr).then(() => {
     const toast = document.createElement('div');
     toast.className = 'copy-address-toast';
-    toast.textContent = `📋 Copied "${addr}" to clipboard!`;
+    toast.textContent = `ðŸ“‹ Copied "${addr}" to clipboard!`;
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
   }).catch(err => {
