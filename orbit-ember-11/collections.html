@@ -38,7 +38,7 @@
     </div>
   </header>
 
-  <!-- Compact Main Container -->
+  <!-- Main Container -->
   <main id="main-content" class="container" style="padding-top: 1.5rem; padding-bottom: 5rem;">
     
     <!-- Styled Branded Breadcrumb -->
@@ -59,14 +59,423 @@
         <h2 class="filter-title">Explore by Collection</h2>
         <span id="dynamic-col-total" class="col-total-badge">12 Curated Collections</span>
       </div>
-      <div id="collections-category-nav" class="cat-tabs-wrapper"></div>
+      <div id="collections-category-nav" class="cat-tabs-wrapper">
+        <button class="cat-tab-btn active">All Collections <span class="cat-count">12</span></button>
+        <button class="cat-tab-btn">Signature &amp; Fire <span class="cat-count">4</span></button>
+        <button class="cat-tab-btn">Occasions &amp; Sharing <span class="cat-count">3</span></button>
+        <button class="cat-tab-btn">Brunch &amp; Daytime <span class="cat-count">1</span></button>
+        <button class="cat-tab-btn">Cocktails &amp; Zero-Proof <span class="cat-count">2</span></button>
+        <button class="cat-tab-btn">Dessert &amp; Nightcap <span class="cat-count">1</span></button>
+        <button class="cat-tab-btn">Private Dining <span class="cat-count">1</span></button>
+      </div>
     </section>
 
     <!-- Featured Collection Spotlight Container -->
-    <section id="featured-collection-container" style="margin-bottom: 3.5rem;"></section>
+    <section id="featured-collection-container" style="margin-bottom: 3.5rem;">
+      <div class="featured-michelin-card">
+        <div class="featured-michelin-media">
+          <img src="images/collection-signature.jpg" alt="Signature Orbit &amp; Ember">
+          <div class="featured-media-overlay"></div>
+          <span class="feat-michelin-badge">★ FEATURED EDITORIAL COLLECTION</span>
+          <span class="feat-service-pill">Dinner &amp; Drinks</span>
+        </div>
+        <div class="featured-michelin-body">
+          <span class="subhead-tag">The Flagship Experience • 4 Curated Courses</span>
+          <h2 class="featured-michelin-title">Signature Orbit &amp; Ember</h2>
+          <p class="featured-michelin-desc">Our signature collection highlights the pinnacle of open hearth wood-fired cooking and celestial mixology. From 14-hour black garlic braised short ribs to high-rye bourbon aged with flamed orange peel, these preparations embody the soul of Orbit &amp; Ember.</p>
+          <div class="featured-pairing-bar">🍷 Suggested Beverage: Copper Moon Rye ($17)</div>
+          <div class="featured-items-preview">
+            <div class="preview-header">Featured Menu Courses:</div>
+            <ul class="preview-items-list">
+              <li><span class="preview-item-name">Black Garlic Braised Short Rib</span><span class="preview-item-dots"></span><span class="preview-item-price">$34</span></li>
+              <li><span class="preview-item-name">Copper Moon Rye Cocktail</span><span class="preview-item-dots"></span><span class="preview-item-price">$17</span></li>
+              <li><span class="preview-item-name">Hearth-Roasted Wild Mushrooms</span><span class="preview-item-dots"></span><span class="preview-item-price">$24</span></li>
+              <li><span class="preview-item-name">Burnt Honey &amp; Hearth Salt Cheesecake</span><span class="preview-item-dots"></span><span class="preview-item-price">$14</span></li>
+            </ul>
+          </div>
+          <div class="featured-col-actions">
+            <button class="cta-btn open-col-btn" data-slug="signature-orbit-and-ember">Explore Full Collection &rsaquo;</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-signature">☆ Save Collection</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 12 Collections Cards Grid -->
-    <section id="collections-grid" class="locations-grid-container"></section>
+    <section id="collections-grid" class="locations-grid-container">
+      
+      <!-- Card 1 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-signature.jpg" alt="Signature Orbit &amp; Ember">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Dinner &amp; Drinks</span>
+          <span class="col-pairing-badge">🍷 Copper Moon</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">The Flagship Experience</span>
+          <h3 class="col-michelin-title">Signature Orbit &amp; Ember</h3>
+          <p class="col-michelin-desc">The definitive dishes, craft cocktails, and hearth finishes that define our kitchen.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Black Garlic Short Rib</span><span class="mini-price">$34</span></li>
+              <li><span>Copper Moon</span><span class="mini-price">$17</span></li>
+              <li><span>Charred Mushrooms</span><span class="mini-price">$24</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="signature-orbit-and-ember" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-signature">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-fire.jpg" alt="Around the Fire">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Dinner Service</span>
+          <span class="col-pairing-badge">🍷 First Light Spritz</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Live Hearth Cooking</span>
+          <h3 class="col-michelin-title">Around the Fire</h3>
+          <p class="col-michelin-desc">Dishes defined by direct cured oak flame, char, smoke, roasting, and hearth embers.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Ember Chicken</span><span class="mini-price">$28</span></li>
+              <li><span>Charred Carrots</span><span class="mini-price">$16</span></li>
+              <li><span>Smoked Flatbread</span><span class="mini-price">$18</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="around-the-fire" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-around-the-fire">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-sharing.jpg" alt="Made for Sharing">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Dinner &amp; Brunch</span>
+          <span class="col-pairing-badge">🍷 Solar Flare</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Shared Plates &amp; Boards</span>
+          <h3 class="col-michelin-title">Made for Sharing</h3>
+          <p class="col-michelin-desc">Starters, flatbreads, oysters, and hearth sides designed to pass around the table.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Smoked Flatbread</span><span class="mini-price">$18</span></li>
+              <li><span>Roasted Oysters</span><span class="mini-price">$22 half / $38 dozen</span></li>
+              <li><span>Charred Carrots</span><span class="mini-price">$16</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="made-for-sharing" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-made-for-sharing">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-brunch.jpg" alt="Weekend Brunch">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Sat &amp; Sun 10:00 AM – 2:30 PM</span>
+          <span class="col-pairing-badge">🍷 First Light Spritz</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Saturday &amp; Sunday Daytime</span>
+          <h3 class="col-michelin-title">Weekend Brunch</h3>
+          <p class="col-michelin-desc">Hearth-poached eggs, brioche french toast, short rib hash, and morning spritzes.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Ember Benedict</span><span class="mini-price">$19</span></li>
+              <li><span>Short Rib Hash</span><span class="mini-price">$21</span></li>
+              <li><span>Peach French Toast</span><span class="mini-price">$17</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="weekend-brunch" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-weekend-brunch">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-cocktails.jpg" alt="Cocktails After Dark">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Bar &amp; Lounge Nightly</span>
+          <span class="col-pairing-badge">🍷 Copper Moon</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Craft Spirits &amp; Mixology</span>
+          <h3 class="col-michelin-title">Cocktails After Dark</h3>
+          <p class="col-michelin-desc">High-rye bourbon, smoked mezcal, espresso martinis, and botanical spritzes.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Copper Moon</span><span class="mini-price">$17</span></li>
+              <li><span>Solar Flare</span><span class="mini-price">$16</span></li>
+              <li><span>First Light Spritz</span><span class="mini-price">$15</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Cocktails</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="cocktails-after-dark" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-cocktails-after-dark">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-zeroproof.jpg" alt="Zero-Proof, Fully Considered">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Available All Services</span>
+          <span class="col-pairing-badge">🌿 Lunar Bloom</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Crafted Non-Alcoholic Elixirs</span>
+          <h3 class="col-michelin-title">Zero-Proof, Fully Considered</h3>
+          <p class="col-michelin-desc">Distilled botanical spirits, jasmine peach elixirs, ginger press, and smoked tea tonics.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Lunar Bloom</span><span class="mini-price">$12</span></li>
+              <li><span>Garden Orbit</span><span class="mini-price">$11</span></li>
+              <li><span>Ember Tonic</span><span class="mini-price">$10</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 3 Zero-Proof Elixirs</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="zero-proof-fully-considered" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-zero-proof">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-dessert.jpg" alt="Save Room for Dessert">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Nightly Dessert Service</span>
+          <span class="col-pairing-badge">🍷 Espresso Martini</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Sweet &amp; Smoked Finishes</span>
+          <h3 class="col-michelin-title">Save Room for Dessert</h3>
+          <p class="col-michelin-desc">Caramelized honey cheesecake, smoked Valrhona dark chocolate torte, and espresso martinis.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Burnt Honey Cheesecake</span><span class="mini-price">$14</span></li>
+              <li><span>Dark Chocolate Torte</span><span class="mini-price">$15</span></li>
+              <li><span>Espresso Martini</span><span class="mini-price">$18</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 3 Desserts</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="save-room-for-dessert" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-save-room">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-tablefortwo.jpg" alt="A Table for Two">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Dinner Service</span>
+          <span class="col-pairing-badge">🍷 Copper Moon</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Intimate Dining Progression</span>
+          <h3 class="col-michelin-title">A Table for Two</h3>
+          <p class="col-michelin-desc">A curated 4-course progression for two guests featuring hearth bread, charred carrots, short rib, and cheesecake.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Hearth Bread</span><span class="mini-price">$9</span></li>
+              <li><span>Charred Carrots</span><span class="mini-price">$16</span></li>
+              <li><span>Black Garlic Short Rib</span><span class="mini-price">$34</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Courses</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="a-table-for-two" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-table-for-two">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-gathertable.jpg" alt="Gather the Table">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Dinner &amp; Large Groups</span>
+          <span class="col-pairing-badge">🍷 First Light Spritz</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Large Group Dining</span>
+          <h3 class="col-michelin-title">Gather the Table</h3>
+          <p class="col-michelin-desc">Group-friendly feast featuring roasted oysters, smoked flatbread, ember chicken, and charred mushrooms.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Roasted Oysters</span><span class="mini-price">$22 half / $38 dozen</span></li>
+              <li><span>Smoked Flatbread</span><span class="mini-price">$18</span></li>
+              <li><span>Ember Chicken</span><span class="mini-price">$28</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Family-Style Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="gather-the-table" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-gather-the-table">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 10 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-season.jpg" alt="The Current Season">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Seasonal Harvest</span>
+          <span class="col-pairing-badge">🍷 Copper Moon</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Autumn Harvest Selections</span>
+          <h3 class="col-michelin-title">The Current Season</h3>
+          <p class="col-michelin-desc">Limited-availability seasonal dishes highlighting autumn mushrooms and summer peach brioche.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Charred Mushrooms</span><span class="mini-price">$24</span></li>
+              <li><span>Peach French Toast</span><span class="mini-price">$17</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 2 Harvest Dishes</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="the-current-season" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-current-season">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 11 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-chefjulian.jpg" alt="Chef Julian’s Current Picks">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Chef's Recommendations</span>
+          <span class="col-pairing-badge">🍷 Copper Moon</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">Executive Chef Feature</span>
+          <h3 class="col-michelin-title">Chef Julian’s Current Picks</h3>
+          <p class="col-michelin-desc">Personal recommendations from Executive Chef Julian Reyes highlighting his favorite hearth pairings.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Black Garlic Short Rib</span><span class="mini-price">$34</span></li>
+              <li><span>Charred Carrots</span><span class="mini-price">$16</span></li>
+              <li><span>Copper Moon</span><span class="mini-price">$17</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 3 Chef Picks</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="chef-julians-current-picks" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-chef-julian-picks">☆</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 12 -->
+      <article class="collection-michelin-card">
+        <div class="col-michelin-media">
+          <img src="images/collection-privatedining.jpg" alt="Private Dining Menus">
+          <div class="col-media-overlay"></div>
+          <span class="col-service-badge">Private Events &amp; Inquiries</span>
+          <span class="col-pairing-badge">🍷 Wine Flight Option</span>
+        </div>
+        <div class="col-michelin-body">
+          <span class="subhead-tag">The Ember Room Direction</span>
+          <h3 class="col-michelin-title">Private Dining Menus</h3>
+          <p class="col-michelin-desc">Sample direction and curated multi-course menus for private events in The Ember Room.</p>
+          <div class="col-card-preview-box">
+            <div class="preview-mini-title">Highlights:</div>
+            <ul class="preview-mini-list">
+              <li><span>Black Garlic Short Rib</span><span class="mini-price">$34</span></li>
+              <li><span>Ember Chicken</span><span class="mini-price">$28</span></li>
+              <li><span>Burnt Honey Cheesecake</span><span class="mini-price">$14</span></li>
+            </ul>
+          </div>
+          <div class="col-card-meta">
+            <span>🍽️ 4 Sample Courses</span>
+            <span>⭐ Dark Star Selection</span>
+          </div>
+          <div class="col-card-actions">
+            <button class="cta-btn open-col-btn" data-slug="private-dining-menus" style="flex: 1;">Explore Collection</button>
+            <button class="btn-secondary save-col-btn" data-id="collection-private-dining">☆</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
 
     <!-- Standard Menu Authority Note & Disclaimer -->
     <div class="concierge-disclaimer-card" style="margin-top: 4rem;">

@@ -45,7 +45,25 @@
     localStorage.setItem('orbit_saved_collections', JSON.stringify(saved));
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  
+  function initCollectionsEngine() {
+    initDataMaps();
+
+    const config = window.ORBIT_COLLECTIONS_CONFIG;
+    if (!config) {
+      console.error("ORBIT_COLLECTIONS_CONFIG not found!");
+      return;
+    }
+
+    const categoryNavContainer = document.getElementById('collections-category-nav');
+    const featuredSectionContainer = document.getElementById('featured-collection-container');
+    const gridContainer = document.getElementById('collections-grid');
+    const detailDrawer = document.getElementById('collection-detail-drawer');
+    const detailModalContent = document.getElementById('collection-modal-content');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+    let activeCategory = 'all';
+
     initDataMaps();
 
     const config = window.ORBIT_COLLECTIONS_CONFIG;
