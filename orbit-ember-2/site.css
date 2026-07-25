@@ -1964,3 +1964,33 @@ html, body {
 }
 *, *:before, *:after { box-sizing: inherit; }
 img, video, canvas, iframe { max-width: 100%; height: auto; }
+
+/* Clean Vector Logo Display Fix */
+.hero-logo-img {
+  max-height: 180px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  display: inline-block !important;
+}
+
+.nav-logo-icon {
+  max-height: 40px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.footer-logo img, img.footer-logo {
+  max-height: 90px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
