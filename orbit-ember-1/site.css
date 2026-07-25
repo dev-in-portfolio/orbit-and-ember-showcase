@@ -719,3 +719,31 @@ img, video, canvas, iframe { max-width: 100%; height: auto; }
   box-shadow: none !important;
   border: none !important;
 }
+
+
+/* Official Brand Finish Logo Drop-Shadow & Display Rules */
+.hero-logo-img {
+  max-height: 220px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  filter: drop-shadow(0 10px 25px rgba(224, 168, 104, 0.35)) !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.nav-logo-icon {
+  height: 38px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  margin-right: 0.6rem !important;
+  filter: drop-shadow(0 2px 8px rgba(224, 168, 104, 0.4)) !important;
+}
+
+.footer-logo img, img.footer-logo {
+  max-height: 100px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  filter: drop-shadow(0 4px 15px rgba(224, 168, 104, 0.25)) !important;
+}
