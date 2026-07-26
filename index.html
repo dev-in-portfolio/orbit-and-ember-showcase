@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -773,9 +773,9 @@
         ["Level 0 + Catering & Private Events", "Charlotte, NC · package 7", "A private-events and catering inquiry experience for celebrations, business dinners, and group dining.", ["The Ember Room", "Event inquiry", "Group dining"], "orbit-ember-7/experience.html", "Explore private events"],
         ["Level 0 + Guest Engagement", "Charlotte, NC · package 8", "Optional, account-free flavor and favorite-item interactions with on-device saving and privacy guidance.", ["Flavor selector", "Save on device", "No account"], "orbit-ember-10/engagement.html", "Try guest engagement"],
         ["Level 0 + Menu Collections", "Charlotte, NC · package 9", "Twelve curated menu stories resolve current dish facts from the restaurant menu experience.", ["12 collections", "Curated stories", "Menu references"], "orbit-ember-11/collections.html", "Browse collections"],
-        ["Level 0 + Signature Interactive Experience", "Charlotte, NC · package 10", "A cinematic WebGL table experience with atmosphere, pace, flavor, and occasion choices plus accessible fallbacks.", ["WebGL scene", "10 result families", "Reduced motion"], "the-orbit-experience", "Enter the experience"],
-        ["Level 0 + Digital Menu Concierge", "Charlotte, NC · package 11", "A deterministic guided menu discovery flow with dietary boundaries, explanations, comparison, save, and share.", ["Guided discovery", "Hard filters", "Why it fits"], "menu-concierge", "Open the concierge"],
-        ["Level 0 + Multi-Location Growth", "South End · Ballantyne · Lake Norman", "A status-aware location system for one fictional flagship, one opening-soon demo, and one planned market.", ["Location status", "Safe actions", "Growth model"], "locations", "Explore locations"]
+        ["Level 0 + Signature Interactive Experience", "Charlotte, NC · package 10", "A cinematic WebGL table experience with atmosphere, pace, flavor, and occasion choices plus accessible fallbacks.", ["WebGL scene", "10 result families", "Reduced motion"], "orbit-ember-12/experience.html", "Enter the experience"],
+        ["Level 0 + Digital Menu Concierge", "Charlotte, NC · package 11", "A deterministic guided menu discovery flow with dietary boundaries, explanations, comparison, save, and share.", ["Guided discovery", "Hard filters", "Why it fits"], "orbit-ember-13/concierge.html", "Open the concierge"],
+        ["Level 0 + Multi-Location Growth", "South End · Ballantyne · Lake Norman", "A status-aware location system for one fictional flagship, one opening-soon demo, and one planned market.", ["Location status", "Safe actions", "Growth model"], "orbit-ember-14/locations.html", "Explore locations"]
       ];
       const cards = [...document.querySelectorAll("main.grid .card")];
       cards.forEach((card, index) => {
@@ -791,6 +791,17 @@
         link.querySelector("span").textContent = entry[5];
         link.setAttribute("aria-label", `${entry[5]}: ${entry[0]}`);
       });
+
+      const grid = document.querySelector("main.grid");
+      if (grid) {
+        grid.addEventListener("click", (e) => {
+          const card = e.target.closest(".card");
+          if (!card) return;
+          const link = card.querySelector(".card-action");
+          if (!link || e.target.closest("a")) return;
+          window.open(link.href, link.target || "_blank", "noopener,noreferrer");
+        });
+      }
     })();
   </script>
 
