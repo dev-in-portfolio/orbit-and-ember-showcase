@@ -12,7 +12,7 @@ const labels = [
   "Level 0",
   "Level 0 + Brand Finish",
   "Level 0 + Menu Experience",
-  "Level 0 + Photo Story",
+  "Level 0 + Photo Story/Gallery",
   "Level 0 + Local Discovery",
   "Level 0 + Trust & Reputation",
   "Level 0 + Order & Reserve",
