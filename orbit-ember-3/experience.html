@@ -43,7 +43,7 @@
 
     <!-- Category Filter Bar -->
     <div class="gallery-filter-bar">
-      <button class="filter-btn active" data-filter="all">All Photos (11)</button>
+      <button class="filter-btn active" data-filter="all">All Photos (10)</button>
       <button class="filter-btn" data-filter="dishes">Signature Dishes</button>
       <button class="filter-btn" data-filter="cocktails">Cocktails &amp; Bar</button>
       <button class="filter-btn" data-filter="hearth">Hearth &amp; Fire</button>
@@ -149,20 +149,8 @@
         </div>
       </article>
 
-      <!-- Item 9: Full Restaurant Staff -->
-      <article class="gallery-tile" data-cat="people" data-index="8" data-full="images/30-orbit-ember-staff.jpg" data-title="The Orbit &amp; Ember Team" data-caption="Our full kitchen, bar, and dining service team gathered in the main dining room before service.">
-        <div class="tile-img-wrap">
-          <img src="images/30-orbit-ember-staff.jpg" alt="Full Orbit &amp; Ember team portrait" loading="lazy">
-          <div class="tile-overlay">
-            <span class="tile-cat-tag">Team &amp; Hospitality</span>
-            <h3>Full Restaurant Team</h3>
-            <span class="zoom-icon">🔍 View Fullscreen</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Item 10: Exterior Dusk -->
-      <article class="gallery-tile" data-cat="dining" data-index="9" data-full="images/24-orbit-ember-exterior-dusk.jpg" data-title="South End Exterior at Dusk" data-caption="Urban brick-and-steel exterior view of Orbit &amp; Ember in Charlotte's South End with warm interior lighting.">
+      <!-- Item 9: Exterior Dusk -->
+      <article class="gallery-tile" data-cat="dining" data-index="8" data-full="images/24-orbit-ember-exterior-dusk.jpg" data-title="South End Exterior at Dusk" data-caption="Urban brick-and-steel exterior view of Orbit &amp; Ember in Charlotte's South End with warm interior lighting.">
         <div class="tile-img-wrap">
           <img src="images/24-orbit-ember-exterior-dusk.jpg" alt="Exterior dusk view" loading="lazy">
           <div class="tile-overlay">
@@ -173,8 +161,8 @@
         </div>
       </article>
 
-      <!-- Item 11: Atmospheric Hearth Detail -->
-      <article class="gallery-tile" data-cat="hearth" data-index="10" data-full="images/36-orbit-ember-atmospheric-detail.jpg" data-title="Atmospheric Hearth Glow" data-caption="Copper pendant lighting reflected in smoked glass with warm oak ember glow.">
+      <!-- Item 10: Atmospheric Hearth Detail -->
+      <article class="gallery-tile" data-cat="hearth" data-index="9" data-full="images/36-orbit-ember-atmospheric-detail.jpg" data-title="Atmospheric Hearth Glow" data-caption="Copper pendant lighting reflected in smoked glass with warm oak ember glow.">
         <div class="tile-img-wrap">
           <img src="images/36-orbit-ember-atmospheric-detail.jpg" alt="Copper lighting and ember glow detail" loading="lazy">
           <div class="tile-overlay">
@@ -192,13 +180,13 @@
     <button id="lb-close" class="lb-control-btn lb-close-btn" aria-label="Close Lightbox">&times;</button>
     <button id="lb-prev" class="lb-control-btn lb-prev-btn" aria-label="Previous Photo">&#10094;</button>
     <button id="lb-next" class="lb-control-btn lb-next-btn" aria-label="Next Photo">&#10095;</button>
-    
+
     <div class="lightbox-dialog-body">
       <div class="lb-image-frame">
         <img id="lb-active-img" src="" alt="Active fullscreen photograph">
       </div>
       <div class="lb-meta-bar">
-        <div class="lb-counter" id="lb-counter">Photo 1 of 11</div>
+        <div class="lb-counter" id="lb-counter">Photo 1 of 10</div>
         <h3 class="lb-title" id="lb-title">Main Dining Room at Dusk</h3>
         <p class="lb-caption" id="lb-caption">Warm walnut wood, copper pendant lighting...</p>
       </div>
@@ -237,7 +225,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const tiles = Array.from(document.querySelectorAll('.gallery-tile'));
       const filterBtns = document.querySelectorAll('.gallery-filter-bar .filter-btn');
-      
+
       const lightbox = document.getElementById('lightbox-modal');
       const lbImg = document.getElementById('lb-active-img');
       const lbTitle = document.getElementById('lb-title');
@@ -337,6 +325,5 @@
     });
   </script>
 
-  
 </body>
 </html>
